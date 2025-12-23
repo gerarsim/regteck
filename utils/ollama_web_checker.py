@@ -24,7 +24,7 @@ class OllamaHealthChecker:
         self.host = os.environ.get('OLLAMA_HOST') or \
                     os.environ.get('OLLAMA_BASE_URL') or \
                     os.environ.get('OLLAMA_API_URL') or \
-                    'http://localhost:11434'
+                    'http://127.0.0.1:11434'
 
         self.model = os.environ.get('OLLAMA_MODEL') or \
                      os.environ.get('LLM_MODEL') or \
