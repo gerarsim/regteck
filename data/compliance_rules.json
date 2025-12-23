@@ -1,392 +1,338 @@
 {
-  "RULE_001": {
-    "name": "KYC Customer Identification",
-    "mandatory": true,
-    "severity": "critical",
-    "keywords": ["identification", "client", "customer", "identity", "document", "passport", "carte identité", "pièce identité"],
-    "description": "Document must contain complete customer identification procedures",
-    "regulatory_basis": "Loi du 12 novembre 2004, Circulaire CSSF 15/609",
-    "penalty": "€25,000 - €125,000",
-    "recommendation": "Include comprehensive KYC procedures with identity verification",
-    "triggers": ["missing identification", "incomplete customer data", "no identity verification"],
-    "weight": 0.15,
-    "luxembourg_specific": true
+  "critical_compliance_rules": {
+    "SANCTIONS_001": {
+      "rule_id": "SANCTIONS_001",
+      "category": "sanctions_screening",
+      "severity": "CRITICAL",
+      "title": {
+        "fr": "Vérification obligatoire contre les listes de sanctions",
+        "en": "Mandatory sanctions list screening",
+        "de": "Obligatorische Sanktionslistenprüfung",
+        "es": "Verificación obligatoria contra listas de sanciones"
+      },
+      "description": {
+        "fr": "Toute personne ou entité doit être vérifiée contre les listes de sanctions avant d'établir une relation d'affaires",
+        "en": "All persons and entities must be screened against sanctions lists before establishing business relationship",
+        "de": "Alle Personen und Entitäten müssen vor Geschäftsbeziehung gegen Sanktionslisten geprüft werden",
+        "es": "Todas las personas y entidades deben verificarse contra listas de sanciones antes de establecer relación comercial"
+      },
+      "regulatory_basis": "EU Regulation 2016/44, OFAC Guidelines, UN Security Council Resolutions",
+      "keywords": [
+        "sanctions", "sanction", "ofac", "sdn", "designated",
+        "sanctionné", "sanktioniert", "sancionado"
+      ],
+      "penalty": {
+        "financial": "Up to €1,000,000 or 10% annual turnover",
+        "criminal": "Up to 10 years imprisonment",
+        "administrative": "License suspension or revocation"
+      },
+      "action_required": "Implement automated daily screening against all major sanctions lists",
+      "weight": 100.0
+    },
+
+    "SANCTIONS_002": {
+      "rule_id": "SANCTIONS_002",
+      "category": "sanctions_violation",
+      "severity": "CRITICAL",
+      "title": {
+        "fr": "Interdiction absolue de traiter avec des entités sanctionnées",
+        "en": "Absolute prohibition on dealing with sanctioned entities",
+        "de": "Absolutes Verbot des Umgangs mit sanktionierten Entitäten",
+        "es": "Prohibición absoluta de tratar con entidades sancionadas"
+      },
+      "description": {
+        "fr": "Il est strictement interdit d'établir ou maintenir des relations d'affaires avec des personnes, entités ou pays sous sanctions",
+        "en": "Strictly prohibited to establish or maintain business relationships with sanctioned persons, entities, or countries",
+        "de": "Streng verboten, Geschäftsbeziehungen mit sanktionierten Personen, Entitäten oder Ländern aufzubauen",
+        "es": "Estrictamente prohibido establecer relaciones comerciales con personas, entidades o países sancionados"
+      },
+      "regulatory_basis": "EU Sanctions Regulations, OFAC Sanctions Programs, UN Security Council Resolutions",
+      "detection_triggers": [
+        "sanctioned_entity_name_match",
+        "sanctioned_country_reference",
+        "sanctions_evasion_keywords"
+      ],
+      "penalty": {
+        "financial": "€1,000,000 minimum + asset seizure",
+        "criminal": "5-10 years imprisonment",
+        "institutional": "Banking license revocation"
+      },
+      "immediate_actions": [
+        "Freeze all assets immediately",
+        "Reject transaction",
+        "File Suspicious Activity Report",
+        "Notify authorities within 24 hours"
+      ],
+      "weight": 100.0
+    },
+
+    "AML_001": {
+      "rule_id": "AML_001",
+      "category": "kyc_aml",
+      "severity": "CRITICAL",
+      "title": {
+        "fr": "Identification du client (KYC) - Procédures obligatoires",
+        "en": "Customer Identification (KYC) - Mandatory Procedures",
+        "de": "Kundenidentifizierung (KYC) - Pflichtverfahren",
+        "es": "Identificación del Cliente (KYC) - Procedimientos Obligatorios"
+      },
+      "description": {
+        "fr": "Identification complète du client, vérification documents, bénéficiaires effectifs",
+        "en": "Complete customer identification, document verification, ultimate beneficial owners",
+        "de": "Vollständige Kundenidentifizierung, Dokumentenprüfung, wirtschaftlich Berechtigte",
+        "es": "Identificación completa del cliente, verificación de documentos, beneficiarios finales"
+      },
+      "regulatory_basis": "AML Directive 2015/849/EU, Luxembourg AML Law 2004, FATF Recommendations",
+      "required_elements": [
+        "government_issued_id",
+        "proof_of_address",
+        "source_of_funds",
+        "purpose_of_relationship",
+        "beneficial_ownership_declaration"
+      ],
+      "keywords": [
+        "kyc", "know your customer", "identification",
+        "beneficial owner", "bénéficiaire effectif",
+        "wirtschaftlich berechtigter", "beneficiario final"
+      ],
+      "penalty": {
+        "financial": "€125,000 - €5,000,000",
+        "administrative": "Public warning, activity restrictions"
+      },
+      "weight": 30.0
+    },
+
+    "AML_002": {
+      "rule_id": "AML_002",
+      "category": "transaction_monitoring",
+      "severity": "HIGH",
+      "title": {
+        "fr": "Surveillance continue des transactions",
+        "en": "Ongoing transaction monitoring",
+        "de": "Laufende Transaktionsüberwachung",
+        "es": "Monitoreo continuo de transacciones"
+      },
+      "description": {
+        "fr": "Surveillance automatisée des transactions pour détecter activités suspectes",
+        "en": "Automated transaction monitoring to detect suspicious activities",
+        "de": "Automatisierte Transaktionsüberwachung zur Erkennung verdächtiger Aktivitäten",
+        "es": "Monitoreo automatizado de transacciones para detectar actividades sospechosas"
+      },
+      "regulatory_basis": "AML Directive Article 13, CSSF Circular 18/698",
+      "red_flags": [
+        "large_cash_transactions",
+        "structured_transactions",
+        "unusual_patterns",
+        "high_risk_countries",
+        "frequent_international_transfers"
+      ],
+      "thresholds": {
+        "cash_transaction": "€15,000",
+        "suspicious_activity": "any amount",
+        "cross_border": "€1,000"
+      },
+      "keywords": [
+        "monitoring", "surveillance", "suspicious",
+        "unusual", "inhabituel", "ungewöhnlich", "inusual"
+      ],
+      "penalty": {
+        "financial": "€125,000 - €1,000,000",
+        "administrative": "Enhanced supervision"
+      },
+      "weight": 25.0
+    },
+
+    "TERRORIST_FINANCING_001": {
+      "rule_id": "TERRORIST_FINANCING_001",
+      "category": "terrorist_financing",
+      "severity": "CRITICAL",
+      "title": {
+        "fr": "Interdiction absolue du financement du terrorisme",
+        "en": "Absolute prohibition of terrorist financing",
+        "de": "Absolutes Verbot der Terrorismusfinanzierung",
+        "es": "Prohibición absoluta de financiación del terrorismo"
+      },
+      "description": {
+        "fr": "Toute activité liée au financement du terrorisme est strictement interdite et doit être immédiatement signalée",
+        "en": "Any activity related to terrorist financing is strictly prohibited and must be immediately reported",
+        "de": "Jede Aktivität im Zusammenhang mit Terrorismusfinanzierung ist streng verboten und muss sofort gemeldet werden",
+        "es": "Cualquier actividad relacionada con financiación terrorista está estrictamente prohibida y debe reportarse inmediatamente"
+      },
+      "regulatory_basis": "EU Directive 2015/849, UN Security Council Resolutions, Luxembourg Criminal Code",
+      "detection_indicators": [
+        "terrorist_organization_names",
+        "high_risk_countries",
+        "charitable_front_organizations",
+        "cash_intensive_businesses",
+        "hawala_remittance"
+      ],
+      "keywords": [
+        "terrorist", "terrorism", "terrorisme", "terrorismus",
+        "hamas", "hezbollah", "al-qaeda", "isis",
+        "jihad", "militant", "extremist"
+      ],
+      "penalty": {
+        "criminal": "15-20 years imprisonment",
+        "financial": "Asset seizure + unlimited fines",
+        "institutional": "Immediate license revocation"
+      },
+      "immediate_actions": [
+        "STOP all transactions immediately",
+        "Freeze assets",
+        "Contact law enforcement within 1 hour",
+        "File emergency SAR",
+        "Do not tip off customer"
+      ],
+      "weight": 100.0
+    },
+
+    "MONEY_LAUNDERING_001": {
+      "rule_id": "MONEY_LAUNDERING_001",
+      "category": "money_laundering",
+      "severity": "CRITICAL",
+      "title": {
+        "fr": "Détection et prévention du blanchiment d'argent",
+        "en": "Detection and prevention of money laundering",
+        "de": "Erkennung und Verhinderung von Geldwäsche",
+        "es": "Detección y prevención del lavado de dinero"
+      },
+      "description": {
+        "fr": "Systèmes et procédures pour détecter et prévenir le blanchiment de capitaux",
+        "en": "Systems and procedures to detect and prevent money laundering",
+        "de": "Systeme und Verfahren zur Erkennung und Verhinderung von Geldwäsche",
+        "es": "Sistemas y procedimientos para detectar y prevenir el lavado de dinero"
+      },
+      "regulatory_basis": "AML Directive 2015/849/EU, Luxembourg AML Law, FATF 40 Recommendations",
+      "typologies": [
+        "placement",
+        "layering",
+        "integration",
+        "structuring",
+        "smurfing",
+        "trade_based_laundering"
+      ],
+      "keywords": [
+        "laundering", "blanchiment", "geldwäsche", "blanqueo",
+        "layering", "structuring", "smurfing",
+        "shell company", "société écran", "briefkastenfirma"
+      ],
+      "red_flags": [
+        "cash_intensive_business",
+        "complex_ownership_structures",
+        "offshore_accounts",
+        "rapid_movement_of_funds",
+        "no_apparent_business_purpose"
+      ],
+      "penalty": {
+        "financial": "€1,250,000 - €5,000,000",
+        "criminal": "1-5 years imprisonment",
+        "administrative": "Public disclosure, activity restrictions"
+      },
+      "weight": 40.0
+    },
+
+    "HIGH_RISK_SERVICES_001": {
+      "rule_id": "HIGH_RISK_SERVICES_001",
+      "category": "enhanced_due_diligence",
+      "severity": "HIGH",
+      "title": {
+        "fr": "Services VIP/privilégiés pour clients à haut risque",
+        "en": "VIP/Privileged services for high-risk clients",
+        "de": "VIP/Privilegierte Dienstleistungen für Hochrisikokunden",
+        "es": "Servicios VIP/privilegiados para clientes de alto riesgo"
+      },
+      "description": {
+        "fr": "Les services VIP ou privilégiés nécessitent une diligence renforcée et approbation senior",
+        "en": "VIP or privileged services require enhanced due diligence and senior approval",
+        "de": "VIP- oder privilegierte Dienstleistungen erfordern erweiterte Sorgfaltspflicht und Genehmigung der Geschäftsleitung",
+        "es": "Los servicios VIP o privilegiados requieren diligencia reforzada y aprobación senior"
+      },
+      "regulatory_basis": "AML Directive Article 18a (Enhanced Due Diligence)",
+      "triggers": [
+        "vip_service_mention",
+        "privileged_access",
+        "expedited_processing",
+        "discretionary_service"
+      ],
+      "keywords": [
+        "vip", "premium", "privilégié", "privileged",
+        "facilité", "facilitated", "express",
+        "discretion", "discret", "confidential"
+      ],
+      "required_actions": [
+        "Enhanced CDD (Customer Due Diligence)",
+        "Senior management approval",
+        "Source of wealth verification",
+        "Ongoing enhanced monitoring",
+        "Annual review minimum"
+      ],
+      "red_flags_combination": {
+        "warning": "VIP services + sanctioned entities = AUTOMATIC REJECTION",
+        "action": "Immediate escalation to compliance officer"
+      },
+      "weight": 20.0
+    }
   },
-  "RULE_002": {
-    "name": "AML Transaction Monitoring",
-    "mandatory": true,
-    "severity": "critical",
-    "keywords": ["transaction", "monitoring", "surveillance", "suspicious", "AML", "blanchiment", "LCB-FT"],
-    "description": "Document must include anti-money laundering monitoring procedures",
-    "regulatory_basis": "Loi du 12 novembre 2004, Article 5",
-    "penalty": "€250,000 - €1,250,000",
-    "recommendation": "Implement comprehensive AML transaction monitoring system",
-    "triggers": ["no transaction monitoring", "missing AML procedures", "suspicious activity"],
-    "weight": 0.20,
-    "luxembourg_specific": true
+
+  "scoring_impact": {
+    "critical_violation": {
+      "sanctions_match": {
+        "score_multiplier": 0.0,
+        "description": "Any sanctions match results in 0% score"
+      },
+      "terrorist_financing": {
+        "score_multiplier": 0.0,
+        "description": "Any terrorist financing indicator results in 0% score"
+      },
+      "money_laundering_confirmed": {
+        "score_multiplier": 0.0,
+        "description": "Confirmed money laundering results in 0% score"
+      }
+    },
+    "high_risk": {
+      "incomplete_kyc": {
+        "penalty": 40.0,
+        "description": "Major penalty for incomplete KYC"
+      },
+      "no_transaction_monitoring": {
+        "penalty": 35.0,
+        "description": "No monitoring system in place"
+      },
+      "high_risk_without_edd": {
+        "penalty": 30.0,
+        "description": "High-risk relationship without enhanced due diligence"
+      }
+    },
+    "medium_risk": {
+      "delayed_reporting": {
+        "penalty": 20.0,
+        "description": "Late suspicious activity reporting"
+      },
+      "inadequate_training": {
+        "penalty": 15.0,
+        "description": "Staff not properly trained"
+      }
+    }
   },
-  "RULE_003": {
-    "name": "GDPR Data Protection",
-    "mandatory": true,
-    "severity": "high",
-    "keywords": ["GDPR", "data protection", "données personnelles", "consent", "privacy", "CNPD"],
-    "description": "Document must comply with GDPR data protection requirements",
-    "regulatory_basis": "Règlement UE 2016/679 (RGPD), Loi du 1er août 2018",
-    "penalty": "€20,000,000 or 4% of annual turnover",
-    "recommendation": "Include GDPR compliance measures and data protection procedures",
-    "triggers": ["no data protection", "missing consent", "GDPR violation"],
-    "weight": 0.12,
-    "luxembourg_specific": true
-  },
-  "RULE_004": {
-    "name": "MiFID Investor Protection",
-    "mandatory": true,
-    "severity": "high",
-    "keywords": ["investor protection", "suitability", "appropriateness", "MiFID", "investment advice"],
-    "description": "Document must include MiFID investor protection measures",
-    "regulatory_basis": "Directive 2014/65/UE (MiFID II)",
-    "penalty": "€50,000 - €250,000",
-    "recommendation": "Implement proper suitability and appropriateness assessments",
-    "triggers": ["inappropriate advice", "no suitability test", "investor risk"],
-    "weight": 0.10,
-    "luxembourg_specific": false
-  },
-  "RULE_005": {
-    "name": "Risk Management Framework",
-    "mandatory": true,
-    "severity": "high",
-    "keywords": ["risk management", "risk assessment", "risk control", "risk framework", "gestion des risques"],
-    "description": "Document must include comprehensive risk management framework",
-    "regulatory_basis": "Circulaire CSSF 12/552",
-    "penalty": "€100,000 - €500,000",
-    "recommendation": "Establish robust risk management procedures and controls",
-    "triggers": ["no risk management", "inadequate controls", "missing risk assessment"],
-    "weight": 0.08,
-    "luxembourg_specific": true
-  },
-  "RULE_006": {
-    "name": "Corporate Governance",
-    "mandatory": true,
-    "severity": "medium",
-    "keywords": ["governance", "board", "internal control", "audit committee", "oversight", "gouvernance"],
-    "description": "Document must outline corporate governance structure",
-    "regulatory_basis": "Circulaire CSSF 12/552, Section 2",
-    "penalty": "€50,000 - €250,000",
-    "recommendation": "Detail governance structure and board responsibilities",
-    "triggers": ["poor governance", "no board oversight", "missing controls"],
-    "weight": 0.06,
-    "luxembourg_specific": true
-  },
-  "RULE_007": {
-    "name": "Sanctions Screening",
-    "mandatory": true,
-    "severity": "critical",
-    "keywords": ["sanctions", "screening", "OFAC", "terrorist", "blacklist", "embargo", "liste sanctions"],
-    "description": "Document must include sanctions screening procedures",
-    "regulatory_basis": "Règlement UE n° 2580/2001",
-    "penalty": "€500,000 - €2,500,000",
-    "recommendation": "Implement real-time sanctions screening against all lists",
-    "triggers": ["no sanctions check", "blacklist violation", "terrorist financing"],
-    "weight": 0.18,
-    "luxembourg_specific": false
-  },
-  "RULE_008": {
-    "name": "Beneficial Owner Identification",
-    "mandatory": true,
-    "severity": "high",
-    "keywords": ["beneficial owner", "ultimate beneficial owner", "UBO", "ownership structure", "bénéficiaire effectif"],
-    "description": "Document must identify beneficial owners holding 25% or more",
-    "regulatory_basis": "Directive UE 2018/843, Loi du 13 janvier 2019",
-    "penalty": "€50,000 - €250,000",
-    "recommendation": "Identify and verify all beneficial owners above 25% threshold",
-    "triggers": ["missing UBO", "no ownership structure", "incomplete identification"],
-    "weight": 0.07,
-    "luxembourg_specific": true
-  },
-  "RULE_009": {
-    "name": "Cybersecurity Measures",
-    "mandatory": false,
-    "severity": "medium",
-    "keywords": ["cybersecurity", "IT security", "data breach", "cyber risk", "information security", "cybersécurité"],
-    "description": "Document should include cybersecurity framework",
-    "regulatory_basis": "DORA, Circulaire CSSF 20/750",
-    "penalty": "€100,000 - €500,000",
-    "recommendation": "Implement comprehensive cybersecurity measures",
-    "triggers": ["cyber vulnerability", "data breach", "IT security gap"],
-    "weight": 0.04,
-    "luxembourg_specific": true
-  },
-  "RULE_010": {
-    "name": "CSSF Authorization Requirements",
-    "mandatory": true,
-    "severity": "critical",
-    "keywords": ["CSSF", "authorization", "licence", "agrément", "autorisation", "supervision", "Genehmigung", "Lizenz", "Aufsicht", "autorización", "licencia", "supervisión"],
-    "description": "Document must reference appropriate CSSF authorization",
-    "regulatory_basis": "Loi du 5 avril 1993 sur le secteur financier",
-    "penalty": "Withdrawal of authorization",
-    "recommendation": "Ensure proper CSSF authorization and compliance with licensing conditions",
-    "triggers": ["no CSSF reference", "unauthorized activity", "licence violation", "keine CSSF-Referenz", "sin referencia CSSF"],
-    "weight": 0.25,
-    "luxembourg_specific": true
-  },
-  "RULE_011": {
-    "name": "PSF Registration",
-    "mandatory": true,
-    "severity": "high",
-    "keywords": ["PSF", "professional financial sector", "professionnel secteur financier", "registration", "enregistrement", "Fachmann des Finanzsektors", "Registrierung", "profesional del sector financiero", "registro"],
-    "description": "PSF entities must comply with registration requirements",
-    "regulatory_basis": "Circulaire CSSF 18/698",
-    "penalty": "€25,000 - €125,000",
-    "recommendation": "Ensure proper PSF registration and ongoing compliance",
-    "triggers": ["unregistered PSF", "PSF violation", "non-compliance", "PSF non enregistré", "nicht registrierter PSF", "PSF no registrado"],
-    "weight": 0.12,
-    "luxembourg_specific": true
-  },
-  "RULE_012": {
-    "name": "Luxembourg Tax Compliance",
-    "mandatory": true,
-    "severity": "high",
-    "keywords": ["tax", "fiscal", "ACD", "impôt", "taxation", "CRS", "FATCA", "Steuer", "steuerlich", "Besteuerung", "impuesto", "fiscal", "tributación"],
-    "description": "Document must address Luxembourg tax obligations",
-    "regulatory_basis": "Loi générale des impôts, CRS/FATCA",
-    "penalty": "€500,000 or 80% of evaded tax",
-    "recommendation": "Include proper tax compliance and reporting procedures",
-    "triggers": ["tax evasion", "non-reporting", "CRS violation", "évasion fiscale", "non-déclaration", "Steuerhinterziehung", "evasión fiscal"],
-    "weight": 0.15,
-    "luxembourg_specific": true
-  },
-  "RULE_013": {
-    "name": "Fund Domiciliation Requirements",
-    "mandatory": true,
-    "severity": "high",
-    "keywords": ["fund", "UCITS", "AIFM", "SIF", "RAIF", "domiciliation", "investment fund", "fonds", "fonds d'investissement", "domiciliation", "Fonds", "Investmentfonds", "Domizilierung", "fondo", "fondo de inversión", "domiciliación"],
-    "description": "Investment funds must meet Luxembourg domiciliation requirements",
-    "regulatory_basis": "Loi du 17 décembre 2010, Loi du 12 juillet 2013",
-    "penalty": "€100,000 - €500,000",
-    "recommendation": "Ensure compliance with fund domiciliation and operational requirements",
-    "triggers": ["improper domiciliation", "fund non-compliance", "operational deficiency", "domiciliation incorrecte", "falsche Domizilierung", "domiciliación incorrecta"],
-    "weight": 0.14,
-    "luxembourg_specific": true
-  },
-  "RULE_014": {
-    "name": "Insurance Supervision",
-    "mandatory": true,
-    "severity": "high",
-    "keywords": ["insurance", "CAA", "Solvency II", "assurance", "captive", "reinsurance", "Versicherung", "Solvabilität", "Rückversicherung", "seguro", "solvencia", "reaseguro"],
-    "description": "Insurance entities must comply with CAA supervision requirements",
-    "regulatory_basis": "Loi du 7 décembre 2015 sur le secteur des assurances",
-    "penalty": "€200,000 - €1,000,000",
-    "recommendation": "Implement Solvency II compliance and CAA reporting requirements",
-    "triggers": ["solvency violation", "CAA non-compliance", "insurance breach", "violation solvabilité", "Solvabilitätsverletzung", "violación solvencia"],
-    "weight": 0.16,
-    "luxembourg_specific": true
-  },
-  "RULE_015": {
-    "name": "Payment Services Compliance",
-    "mandatory": true,
-    "severity": "high",
-    "keywords": ["payment services", "PSD2", "payment institution", "electronic money", "services paiement", "monnaie électronique", "Zahlungsdienste", "Zahlungsinstitut", "elektronisches Geld", "servicios de pago", "institución de pago", "dinero electrónico"],
-    "description": "Payment service providers must comply with PSD2 requirements",
-    "regulatory_basis": "Loi du 10 novembre 2009 relative aux services de paiement",
-    "penalty": "€150,000 - €750,000",
-    "recommendation": "Implement PSD2 compliance including strong customer authentication",
-    "triggers": ["PSD2 violation", "payment breach", "unauthorized payment service", "violation PSD2", "PSD2-Verletzung", "violación PSD2"],
-    "weight": 0.11,
-    "luxembourg_specific": true
-  },
-  "RULE_016": {
-    "name": "Outsourcing Governance",
-    "mandatory": true,
-    "severity": "medium",
-    "keywords": ["outsourcing", "externalisation", "third party", "cloud", "service provider", "tierce partie", "fournisseur service", "Auslagerung", "Drittpartei", "Cloud", "Dienstleister", "externalización", "terceros", "proveedor servicios"],
-    "description": "Document must address outsourcing arrangements and governance",
-    "regulatory_basis": "Circulaire CSSF 05/178",
-    "penalty": "€50,000 - €250,000",
-    "recommendation": "Establish proper outsourcing governance and oversight procedures",
-    "triggers": ["uncontrolled outsourcing", "cloud violation", "third party risk", "externalisation non contrôlée", "unkontrollierte Auslagerung", "externalización descontrolada"],
-    "weight": 0.08,
-    "luxembourg_specific": true
-  },
-  "RULE_017": {
-    "name": "Business Continuity Planning",
-    "mandatory": true,
-    "severity": "medium",
-    "keywords": ["business continuity", "BCP", "disaster recovery", "continuité activité", "plan secours", "Geschäftskontinuität", "Notfallwiederherstellung", "continuidad del negocio", "recuperación desastres", "plan contingencia"],
-    "description": "Document must include business continuity and disaster recovery plans",
-    "regulatory_basis": "Circulaire CSSF 12/552, Section 7",
-    "penalty": "€30,000 - €150,000",
-    "recommendation": "Develop and test comprehensive business continuity procedures",
-    "triggers": ["no BCP", "inadequate recovery", "business disruption", "pas de PCA", "kein BCP", "sin PCA"],
-    "weight": 0.06,
-    "luxembourg_specific": true
-  },
-  "RULE_018": {
-    "name": "Professional Liability Insurance",
-    "mandatory": true,
-    "severity": "medium",
-    "keywords": ["professional liability", "insurance", "responsabilité professionnelle", "PI cover", "assurance RC", "Berufshaftpflicht", "Versicherung", "responsabilidad profesional", "seguro RC"],
-    "description": "Financial professionals must maintain adequate professional liability insurance",
-    "regulatory_basis": "Loi du 5 avril 1993, Article 54",
-    "penalty": "€25,000 - €125,000",
-    "recommendation": "Maintain appropriate professional liability insurance coverage",
-    "triggers": ["no PI insurance", "inadequate coverage", "insurance lapse", "pas assurance RC", "keine Berufshaftpflicht", "sin seguro RC"],
-    "weight": 0.05,
-    "luxembourg_specific": true
-  },
-  "RULE_019": {
-    "name": "Market Abuse Prevention",
-    "mandatory": true,
-    "severity": "high",
-    "keywords": ["market abuse", "insider dealing", "market manipulation", "abus de marché", "délit initié", "manipulation marché", "Marktmissbrauch", "Insiderhandel", "Marktmanipulation", "abuso de mercado", "uso información privilegiada", "manipulación mercado"],
-    "description": "Document must include market abuse prevention measures",
-    "regulatory_basis": "Règlement UE 596/2014 (MAR)",
-    "penalty": "€5,000,000 or 10% of annual turnover",
-    "recommendation": "Implement comprehensive market abuse detection and prevention",
-    "triggers": ["insider trading", "market manipulation", "abuse detected", "délit initié", "Insiderhandel", "uso información privilegiada"],
-    "weight": 0.13,
-    "luxembourg_specific": false
-  },
-  "RULE_020": {
-    "name": "Central Bank Reporting",
-    "mandatory": true,
-    "severity": "high",
-    "keywords": ["BCL", "central bank", "statistical reporting", "monetary statistics", "banque centrale", "déclarations statistiques", "Zentralbank", "statistische Meldungen", "banco central", "estadísticas monetarias", "informes estadísticos"],
-    "description": "Entities must comply with BCL statistical reporting requirements",
-    "regulatory_basis": "Loi du 23 décembre 1998 portant création de la BCL",
-    "penalty": "€10,000 - €50,000",
-    "recommendation": "Ensure timely and accurate BCL statistical reporting",
-    "triggers": ["BCL non-reporting", "statistical violation", "central bank breach", "non-déclaration BCL", "BCL-Meldeversäumnis", "incumplimiento BCL"],
-    "weight": 0.07,
-    "luxembourg_specific": true
-  },
-  "RULE_021": {
-    "name": "Securitization Compliance",
-    "mandatory": true,
-    "severity": "medium",
-    "keywords": ["securitization", "titrisation", "STS", "due diligence", "retention", "Verbriefung", "sorgfältige Prüfung", "Beibehaltung", "titulización", "diligencia debida", "retención"],
-    "description": "Securitization entities must comply with EU securitization regulation",
-    "regulatory_basis": "Règlement UE 2017/2402",
-    "penalty": "€100,000 - €500,000",
-    "recommendation": "Implement securitization compliance including due diligence and retention",
-    "triggers": ["securitization breach", "STS violation", "retention failure", "violation titrisation", "Verbriefungsverstoß", "violación titulización"],
-    "weight": 0.09,
-    "luxembourg_specific": false
-  },
-  "RULE_022": {
-    "name": "Pension Fund Supervision",
-    "mandatory": true,
-    "severity": "high",
-    "keywords": ["pension fund", "SEPCAV", "ASSEP", "retirement", "pension", "fonds pension", "retraite", "Pensionsfonds", "Rente", "Altersvorsorge", "fondo pensiones", "jubilación"],
-    "description": "Pension funds must comply with supervision requirements",
-    "regulatory_basis": "Loi du 13 juillet 2005 relative aux institutions de retraite professionnelle",
-    "penalty": "€75,000 - €375,000",
-    "recommendation": "Ensure pension fund compliance with governance and investment rules",
-    "triggers": ["pension violation", "SEPCAV breach", "retirement fund issue", "violation pension", "Pensionsverstoß", "violación pensión"],
-    "weight": 0.10,
-    "luxembourg_specific": true
-  },
-  "RULE_023": {
-    "name": "Investment Firm Capital Requirements",
-    "mandatory": true,
-    "severity": "critical",
-    "keywords": ["capital requirements", "CRR", "MREL", "capital adequacy", "fonds propres", "adéquation capital", "Kapitalanforderungen", "Eigenkapital", "requisitos capital", "adecuación capital"],
-    "description": "Investment firms must maintain adequate capital requirements",
-    "regulatory_basis": "Règlement UE 575/2013 (CRR), Directive 2013/36/UE (CRD)",
-    "penalty": "€1,000,000 - €5,000,000",
-    "recommendation": "Maintain adequate capital ratios and buffers as required",
-    "triggers": ["capital deficiency", "ratio breach", "adequacy failure", "insuffisance capital", "Kapitalmangel", "deficiencia capital"],
-    "weight": 0.22,
-    "luxembourg_specific": false
-  },
-  "RULE_024": {
-    "name": "ESG Disclosure Requirements",
-    "mandatory": true,
-    "severity": "medium",
-    "keywords": ["ESG", "sustainability", "SFDR", "taxonomy", "green finance", "durabilité", "finance verte", "taxonomie", "Nachhaltigkeit", "grüne Finanzierung", "sostenibilidad", "finanzas verdes"],
-    "description": "Financial entities must comply with ESG disclosure requirements",
-    "regulatory_basis": "Règlement UE 2019/2088 (SFDR)",
-    "penalty": "€50,000 - €250,000",
-    "recommendation": "Implement proper ESG disclosure and sustainability risk assessment",
-    "triggers": ["ESG non-disclosure", "greenwashing", "sustainability breach", "non-divulgation ESG", "ESG-Verstöße", "incumplimiento ESG"],
-    "weight": 0.08,
-    "luxembourg_specific": false
-  },
-  "RULE_025": {
-    "name": "Crypto Asset Regulation",
-    "mandatory": false,
-    "severity": "medium",
-    "keywords": ["crypto", "cryptocurrency", "bitcoin", "DLT", "blockchain", "MiCA", "cryptomonnaie", "actifs crypto", "Kryptowährung", "Krypto-Assets", "criptomoneda", "activos cripto"],
-    "description": "Crypto asset service providers must comply with emerging regulations",
-    "regulatory_basis": "Règlement UE 2023/1114 (MiCA)",
-    "penalty": "€200,000 - €1,000,000",
-    "recommendation": "Prepare for MiCA compliance if providing crypto asset services",
-    "triggers": ["unauthorized crypto", "MiCA violation", "token breach", "crypto non autorisé", "nicht autorisierte Krypto", "cripto no autorizado"],
-    "weight": 0.06,
-    "luxembourg_specific": false
-  },
-  "RULE_026": {
-    "name": "Family Office Regulations",
-    "mandatory": true,
-    "severity": "medium",
-    "keywords": ["family office", "SPF", "wealth management", "private wealth", "gestion fortune", "patrimoine familial", "Familienvermögen", "Vermögensverwaltung", "oficina familiar", "gestión patrimonial"],
-    "description": "Family offices must comply with SPF regulations",
-    "regulatory_basis": "Loi du 11 mai 2007 relative à la création d'une société de gestion de patrimoine familial",
-    "penalty": "€25,000 - €125,000",
-    "recommendation": "Ensure SPF compliance with investment and operational restrictions",
-    "triggers": ["SPF violation", "family office breach", "wealth management issue", "violation SPF", "SPF-Verstoß", "violación SPF"],
-    "weight": 0.07,
-    "luxembourg_specific": true
-  },
-  "RULE_027": {
-    "name": "Cross-Border Services",
-    "mandatory": true,
-    "severity": "high",
-    "keywords": ["cross-border", "passporting", "freedom of services", "notification", "transfrontalier", "libre prestation", "grenzüberschreitend", "Dienstleistungsfreiheit", "transfronterizo", "libre prestación", "notificación"],
-    "description": "Cross-border services must comply with passporting requirements",
-    "regulatory_basis": "Various EU Directives, CSSF procedures",
-    "penalty": "€50,000 - €250,000",
-    "recommendation": "Ensure proper notifications and compliance for cross-border activities",
-    "triggers": ["unauthorized cross-border", "passporting breach", "notification failure", "transfrontalier non autorisé", "grenzüberschreitender Verstoß", "transfronterizo no autorizado"],
-    "weight": 0.09,
-    "luxembourg_specific": true
-  },
-  "RULE_028": {
-    "name": "Whistleblower Protection",
-    "mandatory": true,
-    "severity": "medium",
-    "keywords": ["whistleblower", "alert", "lanceur alerte", "reporting channel", "protection", "canal signalement", "Whistleblower", "Meldekanal", "Schutz", "denunciante", "canal denuncia", "protección"],
-    "description": "Document must include whistleblower protection procedures",
-    "regulatory_basis": "Directive UE 2019/1937",
-    "penalty": "€30,000 - €150,000",
-    "recommendation": "Establish secure whistleblower reporting channels and protection measures",
-    "triggers": ["no whistleblower protection", "retaliation", "channel failure", "pas protection lanceur", "keine Whistleblower-Schutz", "sin protección denunciante"],
-    "weight": 0.05,
-    "luxembourg_specific": false
-  },
-  "RULE_029": {
-    "name": "Digital Operational Resilience",
-    "mandatory": true,
-    "severity": "high",
-    "keywords": ["DORA", "operational resilience", "ICT risk", "digital resilience", "résilience opérationnelle", "risque TIC", "operative Belastbarkeit", "IKT-Risiko", "resistencia operacional", "riesgo TIC"],
-    "description": "Financial entities must comply with DORA requirements",
-    "regulatory_basis": "Règlement UE 2022/2554 (DORA)",
-    "penalty": "€1,000,000 - €5,000,000",
-    "recommendation": "Implement comprehensive ICT risk management and incident reporting",
-    "triggers": ["DORA violation", "ICT failure", "resilience breach", "violation DORA", "DORA-Verstoß", "violación DORA"],
-    "weight": 0.16,
-    "luxembourg_specific": false
-  },
-  "RULE_030": {
-    "name": "Luxembourg Stock Exchange Compliance",
-    "mandatory": false,
-    "severity": "medium",
-    "keywords": ["LuxSE", "Luxembourg Stock Exchange", "listing", "transparency", "bourse", "cotation", "transparence", "Börse", "Notierung", "Transparenz", "bolsa", "cotización", "transparencia"],
-    "description": "Listed entities must comply with LuxSE requirements",
-    "regulatory_basis": "LuxSE Rules and Regulations",
-    "penalty": "€10,000 - €50,000",
-    "recommendation": "Ensure compliance with listing rules and transparency obligations",
-    "triggers": ["listing breach", "transparency failure", "LuxSE violation", "violation cotation", "Notierungsverstoß", "violación cotización"],
-    "weight": 0.04,
-    "luxembourg_specific": true
+
+  "automatic_triggers": {
+    "immediate_rejection": [
+      "sanctioned_entity_match",
+      "terrorist_organization_mention",
+      "sanctions_evasion_language",
+      "known_criminal_organization"
+    ],
+    "mandatory_sar_filing": [
+      "money_laundering_indicators",
+      "terrorist_financing_suspicion",
+      "sanctions_violation_attempt",
+      "structured_transactions"
+    ],
+    "enhanced_due_diligence": [
+      "high_risk_country",
+      "pep_identified",
+      "cash_intensive_business",
+      "complex_ownership"
+    ]
   }
 }
