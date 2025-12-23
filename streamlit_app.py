@@ -771,4 +771,4 @@ def main():
         logger.error(f"Application error: {e}")
 
 if __name__ == "__main__":
-    main()    main()
+    main()
