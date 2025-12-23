@@ -1,16 +1,16 @@
-# Docker Compose configuration for LexAI
-# Compatible with Docker Compose v2.x (no version field needed)
+# docker-compose.yml - LexAI with Host-Based Ollama
+# Ollama runs on host (already installed), LexAI connects to it
 
 services:
   # ============================================================================
-  # LEXAI APPLICATION - LOCAL COMPLIANCE ENGINE
+  # LEXAI APPLICATION
   # ============================================================================
   lexai-app:
     build:
       context: .
       dockerfile: Dockerfile
       args:
-        INSTALL_LLM: "false"  # Disable LLM installation
+        INSTALL_LLM: "false"
         BUILD_ENV: "production"
 
     container_name: lexai-app
@@ -33,11 +33,18 @@ services:
       LOG_LEVEL: "INFO"
       DEBUG_MODE: "false"
 
-      # Local engine configuration
-      COMPLIANCE_ENGINE: "local"
-      LLM_AVAILABLE: "false"
-      USE_LOCAL_ENGINE: "true"
+      # ✅ LLM Configuration - Using Host Ollama
+      COMPLIANCE_ENGINE: "llm"
+      USE_LLM_ANALYZER: "true"
+      USE_LOCAL_ENGINE: "false"
       DATA_DIR: "/app/data"
+
+      # ✅ Ollama connection to host (Linux)
+      OLLAMA_HOST: "http://172.17.0.1:11434"
+      OLLAMA_MODEL: "llama3.2:3b"
+      LLM_ANALYSIS_MODE: "hybrid"
+      LLM_TEMPERATURE: "0.1"
+      LLM_MAX_TOKENS: "2000"
 
       # Performance optimization
       OMP_NUM_THREADS: "4"
@@ -49,9 +56,7 @@ services:
       SECURE_MODE: "true"
 
     volumes:
-      # Mount your data directory (read-only for compliance data)
       - ./data:/app/data:ro
-      # Writable logs directory
       - lexai-logs:/app/logs
 
     restart: unless-stopped
@@ -59,7 +64,11 @@ services:
     networks:
       - lexai-net
 
-    # Resource limits (Docker Compose v2 format)
+    # ✅ Allow container to reach host (Linux)
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+    # Resource limits
     mem_limit: 2g
     mem_reservation: 1g
     cpus: 1.0
@@ -81,3 +90,20 @@ networks:
 volumes:
   lexai-logs:
     driver: local
+
+# ============================================================================
+# NOTES
+# ============================================================================
+# Ollama is running on the host machine at 127.0.0.1:11434
+# The container accesses it via 172.17.0.1:11434 (default Docker bridge gateway)
+#
+# Before deploying:
+# 1. Ensure Ollama is running: systemctl status ollama
+# 2. Ensure model is downloaded: ollama list
+# 3. Test API: curl http://localhost:11434/api/tags
+#
+# Deploy:
+# docker-compose down && docker-compose up -d
+#
+# Verify:
+# docker exec lexai-app curl http://172.17.0.1:11434/api/tags
