@@ -33,18 +33,21 @@ services:
       LOG_LEVEL: "INFO"
       DEBUG_MODE: "false"
 
-      # ✅ LLM Configuration - Using Host Ollama
+      # LLM Configuration - Using Host Ollama
       COMPLIANCE_ENGINE: "llm"
       USE_LLM_ANALYZER: "true"
       USE_LOCAL_ENGINE: "false"
       DATA_DIR: "/app/data"
 
-      # ✅ Ollama connection to host (Linux)
-      OLLAMA_HOST: "http://172.17.0.1:11434"
+      # Ollama connection - Uses host.docker.internal for cross-platform support
+      # For Linux: Uses extra_hosts mapping below (host.docker.internal -> host-gateway)
+      # For Mac/Windows Docker Desktop: host.docker.internal works natively
+      OLLAMA_HOST: "http://host.docker.internal:11434"
       OLLAMA_MODEL: "llama3.2:3b"
       LLM_ANALYSIS_MODE: "hybrid"
       LLM_TEMPERATURE: "0.1"
       LLM_MAX_TOKENS: "2000"
+      OLLAMA_TIMEOUT: "120"
 
       # Performance optimization
       OMP_NUM_THREADS: "4"
@@ -64,7 +67,8 @@ services:
     networks:
       - lexai-net
 
-    # ✅ Allow container to reach host (Linux)
+    # Allow container to reach host (required for Linux)
+    # On Mac/Windows Docker Desktop, host.docker.internal works without this
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
@@ -92,18 +96,29 @@ volumes:
     driver: local
 
 # ============================================================================
-# NOTES
+# USAGE NOTES
 # ============================================================================
-# Ollama is running on the host machine at 127.0.0.1:11434
-# The container accesses it via 172.17.0.1:11434 (default Docker bridge gateway)
 #
-# Before deploying:
-# 1. Ensure Ollama is running: systemctl status ollama
-# 2. Ensure model is downloaded: ollama list
-# 3. Test API: curl http://localhost:11434/api/tags
+# PREREQUISITES:
+# 1. Install Ollama on host: curl -fsSL https://ollama.com/install.sh | sh
+# 2. Pull model: ollama pull llama3.2:3b
+# 3. Ensure Ollama is running:
+#    - Linux: systemctl start ollama
+#    - Mac/Windows: Ollama app should be running
 #
-# Deploy:
-# docker-compose down && docker-compose up -d
+# VERIFY OLLAMA IS ACCESSIBLE:
+#   curl http://localhost:11434/api/tags
 #
-# Verify:
-# docker exec lexai-app curl http://172.17.0.1:11434/api/tags
+# DEPLOY:
+#   docker-compose up -d --build
+#
+# VERIFY FROM CONTAINER:
+#   docker exec lexai-app curl http://host.docker.internal:11434/api/tags
+#
+# TROUBLESHOOTING:
+# - If container can't reach Ollama on Linux, try:
+#   OLLAMA_HOST: "http://172.17.0.1:11434"
+# - On some Linux distros, you may need to configure Ollama to listen on all interfaces:
+#   Edit /etc/systemd/system/ollama.service and add:
+#   Environment="OLLAMA_HOST=0.0.0.0"
+#   Then: systemctl daemon-reload && systemctl restart ollama

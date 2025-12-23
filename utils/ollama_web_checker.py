@@ -1,22 +1,170 @@
 #!/usr/bin/env python3
 """
-Fixed Ollama/Compliance Engine Online Checker
-Works with data/ subdirectory structure
+Ollama/Compliance Engine Health Checker
+Supports both local engine and Ollama LLM
 """
 
 import os
 import sys
 import json
 import logging
-from typing import Dict, Any, List, Tuple
+import requests
+from typing import Dict, Any, List, Tuple, Optional
 from datetime import datetime
 from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
 
+class OllamaHealthChecker:
+    """Health checker for Ollama LLM service"""
+
+    def __init__(self):
+        """Initialize with configuration from environment"""
+        self.host = os.environ.get('OLLAMA_HOST') or \
+                    os.environ.get('OLLAMA_BASE_URL') or \
+                    os.environ.get('OLLAMA_API_URL') or \
+                    'http://localhost:11434'
+
+        self.model = os.environ.get('OLLAMA_MODEL') or \
+                     os.environ.get('LLM_MODEL') or \
+                     'llama3.2:3b'
+
+        self.timeout = int(os.environ.get('OLLAMA_TIMEOUT', '10'))
+
+    def check_ollama_status(self) -> Dict[str, Any]:
+        """
+        Check Ollama service status
+        Returns detailed status information
+        """
+        result = {
+            "timestamp": datetime.now().isoformat(),
+            "host": self.host,
+            "configured_model": self.model,
+            "reachable": False,
+            "api_responding": False,
+            "models_available": [],
+            "model_ready": False,
+            "status": "unknown",
+            "errors": [],
+            "recommendations": []
+        }
+
+        # Step 1: Check if host is reachable
+        try:
+            response = requests.get(f"{self.host}/", timeout=self.timeout)
+            result["reachable"] = True
+            logger.info(f"✅ Ollama host reachable: {self.host}")
+        except requests.exceptions.ConnectionError as e:
+            result["errors"].append(f"Cannot connect to Ollama at {self.host}")
+            result["recommendations"].append(
+                "Ensure Ollama is running: systemctl status ollama or ollama serve"
+            )
+            result["recommendations"].append(
+                f"If running in Docker, use host IP (e.g., http://172.17.0.1:11434)"
+            )
+            result["status"] = "unreachable"
+            return result
+        except requests.exceptions.Timeout:
+            result["errors"].append(f"Connection to {self.host} timed out")
+            result["recommendations"].append("Check network connectivity and firewall rules")
+            result["status"] = "timeout"
+            return result
+        except Exception as e:
+            result["errors"].append(f"Unexpected error: {str(e)}")
+            result["status"] = "error"
+            return result
+
+        # Step 2: Check API endpoint
+        try:
+            response = requests.get(f"{self.host}/api/tags", timeout=self.timeout)
+            if response.status_code == 200:
+                result["api_responding"] = True
+                data = response.json()
+                models = data.get("models", [])
+                result["models_available"] = [m.get("name", m.get("model", "unknown")) for m in models]
+                logger.info(f"✅ Ollama API responding, {len(models)} models available")
+            else:
+                result["errors"].append(f"API returned status {response.status_code}")
+                result["status"] = "api_error"
+                return result
+        except Exception as e:
+            result["errors"].append(f"API check failed: {str(e)}")
+            result["status"] = "api_error"
+            return result
+
+        # Step 3: Check if configured model is available
+        if result["models_available"]:
+            # Check exact match or partial match (e.g., "llama3.2:3b" matches "llama3.2:3b")
+            model_found = any(
+                self.model in m or m.startswith(self.model.split(':')[0])
+                for m in result["models_available"]
+            )
+            if model_found:
+                result["model_ready"] = True
+                result["status"] = "operational"
+                logger.info(f"✅ Configured model '{self.model}' is available")
+            else:
+                result["status"] = "model_missing"
+                result["errors"].append(f"Configured model '{self.model}' not found")
+                result["recommendations"].append(f"Pull the model: ollama pull {self.model}")
+                if result["models_available"]:
+                    result["recommendations"].append(
+                        f"Available models: {', '.join(result['models_available'][:5])}"
+                    )
+        else:
+            result["status"] = "no_models"
+            result["errors"].append("No models installed in Ollama")
+            result["recommendations"].append(f"Pull a model: ollama pull {self.model}")
+
+        return result
+
+    def test_generation(self, prompt: str = "Say 'OK' if you are working.") -> Dict[str, Any]:
+        """Test actual generation capability"""
+        result = {
+            "success": False,
+            "response": None,
+            "latency_ms": None,
+            "error": None
+        }
+
+        try:
+            import time
+            start = time.time()
+
+            response = requests.post(
+                f"{self.host}/api/generate",
+                json={
+                    "model": self.model,
+                    "prompt": prompt,
+                    "stream": False,
+                    "options": {
+                        "num_predict": 50
+                    }
+                },
+                timeout=60
+            )
+
+            latency = (time.time() - start) * 1000
+            result["latency_ms"] = round(latency, 2)
+
+            if response.status_code == 200:
+                data = response.json()
+                result["success"] = True
+                result["response"] = data.get("response", "")[:200]
+                logger.info(f"✅ Generation test passed in {latency:.0f}ms")
+            else:
+                result["error"] = f"Generation failed with status {response.status_code}"
+
+        except Exception as e:
+            result["error"] = str(e)
+            logger.error(f"❌ Generation test failed: {e}")
+
+        return result
+
+
 class EngineHealthChecker:
-    """Fixed health checker for compliance engine with correct paths"""
+    """Health checker for local compliance engine with correct paths"""
 
     def __init__(self, base_dir: str = None):
         """
@@ -24,12 +172,15 @@ class EngineHealthChecker:
         If None, uses parent directory (project root)
         """
         if base_dir is None:
-            # Get parent directory of utils/ (which is project root)
             current_dir = os.path.dirname(os.path.abspath(__file__))
-            base_dir = os.path.dirname(current_dir)
+            # If in utils/, go up one level
+            if os.path.basename(current_dir) == 'utils':
+                base_dir = os.path.dirname(current_dir)
+            else:
+                base_dir = current_dir
 
         self.base_dir = base_dir
-        self.data_dir = os.path.join(base_dir, 'data')
+        self.data_dir = os.environ.get('DATA_DIR') or os.path.join(base_dir, 'data')
 
         self.required_files = [
             'analyses.json',
@@ -46,10 +197,7 @@ class EngineHealthChecker:
         ]
 
     def check_engine_installation(self) -> Dict[str, Any]:
-        """
-        Check if compliance engine is properly installed and operational
-        This is the fixed version of check_ollama_installation
-        """
+        """Check if compliance engine is properly installed and operational"""
         result = {
             "timestamp": datetime.now().isoformat(),
             "installed": False,
@@ -88,29 +236,25 @@ class EngineHealthChecker:
         }
 
         try:
-            # Add project root to path if needed
             if self.base_dir not in sys.path:
                 sys.path.insert(0, self.base_dir)
 
             from engine import LocalComplianceEngine, analyze_document_compliance
 
             result["installed"] = True
-            result["engine_type"] = "local_json_based_decimal_corrected"
+            result["engine_type"] = "local_json_based"
 
-            # Try to instantiate and test
             try:
                 engine = LocalComplianceEngine(self.data_dir)
                 stats = engine.get_analysis_statistics()
 
                 result["running"] = True
-                result["models"] = ["local_engine_v4.0_decimal_corrected"]
+                result["models"] = ["local_engine_v4.0"]
                 result["features"] = [
-                    "Excellence metrics",
-                    "100.00% scoring capability",
-                    "Advanced weighting",
-                    "Banking sector optimization",
-                    "Decimal precision (XX.XX%)",
-                    "Luxembourg-specific analysis"
+                    "Rule-based analysis",
+                    "Luxembourg-specific compliance",
+                    "Multi-language support",
+                    "Banking sector optimization"
                 ]
                 result["statistics"] = stats
 
@@ -122,11 +266,6 @@ class EngineHealthChecker:
         except ImportError as e:
             result["installed"] = False
             result["errors"] = [f"Engine module not found: {str(e)}"]
-            result["recommendations"] = [
-                "Ensure engine.py is present in project root",
-                "Check Python import paths",
-                "Verify engine.py is not corrupted"
-            ]
 
         return result
 
@@ -143,7 +282,6 @@ class EngineHealthChecker:
             "details": {}
         }
 
-        # Check if data directory exists
         if not os.path.exists(self.data_dir):
             data_info["errors"] = [f"Data directory not found: {self.data_dir}"]
             for filename in self.required_files:
@@ -151,13 +289,10 @@ class EngineHealthChecker:
             return data_info
 
         for filename in self.required_files:
-            # Look in data/ subdirectory
             filepath = os.path.join(self.data_dir, filename)
 
             if os.path.exists(filepath):
                 data_info["found"] += 1
-
-                # Validate JSON
                 is_valid, error, size_mb, records = self._validate_json(filepath)
 
                 data_info["details"][filename] = {
@@ -185,17 +320,12 @@ class EngineHealthChecker:
         return data_info
 
     def _validate_json(self, filepath: str) -> Tuple[bool, str, float, int]:
-        """
-        Validate JSON file
-        Returns: (is_valid, error_message, size_mb, record_count)
-        """
+        """Validate JSON file"""
         try:
             size_mb = os.path.getsize(filepath) / (1024 * 1024)
-
             with open(filepath, 'r', encoding='utf-8') as f:
                 data = json.load(f)
 
-            # Count records
             if isinstance(data, dict):
                 record_count = len(data)
             elif isinstance(data, list):
@@ -212,12 +342,15 @@ class EngineHealthChecker:
 
     def _determine_status(self, result: Dict[str, Any]) -> Dict[str, Any]:
         """Determine overall system status"""
-
         data_files = result["data_files"]
-        found_ratio = data_files["found"] / data_files["total_required"]
-        valid_ratio = len(data_files["valid"]) / data_files["total_required"]
 
-        # Determine status
+        if data_files["total_required"] == 0:
+            found_ratio = 0
+            valid_ratio = 0
+        else:
+            found_ratio = data_files["found"] / data_files["total_required"]
+            valid_ratio = len(data_files["valid"]) / data_files["total_required"]
+
         if not result["installed"]:
             result["status"] = "critical"
             result["warnings"].append("Engine module not installed")
@@ -236,22 +369,6 @@ class EngineHealthChecker:
         else:
             result["status"] = "operational"
 
-        # Add recommendations
-        if data_files["missing"]:
-            result["recommendations"].append(
-                f"Add missing files to data/: {', '.join(data_files['missing'][:3])}{'...' if len(data_files['missing']) > 3 else ''}"
-            )
-
-        if data_files["corrupted"]:
-            result["recommendations"].append(
-                f"Fix corrupted files: {', '.join(data_files['corrupted'])}"
-            )
-
-        if not result["running"] and result["installed"]:
-            result["recommendations"].append(
-                "Check engine.py initialization - review error logs"
-            )
-
         return result
 
     def get_compact_status(self) -> Dict[str, Any]:
@@ -266,152 +383,169 @@ class EngineHealthChecker:
             "models": full_status["models"],
             "features": full_status["features"],
             "data_files_ok": len(full_status["data_files"]["valid"]) == full_status["data_files"]["total_required"],
-            "data_summary": f"{len(full_status['data_files']['valid'])}/{full_status['data_files']['total_required']} files valid",
-            "decimal_precision": True,
-            "scoring_format": "XX.XX%",
-            "score_correction_enabled": True
+            "data_summary": f"{len(full_status['data_files']['valid'])}/{full_status['data_files']['total_required']} files valid"
         }
 
 
-# Main functions for compatibility
+class CombinedHealthChecker:
+    """Combined health checker for both Ollama and local engine"""
+
+    def __init__(self, base_dir: str = None):
+        self.ollama_checker = OllamaHealthChecker()
+        self.engine_checker = EngineHealthChecker(base_dir)
+
+    def check_all(self) -> Dict[str, Any]:
+        """Check all components and return combined status"""
+        result = {
+            "timestamp": datetime.now().isoformat(),
+            "ollama": self.ollama_checker.check_ollama_status(),
+            "local_engine": self.engine_checker.check_engine_installation(),
+            "overall_status": "unknown",
+            "analysis_mode": "fallback",
+            "recommendations": []
+        }
+
+        # Determine best available mode
+        ollama_ok = result["ollama"]["status"] == "operational"
+        engine_ok = result["local_engine"]["status"] == "operational"
+
+        if ollama_ok and engine_ok:
+            result["overall_status"] = "optimal"
+            result["analysis_mode"] = "hybrid"
+        elif ollama_ok:
+            result["overall_status"] = "llm_only"
+            result["analysis_mode"] = "llm_only"
+            result["recommendations"].append("Local engine not available - using LLM only")
+        elif engine_ok:
+            result["overall_status"] = "engine_only"
+            result["analysis_mode"] = "rules_only"
+            result["recommendations"].append("Ollama not available - using rules-based analysis")
+        else:
+            result["overall_status"] = "degraded"
+            result["analysis_mode"] = "fallback"
+            result["recommendations"].append("Both Ollama and local engine unavailable")
+            result["recommendations"].append("Install Ollama: curl -fsSL https://ollama.com/install.sh | sh")
+
+        return result
+
+
+# ============================================================================
+# PUBLIC API - Backward compatible functions
+# ============================================================================
+
 def check_ollama_installation(base_dir: str = None) -> Dict[str, Any]:
     """
-    Fixed check_ollama_installation function
-    Actually checks local compliance engine, not Ollama
+    Check Ollama installation - returns compact status
+    Backward compatible with old API
     """
-    checker = EngineHealthChecker(base_dir)
-    return checker.get_compact_status()
+    # Check if we should use Ollama or local engine
+    use_llm = os.environ.get('USE_LLM_ANALYZER', 'false').lower() == 'true'
+
+    if use_llm:
+        checker = OllamaHealthChecker()
+        ollama_status = checker.check_ollama_status()
+        return {
+            "installed": ollama_status["reachable"],
+            "running": ollama_status["api_responding"],
+            "status": ollama_status["status"],
+            "engine_type": "ollama_llm",
+            "models": ollama_status["models_available"],
+            "features": ["LLM-powered analysis", "Natural language understanding"],
+            "host": ollama_status["host"],
+            "model_ready": ollama_status["model_ready"]
+        }
+    else:
+        checker = EngineHealthChecker(base_dir)
+        return checker.get_compact_status()
 
 
 def check_compliance_engine_online(base_dir: str = None) -> Dict[str, Any]:
     """Full health check with detailed information"""
-    checker = EngineHealthChecker(base_dir)
-    return checker.check_engine_installation()
+    checker = CombinedHealthChecker(base_dir)
+    return checker.check_all()
 
 
 def get_engine_status_summary(base_dir: str = None) -> str:
     """Get human-readable status summary"""
-    checker = EngineHealthChecker(base_dir)
-    status = checker.check_engine_installation()
+    combined = check_compliance_engine_online(base_dir)
 
     status_emoji = {
+        "optimal": "✅",
         "operational": "✅",
-        "warning": "⚠️",
+        "llm_only": "🤖",
+        "engine_only": "📋",
         "degraded": "⚠️",
+        "warning": "⚠️",
         "error": "❌",
         "critical": "🚫",
+        "unreachable": "🔌",
         "unknown": "❓"
     }
 
-    emoji = status_emoji.get(status["status"], "❓")
+    summary = []
+    summary.append("=" * 60)
+    summary.append("LexAI Compliance Engine Status")
+    summary.append("=" * 60)
 
-    summary = f"{emoji} Status: {status['status'].upper()}\n"
-    summary += f"Engine: {'Running' if status['running'] else 'Not Running'}\n"
-    summary += f"Data Files: {len(status['data_files']['valid'])}/{status['data_files']['total_required']} valid\n"
+    # Overall status
+    emoji = status_emoji.get(combined["overall_status"], "❓")
+    summary.append(f"\n{emoji} Overall: {combined['overall_status'].upper()}")
+    summary.append(f"📊 Analysis Mode: {combined['analysis_mode']}")
 
-    if status["warnings"]:
-        summary += "\nWarnings:\n"
-        for warning in status["warnings"]:
-            summary += f"  • {warning}\n"
+    # Ollama status
+    ollama = combined["ollama"]
+    emoji = status_emoji.get(ollama["status"], "❓")
+    summary.append(f"\n🤖 Ollama LLM:")
+    summary.append(f"   Status: {emoji} {ollama['status']}")
+    summary.append(f"   Host: {ollama['host']}")
+    if ollama["models_available"]:
+        summary.append(f"   Models: {', '.join(ollama['models_available'][:3])}")
+    if ollama["errors"]:
+        for err in ollama["errors"]:
+            summary.append(f"   ❌ {err}")
 
-    if status["recommendations"]:
-        summary += "\nRecommendations:\n"
-        for rec in status["recommendations"]:
-            summary += f"  • {rec}\n"
+    # Local engine status
+    engine = combined["local_engine"]
+    emoji = status_emoji.get(engine["status"], "❓")
+    summary.append(f"\n📋 Local Engine:")
+    summary.append(f"   Status: {emoji} {engine['status']}")
+    df = engine["data_files"]
+    summary.append(f"   Data Files: {len(df['valid'])}/{df['total_required']} valid")
 
-    return summary
+    # Recommendations
+    all_recs = combined.get("recommendations", [])
+    all_recs.extend(ollama.get("recommendations", []))
+    all_recs.extend(engine.get("recommendations", []))
+    if all_recs:
+        summary.append(f"\n💡 Recommendations:")
+        for rec in all_recs[:5]:
+            summary.append(f"   • {rec}")
+
+    summary.append("\n" + "=" * 60)
+    return "\n".join(summary)
 
 
-# Backward compatibility - export what was in old version
+# ============================================================================
+# EXPORTS
+# ============================================================================
+
 __all__ = [
+    'OllamaHealthChecker',
+    'EngineHealthChecker',
+    'CombinedHealthChecker',
     'check_ollama_installation',
     'check_compliance_engine_online',
-    'get_engine_status_summary',
-    'EngineHealthChecker'
+    'get_engine_status_summary'
 ]
 
 
 if __name__ == "__main__":
     """Run diagnostics when executed directly"""
-    print("=" * 80)
-    print("LexAI Compliance Engine - Online Check & Diagnostics")
-    print("=" * 80)
+    print(get_engine_status_summary())
 
-    # Determine base directory (parent of utils/)
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    base_dir = os.path.dirname(current_dir)
-    print(f"\n📁 Project directory: {base_dir}")
-    print(f"📁 Data directory: {os.path.join(base_dir, 'data')}")
+    print("\n" + "=" * 60)
+    print("Detailed JSON Output:")
+    print("=" * 60)
 
-    # Run checks
-    checker = EngineHealthChecker(base_dir)
-
-    print("\n" + "=" * 80)
-    print("COMPACT STATUS (for UI)")
-    print("=" * 80)
-    compact = checker.get_compact_status()
-    print(json.dumps(compact, indent=2))
-
-    print("\n" + "=" * 80)
-    print("DETAILED STATUS")
-    print("=" * 80)
-    detailed = checker.check_engine_installation()
-
-    print(f"\n📊 Overall Status: {detailed['status'].upper()}")
-    print(f"🕐 Timestamp: {detailed['timestamp']}")
-
-    print(f"\n🔧 Engine:")
-    print(f"  Installed: {detailed['installed']}")
-    print(f"  Running: {detailed['running']}")
-    print(f"  Type: {detailed['engine_type']}")
-
-    if detailed['models']:
-        print(f"  Models: {', '.join(detailed['models'])}")
-
-    if detailed['features']:
-        print(f"\n  Features:")
-        for feature in detailed['features']:
-            print(f"    • {feature}")
-
-    print(f"\n📁 Data Files:")
-    df = detailed['data_files']
-    print(f"  Required: {df['total_required']}")
-    print(f"  Found: {df['found']}")
-    print(f"  Valid: {len(df['valid'])}")
-    print(f"  Total Size: {df['total_size_mb']:.2f} MB")
-
-    if df['missing']:
-        print(f"\n  ❌ Missing ({len(df['missing'])}):")
-        for file in df['missing']:
-            print(f"    • {file}")
-
-    if df['invalid']:
-        print(f"\n  ⚠️  Invalid ({len(df['invalid'])}):")
-        for file in df['invalid']:
-            error = df['details'][file].get('error', 'Unknown error')
-            print(f"    • {file}: {error}")
-
-    if df['valid']:
-        print(f"\n  ✅ Valid ({len(df['valid'])}):")
-        for file in df['valid'][:5]:  # Show first 5
-            details = df['details'][file]
-            print(f"    • {file}: {details['size_mb']:.2f} MB, {details['records']} records")
-        if len(df['valid']) > 5:
-            print(f"    ... and {len(df['valid']) - 5} more")
-
-    if detailed['warnings']:
-        print(f"\n⚠️  Warnings:")
-        for warning in detailed['warnings']:
-            print(f"  • {warning}")
-
-    if detailed['recommendations']:
-        print(f"\n💡 Recommendations:")
-        for rec in detailed['recommendations']:
-            print(f"  • {rec}")
-
-    print("\n" + "=" * 80)
-    print("SUMMARY")
-    print("=" * 80)
-    print(get_engine_status_summary(base_dir))
-
-    print("=" * 80)
+    result = check_compliance_engine_online()
+    print(json.dumps(result, indent=2, default=str))

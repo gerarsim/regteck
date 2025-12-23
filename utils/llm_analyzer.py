@@ -20,12 +20,12 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class OllamaConfig:
-    """Configuration for Ollama local LLM"""
-    host: str = "http://localhost:11434"
-    model: str = "llama3.2:3b"  # or "mistral", "phi3", etc.
-    timeout: int = 120
-    temperature: float = 0.1  # Low for consistency
-    max_tokens: int = 2000
+    """Configuration for Ollama local LLM - reads from environment variables"""
+    host: str = None
+    model: str = None
+    timeout: int = None
+    temperature: float = None
+    max_tokens: int = None
 
     # Alternative models you can use:
     # - llama3.2:3b (fast, 3GB RAM)
@@ -33,6 +33,37 @@ class OllamaConfig:
     # - mistral:7b (good balance)
     # - phi3:mini (very fast, 2GB RAM)
     # - mixtral:8x7b (best quality, 26GB RAM)
+
+    def __post_init__(self):
+        """Load configuration from environment variables with fallbacks"""
+        import os
+
+        # Host: Check multiple environment variables for flexibility
+        if self.host is None:
+            self.host = os.environ.get('OLLAMA_HOST') or \
+                        os.environ.get('OLLAMA_BASE_URL') or \
+                        os.environ.get('OLLAMA_API_URL') or \
+                        'http://localhost:11434'
+
+        # Model
+        if self.model is None:
+            self.model = os.environ.get('OLLAMA_MODEL') or \
+                         os.environ.get('LLM_MODEL') or \
+                         'llama3.2:3b'
+
+        # Timeout
+        if self.timeout is None:
+            self.timeout = int(os.environ.get('OLLAMA_TIMEOUT', '120'))
+
+        # Temperature
+        if self.temperature is None:
+            self.temperature = float(os.environ.get('LLM_TEMPERATURE', '0.1'))
+
+        # Max tokens
+        if self.max_tokens is None:
+            self.max_tokens = int(os.environ.get('LLM_MAX_TOKENS', '2000'))
+
+        logger.info(f"OllamaConfig initialized: host={self.host}, model={self.model}")
 
 # ============================================================================
 # OLLAMA CLIENT
@@ -46,9 +77,9 @@ class OllamaClient:
         self.available = self._check_availability()
 
         if self.available:
-            logger.info(f"✅ Ollama connected: {self.config.model}")
+            logger.info(f"âœ… Ollama connected: {self.config.model}")
         else:
-            logger.warning("⚠️ Ollama not available - using fallback")
+            logger.warning("âš ï¸ Ollama not available - using fallback")
 
     def _check_availability(self) -> bool:
         """Check if Ollama is running"""
@@ -201,7 +232,7 @@ class LLMComplianceAnalyzer:
         self.prompts = CompliancePrompts()
 
         if not self.client.available:
-            logger.warning("⚠️ LLM not available, falling back to rules")
+            logger.warning("âš ï¸ LLM not available, falling back to rules")
 
     def analyze_document(self, text: str, doc_type: str = "auto",
                          language: str = "auto") -> Dict[str, Any]:
@@ -213,7 +244,7 @@ class LLMComplianceAnalyzer:
         if not self.client.available:
             return self._fallback_analysis(text, doc_type, language)
 
-        logger.info(f"🤖 Analyzing with {self.config.model}")
+        logger.info(f"ðŸ¤– Analyzing with {self.config.model}")
 
         # Get system and analysis prompts
         system_prompt = self.prompts.get_system_prompt()
@@ -234,7 +265,7 @@ class LLMComplianceAnalyzer:
             'timestamp': time.time()
         })
 
-        logger.info(f"✅ LLM analysis complete: {result.get('score', 0):.1f}%")
+        logger.info(f"âœ… LLM analysis complete: {result.get('score', 0):.1f}%")
 
         return result
 
@@ -306,7 +337,7 @@ class LLMComplianceAnalyzer:
         # Positive indicators
         positive_keywords = [
             'compliance', 'regulation', 'gdpr', 'kyc', 'aml',
-            'verification', 'monitoring', 'conformité'
+            'verification', 'monitoring', 'conformitÃ©'
         ]
         for keyword in positive_keywords:
             if keyword in text_lower:
@@ -330,19 +361,19 @@ class LLMComplianceAnalyzer:
         high = result.get('high_issues', 0)
 
         if score >= 95:
-            return f"✅ Excellent compliance ({score:.1f}%) - {len(result.get('issues', []))} minor issue(s)"
+            return f"âœ… Excellent compliance ({score:.1f}%) - {len(result.get('issues', []))} minor issue(s)"
         elif score >= 85:
-            return f"👍 Good compliance ({score:.1f}%) - {high} high priority issue(s)"
+            return f"ðŸ‘ Good compliance ({score:.1f}%) - {high} high priority issue(s)"
         elif score >= 70:
-            return f"⚠️ Adequate compliance ({score:.1f}%) - {high + critical} significant issue(s)"
+            return f"âš ï¸ Adequate compliance ({score:.1f}%) - {high + critical} significant issue(s)"
         elif score >= 50:
-            return f"⚠️ Poor compliance ({score:.1f}%) - {critical} critical issue(s)"
+            return f"âš ï¸ Poor compliance ({score:.1f}%) - {critical} critical issue(s)"
         else:
-            return f"❌ Critical non-compliance ({score:.1f}%) - Immediate action required"
+            return f"âŒ Critical non-compliance ({score:.1f}%) - Immediate action required"
 
     def _fallback_analysis(self, text: str, doc_type: str, language: str) -> Dict[str, Any]:
         """Fallback when LLM is not available"""
-        logger.info("📋 Using rule-based fallback")
+        logger.info("ðŸ“‹ Using rule-based fallback")
 
         # Simple rule-based analysis
         score = self._quick_rule_score(text)
@@ -428,15 +459,15 @@ class HybridComplianceAnalyzer:
 
         # Check for critical regulatory keywords
         critical_keywords = {
-            'gdpr': ['gdpr', 'rgpd', 'data protection', 'protection données'],
+            'gdpr': ['gdpr', 'rgpd', 'data protection', 'protection donnÃ©es'],
             'aml': ['aml', 'kyc', 'anti-blanchiment', 'know your customer'],
-            'mifid': ['mifid', 'marchés financiers', 'financial instruments']
+            'mifid': ['mifid', 'marchÃ©s financiers', 'financial instruments']
         }
 
         validation_notes = []
         for category, keywords in critical_keywords.items():
             if any(kw in text_lower for kw in keywords):
-                validation_notes.append(f"✓ {category.upper()} references found")
+                validation_notes.append(f"âœ“ {category.upper()} references found")
 
         llm_result['validation_notes'] = validation_notes
         llm_result['rules_validated'] = True
