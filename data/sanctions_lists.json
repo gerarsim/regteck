@@ -4,66 +4,366 @@
       "fr": [
         "Liste des sanctions de l'UE",
         "Liste OFAC (États-Unis)",
-        "Liste des sanctions des Nations Unies"
+        "Liste des sanctions des Nations Unies",
+        "Liste consolidée du Royaume-Uni",
+        "Liste des personnes politiquement exposées (PPE)"
       ],
       "de": [
         "EU-Sanktionsliste",
         "OFAC-Liste (USA)",
-        "UN-Sanktionsliste"
+        "UN-Sanktionsliste",
+        "Konsolidierte Liste des Vereinigten Königreichs",
+        "Liste der politisch exponierten Personen (PEP)"
       ],
       "en": [
         "EU Sanctions List",
         "OFAC List (USA)",
-        "UN Sanctions List"
+        "UN Sanctions List",
+        "UK Consolidated List",
+        "Politically Exposed Persons (PEP) List"
       ],
       "es": [
         "Lista de Sanciones de la UE",
         "Lista OFAC (EE.UU.)",
-        "Lista de Sanciones de la ONU"
+        "Lista de Sanciones de la ONU",
+        "Lista Consolidada del Reino Unido",
+        "Lista de Personas Políticamente Expuestas (PPE)"
       ]
     },
     "screening_requirements": {
-      "fr": "Vérification systématique contre les listes de sanctions",
-      "de": "Systematische Überprüfung gegen Sanktionslisten",
-      "en": "Systematic screening against sanctions lists",
-      "es": "Verificación sistemática contra listas de sanciones"
+      "fr": "Vérification systématique contre les listes de sanctions avant toute relation d'affaires",
+      "de": "Systematische Überprüfung gegen Sanktionslisten vor jeder Geschäftsbeziehung",
+      "en": "Systematic screening against sanctions lists before any business relationship",
+      "es": "Verificación sistemática contra listas de sanciones antes de cualquier relación comercial"
     },
     "legal_basis": {
-      "fr": "Règlement (UE) 2016/44 et autres textes communautaires pertinents",
-      "de": "Verordnung (EU) 2016/44 und andere relevante EU-Rechtsakte",
-      "en": "Regulation (EU) 2016/44 and other relevant EU legislation",
-      "es": "Reglamento (UE) 2016/44 y otras normativas pertinentes de la UE"
+      "fr": "Règlement (UE) 2016/44, Règlement (UE) 2022/345, Directive AML 2015/849/EU",
+      "de": "Verordnung (EU) 2016/44, Verordnung (EU) 2022/345, AML-Richtlinie 2015/849/EU",
+      "en": "Regulation (EU) 2016/44, Regulation (EU) 2022/345, AML Directive 2015/849/EU",
+      "es": "Reglamento (UE) 2016/44, Reglamento (UE) 2022/345, Directiva AML 2015/849/UE"
     },
     "supervisory_authority": {
-      "fr": "Ministère des Affaires étrangères, CSSF, CRF",
-      "de": "Außenministerium, CSSF, CRF",
-      "en": "Ministry of Foreign Affairs, CSSF, CRF",
-      "es": "Ministerio de Asuntos Exteriores, CSSF, CRF"
+      "fr": "Ministère des Affaires étrangères, CSSF, CRF Luxembourg",
+      "de": "Außenministerium, CSSF, CRF Luxemburg",
+      "en": "Ministry of Foreign Affairs, CSSF, Luxembourg FIU (CRF)",
+      "es": "Ministerio de Asuntos Exteriores, CSSF, UIF Luxemburgo (CRF)"
     },
     "penalties": {
-      "fr": "Sanctions administratives et pénales selon la législation nationale",
-      "de": "Verwaltungs- und strafrechtliche Sanktionen gemäß nationalem Recht",
-      "en": "Administrative and criminal penalties under national law",
-      "es": "Sanciones administrativas y penales según la legislación nacional"
+      "fr": "Amendes jusqu'à 1 000 000 EUR, emprisonnement jusqu'à 10 ans, révocation de licence",
+      "de": "Geldstrafen bis 1 000 000 EUR, Freiheitsstrafe bis 10 Jahre, Lizenzentzug",
+      "en": "Fines up to EUR 1,000,000, imprisonment up to 10 years, license revocation",
+      "es": "Multas hasta 1 000 000 EUR, prisión hasta 10 años, revocación de licencia"
     },
     "exemptions": {
-      "fr": "Autorisation spéciale possible pour besoins humanitaires ou diplomatiques",
-      "de": "Sondergenehmigung möglich für humanitäre oder diplomatische Zwecke",
-      "en": "Special authorization possible for humanitarian or diplomatic purposes",
-      "es": "Autorización especial posible por motivos humanitarios o diplomáticos"
+      "fr": "Autorisation spéciale possible pour besoins humanitaires (après approbation CRF)",
+      "de": "Sondergenehmigung möglich für humanitäre Zwecke (nach CRF-Genehmigung)",
+      "en": "Special authorization possible for humanitarian purposes (after FIU approval)",
+      "es": "Autorización especial posible por motivos humanitarios (tras aprobación UIF)"
     },
     "update_frequency": {
-      "fr": "Mise à jour régulière, généralement mensuelle",
-      "de": "Regelmäßige Aktualisierung, in der Regel monatlich",
-      "en": "Regular updates, generally monthly",
-      "es": "Actualizaciones regulares, generalmente mensuales"
+      "fr": "Vérification quotidienne obligatoire, mise à jour en temps réel recommandée",
+      "de": "Tägliche Überprüfung erforderlich, Echtzeit-Updates empfohlen",
+      "en": "Daily verification required, real-time updates recommended",
+      "es": "Verificación diaria requerida, actualizaciones en tiempo real recomendadas"
     },
     "official_sources": {
       "en": [
         "https://www.sanctionsmap.eu",
-        "https://www.treasury.gov/ofac",
-        "https://www.un.org/securitycouncil/sanctions"
+        "https://www.treasury.gov/ofac/downloads/sdnlist.txt",
+        "https://www.un.org/securitycouncil/sanctions/1267/aq_sanctions_list",
+        "https://www.gov.uk/government/publications/financial-sanctions-consolidated-list-of-targets",
+        "https://www.cssf.lu/en/supervision/aml-cft/"
       ]
+    }
+  },
+
+  "sanctioned_entities_database": {
+    "high_risk_individuals": {
+      "description": {
+        "en": "Individuals under international sanctions - requires immediate rejection",
+        "fr": "Personnes sous sanctions internationales - rejet immédiat requis",
+        "de": "Personen unter internationalen Sanktionen - sofortige Ablehnung erforderlich",
+        "es": "Individuos bajo sanciones internacionales - rechazo inmediato requerido"
+      },
+      "examples": [
+        {
+          "name": "Vladimir Putin / Poutine",
+          "aliases": ["Putin", "Poutine", "V. Putin"],
+          "sanctions": ["EU", "US-OFAC", "UK", "Canada", "Australia"],
+          "reason": "Ukraine invasion, human rights violations",
+          "since": "2022-02-24",
+          "risk_level": "EXTREME"
+        },
+        {
+          "name": "Kim Jong-un",
+          "aliases": ["Kim Jong Un", "Supreme Leader"],
+          "sanctions": ["UN", "US-OFAC", "EU"],
+          "reason": "Nuclear weapons program, human rights violations",
+          "since": "2013",
+          "risk_level": "EXTREME"
+        },
+        {
+          "name": "Ali Khamenei",
+          "aliases": ["Ayatollah Khamenei", "Supreme Leader Iran"],
+          "sanctions": ["US-OFAC", "EU"],
+          "reason": "Terrorism support, nuclear program, human rights",
+          "since": "2019",
+          "risk_level": "EXTREME"
+        },
+        {
+          "name": "Bashar al-Assad",
+          "aliases": ["Assad", "President Syria"],
+          "sanctions": ["US-OFAC", "EU", "UK"],
+          "reason": "Chemical weapons use, war crimes",
+          "since": "2011",
+          "risk_level": "EXTREME"
+        }
+      ],
+      "detection_keywords": [
+        "putin", "poutine", "kim jong", "khamenei", "assad",
+        "sanctioned individual", "personne sanctionnée",
+        "lista de sanciones", "sanktionierte person"
+      ]
+    },
+
+    "terrorist_organizations": {
+      "description": {
+        "en": "Designated terrorist organizations - any involvement is criminal",
+        "fr": "Organisations terroristes désignées - toute implication est criminelle",
+        "de": "Bezeichnete terroristische Organisationen - jede Beteiligung ist kriminell",
+        "es": "Organizaciones terroristas designadas - cualquier participación es criminal"
+      },
+      "examples": [
+        {
+          "name": "Hamas",
+          "aliases": ["Islamic Resistance Movement", "Harakat al-Muqawama al-Islamiya"],
+          "sanctions": ["US-OFAC", "EU", "UK", "Canada"],
+          "designation_date": "1997",
+          "risk_level": "EXTREME",
+          "legal_consequence": "Criminal prosecution mandatory"
+        },
+        {
+          "name": "Hezbollah",
+          "aliases": ["Party of God", "Hizballah", "Hizbullah"],
+          "sanctions": ["US-OFAC", "EU", "UK"],
+          "designation_date": "1997",
+          "risk_level": "EXTREME",
+          "legal_consequence": "Criminal prosecution mandatory"
+        },
+        {
+          "name": "Al-Qaeda",
+          "aliases": ["Al-Qaida", "The Base", "AQ"],
+          "sanctions": ["UN", "US-OFAC", "EU"],
+          "designation_date": "1999",
+          "risk_level": "EXTREME",
+          "legal_consequence": "Criminal prosecution mandatory"
+        },
+        {
+          "name": "ISIS",
+          "aliases": ["ISIL", "Islamic State", "Daesh", "IS"],
+          "sanctions": ["UN", "US-OFAC", "EU"],
+          "designation_date": "2004",
+          "risk_level": "EXTREME",
+          "legal_consequence": "Criminal prosecution mandatory"
+        }
+      ],
+      "detection_keywords": [
+        "hamas", "hezbollah", "al-qaeda", "al qaeda", "isis", "isil", "daesh",
+        "terrorist", "terroriste", "terrorista", "terrorist organization",
+        "organisation terroriste", "organización terrorista"
+      ]
+    },
+
+    "criminal_organizations": {
+      "description": {
+        "en": "International criminal organizations - requires immediate reporting",
+        "fr": "Organisations criminelles internationales - signalement immédiat requis",
+        "de": "Internationale kriminelle Organisationen - sofortige Meldung erforderlich",
+        "es": "Organizaciones criminales internacionales - reporte inmediato requerido"
+      },
+      "examples": [
+        {
+          "name": "Cartel de Sinaloa",
+          "aliases": ["Sinaloa Cartel", "CDS"],
+          "sanctions": ["US-OFAC"],
+          "activities": ["Drug trafficking", "Money laundering", "Violence"],
+          "risk_level": "EXTREME"
+        },
+        {
+          "name": "Ndrangheta",
+          "aliases": ["'Ndrangheta", "Calabrian Mafia"],
+          "sanctions": ["EU", "Italy"],
+          "activities": ["Drug trafficking", "Money laundering", "Extortion"],
+          "risk_level": "EXTREME"
+        },
+        {
+          "name": "Cosa Nostra",
+          "aliases": ["Sicilian Mafia", "Mafia"],
+          "sanctions": ["EU", "US"],
+          "activities": ["Racketeering", "Money laundering", "Murder"],
+          "risk_level": "EXTREME"
+        }
+      ],
+      "detection_keywords": [
+        "cartel", "mafia", "ndrangheta", "cosa nostra", "organized crime",
+        "crime organisé", "criminalidad organizada",
+        "drug trafficking", "trafic de drogue", "narcotráfico"
+      ]
+    },
+
+    "sanctioned_countries": {
+      "description": {
+        "en": "Countries under comprehensive sanctions programs",
+        "fr": "Pays sous programmes de sanctions globales",
+        "de": "Länder unter umfassenden Sanktionsprogrammen",
+        "es": "Países bajo programas de sanciones integrales"
+      },
+      "comprehensive_sanctions": [
+        {
+          "country": "North Korea / DPRK",
+          "aliases": ["Corée du Nord", "Nordkorea", "Corea del Norte", "RPDC"],
+          "sanctions": ["UN", "US-OFAC", "EU"],
+          "since": "2006",
+          "restrictions": "Comprehensive - all financial transactions prohibited",
+          "risk_level": "EXTREME"
+        },
+        {
+          "country": "Iran",
+          "sanctions": ["US-OFAC", "EU (partial)"],
+          "since": "1979/2006",
+          "restrictions": "Sectoral sanctions - banking, energy, shipping",
+          "risk_level": "EXTREME"
+        },
+        {
+          "country": "Syria",
+          "aliases": ["Syrie", "Syrien", "Siria"],
+          "sanctions": ["US-OFAC", "EU"],
+          "since": "2011",
+          "restrictions": "Comprehensive - regime and key sectors",
+          "risk_level": "EXTREME"
+        },
+        {
+          "country": "Russia",
+          "aliases": ["Russie", "Russland", "Rusia", "Russian Federation"],
+          "sanctions": ["US-OFAC", "EU", "UK"],
+          "since": "2022",
+          "restrictions": "Sectoral sanctions - banking, energy, technology",
+          "risk_level": "EXTREME"
+        }
+      ],
+      "detection_keywords": [
+        "north korea", "corée du nord", "dprk", "rpdc",
+        "iran", "persia", "perse",
+        "syria", "syrie", "syrian",
+        "russia", "russie", "russian", "russe"
+      ]
+    }
+  },
+
+  "red_flag_keywords": {
+    "money_laundering": {
+      "keywords": {
+        "fr": ["blanchiment", "layering", "structuration", "sociétés écrans"],
+        "en": ["laundering", "layering", "structuring", "shell companies"],
+        "de": ["geldwäsche", "schichtung", "strukturierung", "briefkastenfirmen"],
+        "es": ["blanqueo", "lavado", "estructuración", "empresas fantasma"]
+      },
+      "severity": "CRITICAL",
+      "action": "Immediate SAR filing required"
+    },
+
+    "sanctions_evasion": {
+      "keywords": {
+        "fr": ["contournement", "éviter sanctions", "échapper", "fraude sanctions"],
+        "en": ["circumvent", "evade", "bypass sanctions", "avoid sanctions"],
+        "de": ["umgehen", "ausweichen", "sanktionen vermeiden"],
+        "es": ["eludir", "evadir", "evitar sanciones", "burlar sanciones"]
+      },
+      "severity": "CRITICAL",
+      "action": "Immediate rejection and authorities notification"
+    },
+
+    "terrorist_financing": {
+      "keywords": {
+        "fr": ["financement terrorisme", "soutien terroriste", "jihad"],
+        "en": ["terrorist financing", "terror funding", "jihad financing"],
+        "de": ["terrorismusfinanzierung", "terrorunterstützung"],
+        "es": ["financiación terrorista", "fondos terroristas"]
+      },
+      "severity": "CRITICAL",
+      "action": "Immediate law enforcement notification"
+    },
+
+    "high_risk_services": {
+      "keywords": {
+        "fr": ["vip", "privilégié", "facilité", "express", "discret", "spécial"],
+        "en": ["vip", "privileged", "facilitated", "express", "discreet", "special"],
+        "de": ["vip", "privilegiert", "erleichtert", "express", "diskret"],
+        "es": ["vip", "privilegiado", "facilitado", "exprés", "discreto"]
+      },
+      "severity": "HIGH",
+      "action": "Enhanced due diligence required",
+      "warning": "Suspicious when combined with sanctioned entities"
+    }
+  },
+
+  "compliance_requirements": {
+    "screening_frequency": {
+      "new_customers": "Before account opening",
+      "existing_customers": "Daily screening recommended, minimum monthly",
+      "transactions": "Real-time for high-value (>€15,000)",
+      "periodic_review": "Quarterly for high-risk, annually for others"
+    },
+
+    "documentation_requirements": {
+      "screening_records": "Keep for 10 years minimum (Luxembourg law)",
+      "positive_matches": "Escalate immediately, document decision",
+      "false_positives": "Document reason for clearing",
+      "management_approval": "Required for any business with matched entities"
+    },
+
+    "reporting_obligations": {
+      "positive_match": {
+        "action": "Freeze assets/transactions immediately",
+        "notification": "CRF Luxembourg within 24 hours",
+        "international": "Notify OFAC if US nexus involved"
+      },
+      "suspicious_activity": {
+        "threshold": "Any amount if sanctions-related",
+        "timeline": "Report within 24 hours of detection",
+        "documentation": "Detailed narrative required"
+      }
+    },
+
+    "training_requirements": {
+      "frequency": "Annual minimum, quarterly for front-line staff",
+      "topics": [
+        "Current sanctions programs",
+        "Red flag indicators",
+        "Screening procedures",
+        "Escalation protocols",
+        "Legal consequences"
+      ],
+      "documentation": "Maintain training records for regulatory review"
+    }
+  },
+
+  "zero_tolerance_policy": {
+    "automatic_rejection": {
+      "en": "Automatic rejection required for any match with sanctioned entities - NO EXCEPTIONS",
+      "fr": "Rejet automatique requis pour toute correspondance avec entités sanctionnées - AUCUNE EXCEPTION",
+      "de": "Automatische Ablehnung erforderlich bei Übereinstimmung mit sanktionierten Entitäten - KEINE AUSNAHMEN",
+      "es": "Rechazo automático requerido para cualquier coincidencia con entidades sancionadas - SIN EXCEPCIONES"
+    },
+    "score_impact": {
+      "single_match": "Compliance score → 0%",
+      "multiple_matches": "Compliance score → 0% + criminal referral",
+      "evasion_attempt": "Compliance score → 0% + immediate law enforcement contact"
+    },
+    "legal_consequences": {
+      "individual_liability": "Personal criminal prosecution possible",
+      "institutional_liability": "License revocation, massive fines",
+      "international_impact": "FATF blacklisting, correspondent banking loss"
     }
   }
 }
