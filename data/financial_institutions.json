@@ -1,0 +1,652 @@
+{
+  "types_of_institutions": {
+    "fr": [
+      "Banques commerciales",
+      "Banques d'investissement",
+      "Sociétés de gestion de patrimoine",
+      "Établissements de crédit",
+      "Sociétés de services d'investissement",
+      "Organismes de placement collectif (OPC)",
+      "Gestionnaires de fonds d'investissement alternatifs",
+      "Compagnies d'assurance",
+      "Entreprises de réassurance",
+      "Institutions de paiement",
+      "Institutions de monnaie électronique",
+      "Sociétés de financement",
+      "Établissements de crédit spécialisés",
+      "Conseillers en investissement",
+      "Sociétés de gestion de portefeuille",
+      "Dépositaires professionnels",
+      "Teneurs de compte conservateurs",
+      "Sociétés de titrisation",
+      "Agents délégués",
+      "Professionnels du secteur financier (PSF)"
+    ],
+    "de": [
+      "Geschäftsbanken",
+      "Investmentbanken",
+      "Vermögensverwaltungsgesellschaften",
+      "Kreditinstitute",
+      "Wertdienstleistungsunternehmen",
+      "Organismen für gemeinsame Anlagen (OGA)",
+      "Verwalter alternativer Investmentfonds",
+      "Versicherungsgesellschaften",
+      "Rückversicherungsunternehmen",
+      "Zahlungsinstitute",
+      "E-Geld-Institute",
+      "Finanzierungsgesellschaften",
+      "Spezialisierte Kreditinstitute",
+      "Anlageberater",
+      "Portfolioverwaltungsgesellschaften",
+      "Professionelle Verwahrer",
+      "Kontoführende Verwahrer",
+      "Verbriefungsgesellschaften",
+      "Delegierte Vertreter",
+      "Fachleute des Finanzsektors (PSF)"
+    ],
+    "en": [
+      "Commercial Banks",
+      "Investment Banks",
+      "Wealth Management Companies",
+      "Credit Institutions",
+      "Investment Service Providers",
+      "Undertakings for Collective Investment (UCI)",
+      "Alternative Investment Fund Managers",
+      "Insurance Companies",
+      "Reinsurance Undertakings",
+      "Payment Institutions",
+      "Electronic Money Institutions",
+      "Finance Companies",
+      "Specialized Credit Institutions",
+      "Investment Advisers",
+      "Portfolio Management Companies",
+      "Professional Depositaries",
+      "Custodian Account Keepers",
+      "Securitization Companies",
+      "Tied Agents",
+      "Professionals of the Financial Sector (PSF)"
+    ],
+    "es": [
+      "Bancos comerciales",
+      "Bancos de inversión",
+      "Empresas de gestión patrimonial",
+      "Instituciones de crédito",
+      "Proveedores de servicios de inversión",
+      "Organismos de inversión colectiva (OIC)",
+      "Gestores de fondos de inversión alternativos",
+      "Compañías de seguros",
+      "Empresas de reaseguros",
+      "Instituciones de pago",
+      "Instituciones de dinero electrónico",
+      "Sociedades de financiación",
+      "Instituciones de crédito especializadas",
+      "Asesores de inversión",
+      "Sociedades de gestión de carteras",
+      "Depositarios profesionales",
+      "Custodios de cuentas",
+      "Sociedades de titulización",
+      "Agentes vinculados",
+      "Profesionales del sector financiero (PSF)"
+    ]
+  },
+  "regulatory_oversight": {
+    "primary_regulator": {
+      "fr": "Commission de Surveillance du Secteur Financier (CSSF)",
+      "de": "Finanzaufsichtsbehörde (CSSF)",
+      "en": "Financial Sector Supervisory Commission (CSSF)",
+      "es": "Comisión de Supervisión del Sector Financiero (CSSF)"
+    },
+    "key_responsibilities": {
+      "fr": [
+        "Supervision bancaire et prudentielle",
+        "Contrôle des risques systémiques",
+        "Vérification de la conformité réglementaire",
+        "Délivrance et retrait d'autorisations",
+        "Protection des consommateurs financiers",
+        "Lutte contre le blanchiment d'argent",
+        "Surveillance des marchés financiers",
+        "Coopération internationale",
+        "Application des sanctions administratives",
+        "Promotion de la stabilité financière"
+      ],
+      "de": [
+        "Banken- und Aufsichtsaufsicht",
+        "Kontrolle systemischer Risiken",
+        "Überprüfung der regulatorischen Compliance",
+        "Erteilung und Entzug von Genehmigungen",
+        "Schutz der Finanzverbraucher",
+        "Bekämpfung der Geldwäsche",
+        "Überwachung der Finanzmärkte",
+        "Internationale Zusammenarbeit",
+        "Anwendung administrativer Sanktionen",
+        "Förderung der Finanzstabilität"
+      ],
+      "en": [
+        "Banking and prudential supervision",
+        "Systemic risk control",
+        "Regulatory compliance verification",
+        "Granting and withdrawal of authorizations",
+        "Financial consumer protection",
+        "Anti-money laundering enforcement",
+        "Financial markets surveillance",
+        "International cooperation",
+        "Administrative sanctions enforcement",
+        "Financial stability promotion"
+      ],
+      "es": [
+        "Supervisión bancaria y prudencial",
+        "Control de riesgos sistémicos",
+        "Verificación de cumplimiento regulatorio",
+        "Otorgamiento y retiro de autorizaciones",
+        "Protección de consumidores financieros",
+        "Aplicación antilavado de dinero",
+        "Vigilancia de mercados financieros",
+        "Cooperación internacional",
+        "Aplicación de sanciones administrativas",
+        "Promoción de la estabilidad financiera"
+      ]
+    },
+    "other_regulators": {
+      "bcl": {
+        "name": {
+          "fr": "Banque centrale du Luxembourg",
+          "de": "Zentralbank Luxemburgs",
+          "en": "Central Bank of Luxembourg",
+          "es": "Banco Central de Luxemburgo"
+        },
+        "role": {
+          "fr": "Politique monétaire, stabilité des prix, supervision macroprudentielle",
+          "de": "Geldpolitik, Preisstabilität, makroprudenzielle Aufsicht",
+          "en": "Monetary policy, price stability, macroprudential supervision",
+          "es": "Política monetaria, estabilidad de precios, supervisión macroprudencial"
+        }
+      },
+      "cnpd": {
+        "name": {
+          "fr": "Commission nationale pour la protection des données",
+          "de": "Nationale Kommission für den Datenschutz",
+          "en": "National Commission for Data Protection",
+          "es": "Comisión Nacional para la Protección de Datos"
+        },
+        "role": {
+          "fr": "Protection des données personnelles, application du RGPD",
+          "de": "Schutz personenbezogener Daten, DSGVO-Durchsetzung",
+          "en": "Personal data protection, GDPR enforcement",
+          "es": "Protección de datos personales, aplicación del RGPD"
+        }
+      },
+      "caa": {
+        "name": {
+          "fr": "Commissariat aux assurances",
+          "de": "Versicherungskommissariat",
+          "en": "Insurance Commissariat",
+          "es": "Comisariado de Seguros"
+        },
+        "role": {
+          "fr": "Supervision du secteur des assurances",
+          "de": "Aufsicht über den Versicherungssektor",
+          "en": "Insurance sector supervision",
+          "es": "Supervisión del sector asegurador"
+        }
+      }
+    }
+  },
+  "authorization_requirements": {
+    "credit_institutions": {
+      "minimum_capital": {
+        "fr": "Capital initial minimum de 5 millions d'euros",
+        "de": "Mindestanfangskapital von 5 Millionen Euro",
+        "en": "Minimum initial capital of 5 million euros",
+        "es": "Capital inicial mínimo de 5 millones de euros"
+      },
+      "fit_and_proper": {
+        "fr": "Dirigeants honorables et compétents",
+        "de": "Ehrbare und kompetente Geschäftsleiter",
+        "en": "Fit and proper directors",
+        "es": "Directores idóneos y competentes"
+      },
+      "business_plan": {
+        "fr": "Plan d'activité détaillé sur 3 ans",
+        "de": "Detaillierter 3-Jahres-Geschäftsplan",
+        "en": "Detailed 3-year business plan",
+        "es": "Plan de negocio detallado de 3 años"
+      },
+      "governance": {
+        "fr": "Structure de gouvernance appropriée",
+        "de": "Angemessene Governance-Struktur",
+        "en": "Appropriate governance structure",
+        "es": "Estructura de gobierno apropiada"
+      }
+    },
+    "investment_firms": {
+      "minimum_capital": {
+        "eur_730k": {
+          "fr": "730 000 € pour les entreprises d'investissement de classe 1",
+          "de": "730.000 € für Wertpapierfirmen der Klasse 1",
+          "en": "€730,000 for Class 1 investment firms",
+          "es": "730.000 € para empresas de inversión de clase 1"
+        },
+        "eur_125k": {
+          "fr": "125 000 € pour les entreprises d'investissement de classe 2",
+          "de": "125.000 € für Wertpapierfirmen der Klasse 2",
+          "en": "€125,000 for Class 2 investment firms",
+          "es": "125.000 € para empresas de inversión de clase 2"
+        }
+      },
+      "services_authorization": {
+        "fr": "Autorisation spécifique pour chaque service d'investissement",
+        "de": "Spezifische Genehmigung für jede Wertpapierdienstleistung",
+        "en": "Specific authorization for each investment service",
+        "es": "Autorización específica para cada servicio de inversión"
+      }
+    },
+    "fund_managers": {
+      "aifm_authorization": {
+        "fr": "Autorisation AIFM pour la gestion de fonds alternatifs",
+        "de": "AIFM-Genehmigung für die Verwaltung alternativer Fonds",
+        "en": "AIFM authorization for alternative fund management",
+        "es": "Autorización AIFM para gestión de fondos alternativos"
+      },
+      "ucits_authorization": {
+        "fr": "Autorisation UCITS pour la gestion de fonds harmonisés",
+        "de": "OGAW-Genehmigung für die Verwaltung harmonisierter Fonds",
+        "en": "UCITS authorization for harmonized fund management",
+        "es": "Autorización UCITS para gestión de fondos armonizados"
+      }
+    }
+  },
+  "fund_regulations": {
+    "ucits": {
+      "description": {
+        "fr": "Organismes de placement collectif en valeurs mobilières - Fonds harmonisés européens avec passeport",
+        "de": "Organismen für gemeinsame Anlagen in Wertpapieren - Harmonisierte europäische Fonds mit Passport",
+        "en": "Undertakings for Collective Investment in Transferable Securities - Harmonized European funds with passport",
+        "es": "Organismos de inversión colectiva en valores mobiliarios - Fondos europeos armonizados con pasaporte"
+      },
+      "key_features": {
+        "fr": [
+          "Diversification obligatoire des investissements",
+          "Liquidité quotidienne des parts",
+          "Protection renforcée des investisseurs",
+          "Passeport européen pour la commercialisation",
+          "Règles strictes d'investissement",
+          "Transparence accrue des informations"
+        ],
+        "de": [
+          "Obligatorische Anlagediversifikation",
+          "Tägliche Liquidität der Anteile",
+          "Verstärkter Anlegerschutz",
+          "Europäischer Passport für den Vertrieb",
+          "Strenge Anlageregeln",
+          "Erhöhte Informationstransparenz"
+        ],
+        "en": [
+          "Mandatory investment diversification",
+          "Daily liquidity of units",
+          "Enhanced investor protection",
+          "European passport for marketing",
+          "Strict investment rules",
+          "Increased information transparency"
+        ],
+        "es": [
+          "Diversificación obligatoria de inversiones",
+          "Liquidez diaria de las participaciones",
+          "Protección reforzada de inversores",
+          "Pasaporte europeo para comercialización",
+          "Reglas estrictas de inversión",
+          "Mayor transparencia de información"
+        ]
+      },
+      "investment_limits": {
+        "single_issuer": "5% maximum (10% pour certaines obligations)",
+        "single_fund": "10% maximum dans autres UCITS/FIA",
+        "liquid_assets": "Minimum requis pour rachats quotidiens",
+        "derivatives": "Utilisation autorisée avec restrictions"
+      },
+      "eligible_assets": {
+        "fr": [
+          "Actions cotées en bourse",
+          "Obligations et titres de créance",
+          "Parts d'autres UCITS",
+          "Dépôts bancaires",
+          "Instruments du marché monétaire",
+          "Instruments financiers dérivés"
+        ],
+        "de": [
+          "Börsennotierte Aktien",
+          "Anleihen und Schuldtitel",
+          "Anteile an anderen OGAW",
+          "Bankeinlagen",
+          "Geldmarktinstrumente",
+          "Finanzderivate"
+        ],
+        "en": [
+          "Listed equities",
+          "Bonds and debt securities",
+          "Units in other UCITS",
+          "Bank deposits",
+          "Money market instruments",
+          "Financial derivative instruments"
+        ],
+        "es": [
+          "Acciones cotizadas",
+          "Bonos y títulos de deuda",
+          "Participaciones en otros UCITS",
+          "Depósitos bancarios",
+          "Instrumentos del mercado monetario",
+          "Instrumentos financieros derivados"
+        ]
+      }
+    },
+    "aifmd": {
+      "description": {
+        "fr": "Directive sur les gestionnaires de fonds d'investissement alternatifs - Cadre réglementaire pour les fonds non-UCITS",
+        "de": "Richtlinie über Verwalter alternativer Investmentfonds - Regulatorischer Rahmen für Nicht-OGAW-Fonds",
+        "en": "Alternative Investment Fund Managers Directive - Regulatory framework for non-UCITS funds",
+        "es": "Directiva sobre gestores de fondos de inversión alternativos - Marco regulatorio para fondos no-UCITS"
+      },
+      "fund_types": {
+        "fr": [
+          "Fonds de private equity",
+          "Fonds de capital-risque",
+          "Fonds immobiliers",
+          "Fonds de matières premières",
+          "Fonds spéculatifs (hedge funds)",
+          "Fonds d'infrastructure",
+          "Fonds de dette privée",
+          "Fonds fermés",
+          "Fonds réservés"
+        ],
+        "de": [
+          "Private-Equity-Fonds",
+          "Risikokapitalfonds",
+          "Immobilienfonds",
+          "Rohstofffonds",
+          "Hedgefonds",
+          "Infrastrukturfonds",
+          "Private-Debt-Fonds",
+          "Geschlossene Fonds",
+          "Reservierte Fonds"
+        ],
+        "en": [
+          "Private equity funds",
+          "Venture capital funds",
+          "Real estate funds",
+          "Commodity funds",
+          "Hedge funds",
+          "Infrastructure funds",
+          "Private debt funds",
+          "Closed-end funds",
+          "Reserved funds"
+        ],
+        "es": [
+          "Fondos de capital privado",
+          "Fondos de capital riesgo",
+          "Fondos inmobiliarios",
+          "Fondos de materias primas",
+          "Fondos de cobertura",
+          "Fondos de infraestructura",
+          "Fondos de deuda privada",
+          "Fondos cerrados",
+          "Fondos reservados"
+        ]
+      },
+      "key_obligations": {
+        "fr": [
+          "Autorisation ou enregistrement AIFM",
+          "Exigences de fonds propres",
+          "Valorisation indépendante",
+          "Fonction de gestion des risques",
+          "Transparence envers les investisseurs",
+          "Reporting aux autorités"
+        ],
+        "de": [
+          "AIFM-Zulassung oder -Registrierung",
+          "Eigenkapitalanforderungen",
+          "Unabhängige Bewertung",
+          "Risikomanagementfunktion",
+          "Transparenz gegenüber Anlegern",
+          "Berichterstattung an Behörden"
+        ],
+        "en": [
+          "AIFM authorization or registration",
+          "Capital requirements",
+          "Independent valuation",
+          "Risk management function",
+          "Investor transparency",
+          "Regulatory reporting"
+        ],
+        "es": [
+          "Autorización o registro AIFM",
+          "Requisitos de capital",
+          "Valoración independiente",
+          "Función de gestión de riesgos",
+          "Transparencia hacia inversores",
+          "Reporte a autoridades"
+        ]
+      },
+      "thresholds": {
+        "registration_threshold": "€100 million AuM",
+        "authorization_threshold": "€500 million AuM",
+        "leverage_threshold": "3x NAV for reporting"
+      }
+    },
+    "specialized_funds": {
+      "sif": {
+        "name": {
+          "fr": "Fonds d'investissement spécialisé",
+          "de": "Spezialisierter Investmentfonds",
+          "en": "Specialized Investment Fund",
+          "es": "Fondo de inversión especializado"
+        },
+        "description": {
+          "fr": "Fonds réservé aux investisseurs avertis avec flexibilité d'investissement",
+          "de": "Fonds für erfahrene Anleger mit Anlageflexibilität",
+          "en": "Fund reserved for sophisticated investors with investment flexibility",
+          "es": "Fondo reservado para inversores sofisticados con flexibilidad de inversión"
+        }
+      },
+      "raif": {
+        "name": {
+          "fr": "Fonds d'investissement alternatif réservé",
+          "de": "Reservierter alternativer Investmentfonds",
+          "en": "Reserved Alternative Investment Fund",
+          "es": "Fondo de inversión alternativo reservado"
+        },
+        "description": {
+          "fr": "Véhicule non réglementé pour investisseurs institutionnels",
+          "de": "Nicht reguliertes Vehikel für institutionelle Anleger",
+          "en": "Unregulated vehicle for institutional investors",
+          "es": "Vehículo no regulado para inversores institucionales"
+        }
+      }
+    }
+  },
+  "cssf_circulars": {
+    "description": {
+      "fr": "Circulaires de la CSSF fournissant des orientations détaillées sur l'application de la réglementation",
+      "de": "CSSF-Rundschreiben mit detaillierten Leitlinien zur Anwendung der Vorschriften",
+      "en": "CSSF circulars providing detailed guidance on regulatory application",
+      "es": "Circulares de la CSSF que proporcionan orientación detallada sobre aplicación regulatoria"
+    },
+    "key_circulars": {
+      "12_552": {
+        "title": {
+          "fr": "Gouvernance d'entreprise",
+          "de": "Unternehmensführung",
+          "en": "Corporate Governance",
+          "es": "Gobierno corporativo"
+        },
+        "scope": {
+          "fr": "Banques, entreprises d'investissement, gestionnaires de fonds",
+          "de": "Banken, Wertpapierfirmen, Fondsverwalter",
+          "en": "Banks, investment firms, fund managers",
+          "es": "Bancos, empresas de inversión, gestores de fondos"
+        },
+        "key_requirements": {
+          "fr": [
+            "Conseil d'administration efficace",
+            "Gestion des risques appropriée",
+            "Contrôle interne robuste",
+            "Fonction de conformité indépendante"
+          ],
+          "de": [
+            "Effektiver Verwaltungsrat",
+            "Angemessenes Risikomanagement",
+            "Robuste interne Kontrolle",
+            "Unabhängige Compliance-Funktion"
+          ],
+          "en": [
+            "Effective board of directors",
+            "Appropriate risk management",
+            "Robust internal control",
+            "Independent compliance function"
+          ],
+          "es": [
+            "Consejo de administración eficaz",
+            "Gestión de riesgos apropiada",
+            "Control interno robusto",
+            "Función de cumplimiento independiente"
+          ]
+        }
+      },
+      "15_609": {
+        "title": {
+          "fr": "Lutte contre le blanchiment et le financement du terrorisme",
+          "de": "Bekämpfung von Geldwäsche und Terrorismusfinanzierung",
+          "en": "Anti-money laundering and counter-terrorist financing",
+          "es": "Prevención de blanqueo de capitales y financiación del terrorismo"
+        },
+        "key_requirements": {
+          "fr": [
+            "Évaluation des risques ML/FT",
+            "Due diligence à l'égard de la clientèle",
+            "Surveillance des transactions",
+            "Déclaration de soupçon"
+          ],
+          "de": [
+            "ML/TF-Risikobewertung",
+            "Kunden-Due-Diligence",
+            "Transaktionsüberwachung",
+            "Verdachtsmeldung"
+          ],
+          "en": [
+            "ML/TF risk assessment",
+            "Customer due diligence",
+            "Transaction monitoring",
+            "Suspicious activity reporting"
+          ],
+          "es": [
+            "Evaluación de riesgos ML/FT",
+            "Debida diligencia del cliente",
+            "Monitoreo de transacciones",
+            "Reporte de actividad sospechosa"
+          ]
+        }
+      },
+      "18_698": {
+        "title": {
+          "fr": "Autorisation et organisation des professionnels du secteur financier",
+          "de": "Zulassung und Organisation von Fachleuten des Finanzsektors",
+          "en": "Authorization and organization of financial sector professionals",
+          "es": "Autorización y organización de profesionales del sector financiero"
+        }
+      },
+      "20_750": {
+        "title": {
+          "fr": "Mesures de surveillance prudentielle et opérationnelle COVID-19",
+          "de": "COVID-19 aufsichtsrechtliche und operative Überwachungsmaßnahmen",
+          "en": "COVID-19 prudential and operational supervisory measures",
+          "es": "Medidas supervisoras prudenciales y operacionales COVID-19"
+        }
+      }
+    }
+  },
+  "market_statistics": {
+    "banking_sector": {
+      "total_banks": 119,
+      "total_assets": "€762 billion (2024)",
+      "employment": "26,000+ professionals",
+      "market_share": {
+        "retail_banking": "25%",
+        "private_banking": "40%",
+        "corporate_banking": "35%"
+      }
+    },
+    "investment_funds": {
+      "total_funds": "3,900+",
+      "net_assets": "€5.1 trillion (2024)",
+      "ucits_funds": "2,100",
+      "alternative_funds": "1,800",
+      "global_ranking": "2nd largest fund domicile globally"
+    },
+    "insurance_sector": {
+      "total_companies": "290+",
+      "gross_premiums": "€45 billion",
+      "reinsurance_share": "65%",
+      "captive_insurance": "220+ companies"
+    }
+  },
+  "digital_transformation": {
+    "fintech_initiatives": {
+      "fr": [
+        "Bac à sable réglementaire",
+        "Partenariats fintech-banques",
+        "Innovation en blockchain",
+        "Paiements numériques"
+      ],
+      "de": [
+        "Regulatorische Sandbox",
+        "Fintech-Bank-Partnerschaften",
+        "Blockchain-Innovation",
+        "Digitale Zahlungen"
+      ],
+      "en": [
+        "Regulatory sandbox",
+        "Fintech-bank partnerships",
+        "Blockchain innovation",
+        "Digital payments"
+      ],
+      "es": [
+        "Sandbox regulatorio",
+        "Asociaciones fintech-banco",
+        "Innovación blockchain",
+        "Pagos digitales"
+      ]
+    },
+    "regulatory_approach": {
+      "fr": "Approche équilibrée entre innovation et protection",
+      "de": "Ausgewogener Ansatz zwischen Innovation und Schutz",
+      "en": "Balanced approach between innovation and protection",
+      "es": "Enfoque equilibrado entre innovación y protección"
+    }
+  },
+  "international_cooperation": {
+    "agreements": {
+      "fr": [
+        "Accords d'échange d'informations fiscales",
+        "Reconnaissance mutuelle avec autres juridictions",
+        "Coopération en matière de supervision",
+        "Participation aux standards internationaux"
+      ],
+      "de": [
+        "Abkommen zum Austausch von Steuerinformationen",
+        "Gegenseitige Anerkennung mit anderen Rechtsordnungen",
+        "Zusammenarbeit bei der Aufsicht",
+        "Teilnahme an internationalen Standards"
+      ],
+      "en": [
+        "Tax information exchange agreements",
+        "Mutual recognition with other jurisdictions",
+        "Supervisory cooperation",
+        "Participation in international standards"
+      ],
+      "es": [
+        "Acuerdos de intercambio de información fiscal",
+        "Reconocimiento mutuo con otras jurisdicciones",
+        "Cooperación supervisora",
+        "Participación en estándares internacionales"
+      ]
+    }
+  }
+}

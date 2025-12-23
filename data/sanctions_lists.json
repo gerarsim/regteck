@@ -1,0 +1,69 @@
+{
+  "international_sanctions": {
+    "key_lists": {
+      "fr": [
+        "Liste des sanctions de l'UE",
+        "Liste OFAC (États-Unis)",
+        "Liste des sanctions des Nations Unies"
+      ],
+      "de": [
+        "EU-Sanktionsliste",
+        "OFAC-Liste (USA)",
+        "UN-Sanktionsliste"
+      ],
+      "en": [
+        "EU Sanctions List",
+        "OFAC List (USA)",
+        "UN Sanctions List"
+      ],
+      "es": [
+        "Lista de Sanciones de la UE",
+        "Lista OFAC (EE.UU.)",
+        "Lista de Sanciones de la ONU"
+      ]
+    },
+    "screening_requirements": {
+      "fr": "Vérification systématique contre les listes de sanctions",
+      "de": "Systematische Überprüfung gegen Sanktionslisten",
+      "en": "Systematic screening against sanctions lists",
+      "es": "Verificación sistemática contra listas de sanciones"
+    },
+    "legal_basis": {
+      "fr": "Règlement (UE) 2016/44 et autres textes communautaires pertinents",
+      "de": "Verordnung (EU) 2016/44 und andere relevante EU-Rechtsakte",
+      "en": "Regulation (EU) 2016/44 and other relevant EU legislation",
+      "es": "Reglamento (UE) 2016/44 y otras normativas pertinentes de la UE"
+    },
+    "supervisory_authority": {
+      "fr": "Ministère des Affaires étrangères, CSSF, CRF",
+      "de": "Außenministerium, CSSF, CRF",
+      "en": "Ministry of Foreign Affairs, CSSF, CRF",
+      "es": "Ministerio de Asuntos Exteriores, CSSF, CRF"
+    },
+    "penalties": {
+      "fr": "Sanctions administratives et pénales selon la législation nationale",
+      "de": "Verwaltungs- und strafrechtliche Sanktionen gemäß nationalem Recht",
+      "en": "Administrative and criminal penalties under national law",
+      "es": "Sanciones administrativas y penales según la legislación nacional"
+    },
+    "exemptions": {
+      "fr": "Autorisation spéciale possible pour besoins humanitaires ou diplomatiques",
+      "de": "Sondergenehmigung möglich für humanitäre oder diplomatische Zwecke",
+      "en": "Special authorization possible for humanitarian or diplomatic purposes",
+      "es": "Autorización especial posible por motivos humanitarios o diplomáticos"
+    },
+    "update_frequency": {
+      "fr": "Mise à jour régulière, généralement mensuelle",
+      "de": "Regelmäßige Aktualisierung, in der Regel monatlich",
+      "en": "Regular updates, generally monthly",
+      "es": "Actualizaciones regulares, generalmente mensuales"
+    },
+    "official_sources": {
+      "en": [
+        "https://www.sanctionsmap.eu",
+        "https://www.treasury.gov/ofac",
+        "https://www.un.org/securitycouncil/sanctions"
+      ]
+    }
+  }
+}

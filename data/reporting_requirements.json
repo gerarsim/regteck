@@ -1,0 +1,54 @@
+{
+  "annual_reporting": {
+    "financial_statements": {
+      "fr": {
+        "deadline": "7 mois après la clôture de l'exercice",
+        "documents_required": [
+          "Bilan",
+          "Compte de résultat",
+          "Annexes"
+        ]
+      },
+      "de": {
+        "deadline": "7 Monate nach Geschäftsjahresende",
+        "documents_required": [
+          "Bilanz",
+          "Gewinn- und Verlustrechnung",
+          "Anhänge"
+        ]
+      },
+      "en": {
+        "deadline": "7 months after fiscal year-end",
+        "documents_required": [
+          "Balance Sheet",
+          "Income Statement",
+          "Annexes"
+        ]
+      },
+      "es": {
+        "deadline": "7 meses después del cierre del ejercicio fiscal",
+        "documents_required": [
+          "Balance",
+          "Estado de resultados",
+          "Anexos"
+        ]
+      }
+    }
+  },
+  "fatca": {
+    "description": {
+      "fr": "Loi américaine visant à lutter contre l'évasion fiscale des contribuables américains détenant des comptes à l'étranger",
+      "de": "US-Gesetz zur Bekämpfung der Steuerhinterziehung amerikanischer Steuerzahler mit Auslandskonten",
+      "en": "US law to combat tax evasion by US taxpayers holding foreign accounts",
+      "es": "Ley de EE.UU. para combatir la evasión fiscal de contribuyentes estadounidenses con cuentas extranjeras"
+    }
+  },
+  "crs": {
+    "description": {
+      "fr": "Standard international développé par l'OCDE pour l'échange automatique d'informations de comptes financiers",
+      "de": "Internationaler Standard der OECD für den automatischen Austausch von Finanzkonteninformationen",
+      "en": "International standard developed by OECD for automatic exchange of financial account information",
+      "es": "Estándar internacional desarrollado por la OCDE para intercambio automático de información de cuentas financieras"
+    }
+  }
+}

@@ -1,0 +1,594 @@
+{
+  "penalty_categories": {
+    "administrative_penalties": {
+      "fr": {
+        "minimum_fine": "10 000 €",
+        "maximum_fine": "5 000 000 €",
+        "types": [
+          "Avertissement",
+          "Blâme",
+          "Amende administrative",
+          "Suspension d'activité",
+          "Interdiction d'exercer",
+          "Révocation d'autorisation"
+        ],
+        "calculation_factors": [
+          "Gravité de l'infraction",
+          "Durée de l'infraction",
+          "Degré de responsabilité",
+          "Situation financière du contrevenant",
+          "Avantages obtenus ou pertes évitées",
+          "Préjudices causés aux tiers",
+          "Degré de coopération avec les autorités",
+          "Infractions antérieures"
+        ]
+      },
+      "de": {
+        "minimum_fine": "10 000 €",
+        "maximum_fine": "5 000 000 €",
+        "types": [
+          "Verwarnung",
+          "Verweis",
+          "Verwaltungsstrafe",
+          "Aktivitätssuspendierung",
+          "Tätigkeitsverbot",
+          "Genehmigungswiderruf"
+        ],
+        "calculation_factors": [
+          "Schwere des Verstoßes",
+          "Dauer des Verstoßes",
+          "Grad der Verantwortlichkeit",
+          "Finanzielle Lage des Zuwiderhandelnden",
+          "Erzielte Vorteile oder vermiedene Verluste",
+          "Schäden für Dritte",
+          "Grad der Zusammenarbeit mit Behörden",
+          "Frühere Verstöße"
+        ]
+      },
+      "en": {
+        "minimum_fine": "€10,000",
+        "maximum_fine": "€5,000,000",
+        "types": [
+          "Warning",
+          "Reprimand",
+          "Administrative fine",
+          "Activity suspension",
+          "Prohibition from exercising activity",
+          "Authorization revocation"
+        ],
+        "calculation_factors": [
+          "Severity of the infringement",
+          "Duration of the infringement",
+          "Degree of responsibility",
+          "Financial situation of the offender",
+          "Benefits obtained or losses avoided",
+          "Harm caused to third parties",
+          "Degree of cooperation with authorities",
+          "Previous infringements"
+        ]
+      },
+      "es": {
+        "minimum_fine": "10 000 €",
+        "maximum_fine": "5 000 000 €",
+        "types": [
+          "Advertencia",
+          "Amonestación",
+          "Multa administrativa",
+          "Suspensión de actividad",
+          "Prohibición de ejercer actividad",
+          "Revocación de autorización"
+        ],
+        "calculation_factors": [
+          "Gravedad de la infracción",
+          "Duración de la infracción",
+          "Grado de responsabilidad",
+          "Situación financiera del infractor",
+          "Beneficios obtenidos o pérdidas evitadas",
+          "Daños causados a terceros",
+          "Grado de cooperación con las autoridades",
+          "Infracciones anteriores"
+        ]
+      }
+    },
+    "criminal_penalties": {
+      "fr": {
+        "minimum_fine": "500 €",
+        "maximum_fine": "10 000 000 €",
+        "imprisonment": {
+          "minimum": "1 mois",
+          "maximum": "10 ans"
+        },
+        "types": [
+          "Amende pénale",
+          "Emprisonnement",
+          "Travaux d'intérêt général",
+          "Interdiction d'exercer une profession",
+          "Confiscation de biens",
+          "Publication de la condamnation"
+        ],
+        "aggravating_factors": [
+          "Récidive",
+          "Préjudice particulièrement grave",
+          "Utilisation de moyens frauduleux",
+          "Abus de confiance",
+          "Atteinte à l'intérêt public"
+        ]
+      },
+      "de": {
+        "minimum_fine": "500 €",
+        "maximum_fine": "10 000 000 €",
+        "imprisonment": {
+          "minimum": "1 Monat",
+          "maximum": "10 Jahre"
+        },
+        "types": [
+          "Geldstrafe",
+          "Freiheitsstrafe",
+          "Gemeinnützige Arbeit",
+          "Berufsverbot",
+          "Vermögenseinziehung",
+          "Veröffentlichung des Urteils"
+        ],
+        "aggravating_factors": [
+          "Wiederholung",
+          "Besonders schwerer Schaden",
+          "Verwendung betrügerischer Mittel",
+          "Vertrauensmissbrauch",
+          "Beeinträchtigung des öffentlichen Interesses"
+        ]
+      },
+      "en": {
+        "minimum_fine": "€500",
+        "maximum_fine": "€10,000,000",
+        "imprisonment": {
+          "minimum": "1 month",
+          "maximum": "10 years"
+        },
+        "types": [
+          "Criminal fine",
+          "Imprisonment",
+          "Community service",
+          "Professional prohibition",
+          "Asset confiscation",
+          "Publication of conviction"
+        ],
+        "aggravating_factors": [
+          "Recidivism",
+          "Particularly serious harm",
+          "Use of fraudulent means",
+          "Breach of trust",
+          "Harm to public interest"
+        ]
+      },
+      "es": {
+        "minimum_fine": "500 €",
+        "maximum_fine": "10 000 000 €",
+        "imprisonment": {
+          "minimum": "1 mes",
+          "maximum": "10 años"
+        },
+        "types": [
+          "Multa penal",
+          "Prisión",
+          "Trabajo de interés general",
+          "Prohibición de ejercer profesión",
+          "Confiscación de bienes",
+          "Publicación de la condena"
+        ],
+        "aggravating_factors": [
+          "Reincidencia",
+          "Perjuicio particularmente grave",
+          "Uso de medios fraudulentos",
+          "Abuso de confianza",
+          "Daño al interés público"
+        ]
+      }
+    },
+    "sector_specific_penalties": {
+      "financial_services": {
+        "fr": {
+          "maximum_fine": "5 000 000 €",
+          "percentage_based": "10% du chiffre d'affaires annuel",
+          "specific_measures": [
+            "Suspension de l'agrément",
+            "Retrait de l'autorisation",
+            "Interdiction de commercialiser certains produits",
+            "Obligation de cesser certaines pratiques",
+            "Nomination d'un administrateur provisoire"
+          ],
+          "applicable_laws": [
+            "Loi du 5 avril 1993 sur le secteur financier",
+            "Loi du 12 juillet 2013 sur les gestionnaires de fonds d'investissement alternatifs",
+            "Loi du 10 novembre 2009 relative aux services de paiement"
+          ]
+        },
+        "de": {
+          "maximum_fine": "5 000 000 €",
+          "percentage_based": "10% des Jahresumsatzes",
+          "specific_measures": [
+            "Aussetzung der Zulassung",
+            "Entzug der Genehmigung",
+            "Verbot der Vermarktung bestimmter Produkte",
+            "Verpflichtung zur Einstellung bestimmter Praktiken",
+            "Ernennung eines vorläufigen Verwalters"
+          ],
+          "applicable_laws": [
+            "Gesetz vom 5. April 1993 über den Finanzsektor",
+            "Gesetz vom 12. Juli 2013 über Verwalter alternativer Investmentfonds",
+            "Gesetz vom 10. November 2009 über Zahlungsdienste"
+          ]
+        },
+        "en": {
+          "maximum_fine": "€5,000,000",
+          "percentage_based": "10% of annual turnover",
+          "specific_measures": [
+            "License suspension",
+            "Authorization withdrawal",
+            "Prohibition to market certain products",
+            "Obligation to cease certain practices",
+            "Appointment of provisional administrator"
+          ],
+          "applicable_laws": [
+            "Law of 5 April 1993 on the financial sector",
+            "Law of 12 July 2013 on alternative investment fund managers",
+            "Law of 10 November 2009 on payment services"
+          ]
+        },
+        "es": {
+          "maximum_fine": "5 000 000 €",
+          "percentage_based": "10% de la facturación anual",
+          "specific_measures": [
+            "Suspensión de la licencia",
+            "Retirada de la autorización",
+            "Prohibición de comercializar ciertos productos",
+            "Obligación de cesar ciertas prácticas",
+            "Nombramiento de administrador provisional"
+          ],
+          "applicable_laws": [
+            "Ley de 5 de abril de 1993 sobre el sector financiero",
+            "Ley de 12 de julio de 2013 sobre gestores de fondos de inversión alternativos",
+            "Ley de 10 de noviembre de 2009 sobre servicios de pago"
+          ]
+        }
+      },
+      "data_protection": {
+        "fr": {
+          "maximum_fine": "20 000 000 €",
+          "percentage_based": "4% du chiffre d'affaires annuel mondial",
+          "specific_measures": [
+            "Limitation du traitement",
+            "Suspension des flux de données",
+            "Ordre de mise en conformité",
+            "Certification obligatoire",
+            "Audit de conformité"
+          ],
+          "applicable_laws": [
+            "Règlement général sur la protection des données (RGPD)",
+            "Loi du 1er août 2018 portant organisation de la Commission nationale pour la protection des données"
+          ]
+        },
+        "de": {
+          "maximum_fine": "20 000 000 €",
+          "percentage_based": "4% des weltweiten Jahresumsatzes",
+          "specific_measures": [
+            "Verarbeitungsbeschränkung",
+            "Aussetzung von Datenflüssen",
+            "Anordnung zur Compliance",
+            "Obligatorische Zertifizierung",
+            "Compliance-Audit"
+          ],
+          "applicable_laws": [
+            "Datenschutz-Grundverordnung (DSGVO)",
+            "Gesetz vom 1. August 2018 zur Organisation der Nationalen Kommission für den Datenschutz"
+          ]
+        },
+        "en": {
+          "maximum_fine": "€20,000,000",
+          "percentage_based": "4% of global annual turnover",
+          "specific_measures": [
+            "Processing limitation",
+            "Data flow suspension",
+            "Compliance order",
+            "Mandatory certification",
+            "Compliance audit"
+          ],
+          "applicable_laws": [
+            "General Data Protection Regulation (GDPR)",
+            "Law of 1 August 2018 on the organization of the National Commission for Data Protection"
+          ]
+        },
+        "es": {
+          "maximum_fine": "20 000 000 €",
+          "percentage_based": "4% de la facturación anual mundial",
+          "specific_measures": [
+            "Limitación del tratamiento",
+            "Suspensión de flujos de datos",
+            "Orden de cumplimiento",
+            "Certificación obligatoria",
+            "Auditoría de cumplimiento"
+          ],
+          "applicable_laws": [
+            "Reglamento General de Protección de Datos (RGPD)",
+            "Ley de 1 de agosto de 2018 sobre la organización de la Comisión Nacional para la Protección de Datos"
+          ]
+        }
+      },
+      "anti_money_laundering": {
+        "fr": {
+          "maximum_fine": "5 000 000 €",
+          "percentage_based": "10% du chiffre d'affaires annuel",
+          "specific_measures": [
+            "Suspension d'activité",
+            "Nomination d'un commissaire spécial",
+            "Interdiction de nouvelles opérations",
+            "Obligation de formation du personnel",
+            "Renforcement des contrôles internes"
+          ],
+          "applicable_laws": [
+            "Loi du 12 novembre 2004 relative à la lutte contre le blanchiment et contre le financement du terrorisme",
+            "Loi du 27 octobre 2010 renforçant l'arsenal légal en matière de lutte contre le blanchiment et le financement du terrorisme"
+          ]
+        },
+        "de": {
+          "maximum_fine": "5 000 000 €",
+          "percentage_based": "10% des Jahresumsatzes",
+          "specific_measures": [
+            "Aktivitätssuspendierung",
+            "Ernennung eines Sonderkommissars",
+            "Verbot neuer Operationen",
+            "Verpflichtende Personalschulung",
+            "Verstärkung der internen Kontrollen"
+          ],
+          "applicable_laws": [
+            "Gesetz vom 12. November 2004 zur Bekämpfung der Geldwäsche und Terrorismusfinanzierung",
+            "Gesetz vom 27. Oktober 2010 zur Stärkung des rechtlichen Instrumentariums im Bereich der Bekämpfung von Geldwäsche und Terrorismusfinanzierung"
+          ]
+        },
+        "en": {
+          "maximum_fine": "€5,000,000",
+          "percentage_based": "10% of annual turnover",
+          "specific_measures": [
+            "Activity suspension",
+            "Appointment of special commissioner",
+            "Prohibition of new operations",
+            "Mandatory staff training",
+            "Strengthening of internal controls"
+          ],
+          "applicable_laws": [
+            "Law of 12 November 2004 on the fight against money laundering and terrorist financing",
+            "Law of 27 October 2010 strengthening the legal arsenal for combating money laundering and terrorist financing"
+          ]
+        },
+        "es": {
+          "maximum_fine": "5 000 000 €",
+          "percentage_based": "10% de la facturación anual",
+          "specific_measures": [
+            "Suspensión de actividad",
+            "Nombramiento de comisario especial",
+            "Prohibición de nuevas operaciones",
+            "Formación obligatoria del personal",
+            "Refuerzo de los controles internos"
+          ],
+          "applicable_laws": [
+            "Ley de 12 de noviembre de 2004 sobre la lucha contra el blanqueo de capitales y la financiación del terrorismo",
+            "Ley de 27 de octubre de 2010 de refuerzo del arsenal legal en materia de lucha contra el blanqueo y la financiación del terrorismo"
+          ]
+        }
+      },
+      "tax_compliance": {
+        "fr": {
+          "maximum_fine": "500 000 €",
+          "percentage_based": "80% de l'impôt éludé",
+          "interest_rate": "0,6% par mois",
+          "specific_measures": [
+            "Saisie conservatoire",
+            "Hypothèque légale",
+            "Publication au Mémorial",
+            "Interdiction d'exercer certaines activités",
+            "Contrôle fiscal approfondi"
+          ],
+          "applicable_laws": [
+            "Loi générale des impôts",
+            "Loi du 4 décembre 1967 concernant l'impôt sur le revenu",
+            "Loi du 6 février 2009 concernant le budget des recettes et des dépenses de l'État"
+          ]
+        },
+        "de": {
+          "maximum_fine": "500 000 €",
+          "percentage_based": "80% der hinterzogenen Steuer",
+          "interest_rate": "0,6% pro Monat",
+          "specific_measures": [
+            "Sicherstellungspfändung",
+            "Gesetzliche Hypothek",
+            "Veröffentlichung im Amtsblatt",
+            "Verbot bestimmter Tätigkeiten",
+            "Vertiefte Steuerprüfung"
+          ],
+          "applicable_laws": [
+            "Allgemeines Steuergesetz",
+            "Gesetz vom 4. Dezember 1967 betreffend die Einkommensteuer",
+            "Gesetz vom 6. Februar 2009 betreffend das Budget der Staatseinnahmen und -ausgaben"
+          ]
+        },
+        "en": {
+          "maximum_fine": "€500,000",
+          "percentage_based": "80% of evaded tax",
+          "interest_rate": "0.6% per month",
+          "specific_measures": [
+            "Precautionary seizure",
+            "Legal mortgage",
+            "Publication in Official Journal",
+            "Prohibition of certain activities",
+            "In-depth tax audit"
+          ],
+          "applicable_laws": [
+            "General Tax Law",
+            "Law of 4 December 1967 concerning income tax",
+            "Law of 6 February 2009 concerning the budget of State revenues and expenditures"
+          ]
+        },
+        "es": {
+          "maximum_fine": "500 000 €",
+          "percentage_based": "80% del impuesto evadido",
+          "interest_rate": "0,6% por mes",
+          "specific_measures": [
+            "Embargo preventivo",
+            "Hipoteca legal",
+            "Publicación en el Boletín Oficial",
+            "Prohibición de ciertas actividades",
+            "Auditoría fiscal profunda"
+          ],
+          "applicable_laws": [
+            "Ley General de Impuestos",
+            "Ley de 4 de diciembre de 1967 sobre el impuesto sobre la renta",
+            "Ley de 6 de febrero de 2009 sobre el presupuesto de ingresos y gastos del Estado"
+          ]
+        }
+      }
+    },
+    "mitigating_factors": {
+      "fr": [
+        "Coopération avec les autorités",
+        "Divulgation volontaire de l'infraction",
+        "Mise en place de mesures correctives",
+        "Absence d'antécédents",
+        "Situation financière difficile",
+        "Caractère involontaire de l'infraction",
+        "Efforts de remédiation",
+        "Impact limité de l'infraction"
+      ],
+      "de": [
+        "Zusammenarbeit mit den Behörden",
+        "Freiwillige Offenlegung des Verstoßes",
+        "Einführung von Korrekturmaßnahmen",
+        "Keine Vorstrafen",
+        "Schwierige finanzielle Lage",
+        "Unbeabsichtigter Charakter des Verstoßes",
+        "Sanierungsbemühungen",
+        "Begrenzte Auswirkungen des Verstoßes"
+      ],
+      "en": [
+        "Cooperation with authorities",
+        "Voluntary disclosure of the infringement",
+        "Implementation of corrective measures",
+        "No previous record",
+        "Difficult financial situation",
+        "Involuntary nature of the infringement",
+        "Remediation efforts",
+        "Limited impact of the infringement"
+      ],
+      "es": [
+        "Cooperación con las autoridades",
+        "Divulgación voluntaria de la infracción",
+        "Implementación de medidas correctivas",
+        "Ausencia de antecedentes",
+        "Situación financiera difícil",
+        "Carácter involuntario de la infracción",
+        "Esfuerzos de remediación",
+        "Impacto limitado de la infracción"
+      ]
+    },
+    "appeal_procedures": {
+      "fr": {
+        "administrative_appeal": {
+          "deadline": "3 mois",
+          "authority": "Tribunal administratif",
+          "procedure": "Recours en annulation ou en réformation"
+        },
+        "judicial_appeal": {
+          "deadline": "40 jours",
+          "authority": "Cour d'appel",
+          "procedure": "Appel de la décision de première instance"
+        }
+      },
+      "de": {
+        "administrative_appeal": {
+          "deadline": "3 Monate",
+          "authority": "Verwaltungsgericht",
+          "procedure": "Anfechtungs- oder Änderungsklage"
+        },
+        "judicial_appeal": {
+          "deadline": "40 Tage",
+          "authority": "Berufungsgericht",
+          "procedure": "Berufung gegen erstinstanzliche Entscheidung"
+        }
+      },
+      "en": {
+        "administrative_appeal": {
+          "deadline": "3 months",
+          "authority": "Administrative Court",
+          "procedure": "Action for annulment or modification"
+        },
+        "judicial_appeal": {
+          "deadline": "40 days",
+          "authority": "Court of Appeal",
+          "procedure": "Appeal against first instance decision"
+        }
+      },
+      "es": {
+        "administrative_appeal": {
+          "deadline": "3 meses",
+          "authority": "Tribunal Administrativo",
+          "procedure": "Recurso de anulación o reforma"
+        },
+        "judicial_appeal": {
+          "deadline": "40 días",
+          "authority": "Tribunal de Apelación",
+          "procedure": "Apelación contra decisión de primera instancia"
+        }
+      }
+    }
+  },
+  "penalty_calculator": {
+    "base_formula": "Base fine + (Aggravating factors × multiplier) - (Mitigating factors × reduction)",
+    "multipliers": {
+      "severity": {
+        "minor": 1.0,
+        "moderate": 2.0,
+        "serious": 3.0,
+        "very_serious": 5.0
+      },
+      "recidivism": {
+        "first_offense": 1.0,
+        "second_offense": 1.5,
+        "multiple_offenses": 2.0
+      },
+      "cooperation": {
+        "full_cooperation": 0.5,
+        "partial_cooperation": 0.7,
+        "no_cooperation": 1.0,
+        "obstruction": 1.5
+      }
+    }
+  },
+  "enforcement_authorities": {
+    "fr": {
+      "CSSF": "Commission de Surveillance du Secteur Financier",
+      "CNPD": "Commission Nationale pour la Protection des Données",
+      "ACD": "Administration des Contributions Directes",
+      "Douanes": "Administration des Douanes et Accises",
+      "Parquet": "Parquet du Tribunal d'Arrondissement"
+    },
+    "de": {
+      "CSSF": "Kommission für die Aufsicht des Finanzsektors",
+      "CNPD": "Nationale Kommission für den Datenschutz",
+      "ACD": "Verwaltung für direkte Steuern",
+      "Douanes": "Zoll- und Verbrauchsteuerverwaltung",
+      "Parquet": "Staatsanwaltschaft des Bezirksgerichts"
+    },
+    "en": {
+      "CSSF": "Commission for the Supervision of the Financial Sector",
+      "CNPD": "National Commission for Data Protection",
+      "ACD": "Direct Tax Administration",
+      "Douanes": "Customs and Excise Administration",
+      "Parquet": "Public Prosecutor's Office of the District Court"
+    },
+    "es": {
+      "CSSF": "Comisión de Supervisión del Sector Financiero",
+      "CNPD": "Comisión Nacional para la Protección de Datos",
+      "ACD": "Administración de Impuestos Directos",
+      "Douanes": "Administración de Aduanas y Impuestos Especiales",
+      "Parquet": "Fiscalía del Tribunal de Distrito"
+    }
+  }
+}

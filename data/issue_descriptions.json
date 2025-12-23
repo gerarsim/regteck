@@ -1,0 +1,534 @@
+{
+  "kyc_issues": {
+    "incomplete_identification": {
+      "description": {
+        "fr": "Identification client incomplète ou insuffisante selon les standards KYC",
+        "de": "Unvollständige oder unzureichende Kundenidentifikation nach KYC-Standards",
+        "en": "Incomplete or insufficient customer identification per KYC standards",
+        "es": "Identificación de cliente incompleta o insuficiente según estándares KYC"
+      },
+      "recommended_action": {
+        "fr": "Effectuer une vérification approfondie du client avec documents officiels",
+        "de": "Gründliche Kundenüberprüfung mit offiziellen Dokumenten durchführen",
+        "en": "Conduct thorough customer verification with official documents",
+        "es": "Realizar una verificación exhaustiva del cliente con documentos oficiales"
+      },
+      "severity": "high",
+      "regulatory_basis": "Loi du 12 novembre 2004, Circulaire CSSF 15/609",
+      "timeline": "48 heures",
+      "potential_penalty": "€25,000 - €125,000"
+    },
+    "missing_beneficial_owner": {
+      "description": {
+        "fr": "Identification du bénéficiaire effectif manquante ou incomplète",
+        "de": "Fehlende oder unvollständige Identifikation des wirtschaftlichen Eigentümers",
+        "en": "Missing or incomplete beneficial owner identification",
+        "es": "Identificación del beneficiario efectivo faltante o incompleta"
+      },
+      "recommended_action": {
+        "fr": "Identifier et vérifier tous les bénéficiaires effectifs détenant plus de 25%",
+        "de": "Alle wirtschaftlichen Eigentümer mit mehr als 25% identifizieren und überprüfen",
+        "en": "Identify and verify all beneficial owners holding more than 25%",
+        "es": "Identificar y verificar todos los beneficiarios efectivos con más del 25%"
+      },
+      "severity": "high",
+      "regulatory_basis": "Directive UE 2018/843, Loi du 13 janvier 2019",
+      "timeline": "72 heures",
+      "potential_penalty": "€50,000 - €250,000"
+    },
+    "outdated_customer_data": {
+      "description": {
+        "fr": "Données client non mises à jour selon la périodicité requise",
+        "de": "Kundendaten nicht gemäß erforderlicher Häufigkeit aktualisiert",
+        "en": "Customer data not updated according to required frequency",
+        "es": "Datos del cliente no actualizados según frecuencia requerida"
+      },
+      "recommended_action": {
+        "fr": "Mettre en place un système de révision périodique des dossiers clients",
+        "de": "System für regelmäßige Überprüfung von Kundendossiers einrichten",
+        "en": "Implement periodic customer file review system",
+        "es": "Implementar sistema de revisión periódica de expedientes de clientes"
+      },
+      "severity": "medium",
+      "regulatory_basis": "Circulaire CSSF 15/609",
+      "timeline": "30 jours",
+      "potential_penalty": "€5,000 - €25,000"
+    },
+    "insufficient_pep_screening": {
+      "description": {
+        "fr": "Criblage insuffisant des personnes politiquement exposées (PEP)",
+        "de": "Unzureichendes Screening politisch exponierter Personen (PEP)",
+        "en": "Insufficient politically exposed persons (PEP) screening",
+        "es": "Cribado insuficiente de personas políticamente expuestas (PEP)"
+      },
+      "recommended_action": {
+        "fr": "Renforcer les procédures de détection PEP et appliquer la diligence renforcée",
+        "de": "PEP-Erkennungsverfahren verstärken und verstärkte Sorgfalt anwenden",
+        "en": "Strengthen PEP detection procedures and apply enhanced due diligence",
+        "es": "Fortalecer procedimientos de detección PEP y aplicar diligencia reforzada"
+      },
+      "severity": "high",
+      "regulatory_basis": "Directive UE 2015/849, Circulaire CSSF 15/609",
+      "timeline": "24 heures",
+      "potential_penalty": "€100,000 - €500,000"
+    }
+  },
+  "aml_issues": {
+    "suspicious_transaction_untracked": {
+      "description": {
+        "fr": "Transaction suspecte non signalée ou mal documentée",
+        "de": "Verdächtige Transaktion nicht gemeldet oder schlecht dokumentiert",
+        "en": "Suspicious transaction unreported or poorly documented",
+        "es": "Transacción sospechosa no reportada o mal documentada"
+      },
+      "recommended_action": {
+        "fr": "Signaler immédiatement à la CRF et documenter l'analyse effectuée",
+        "de": "Sofort an die CRF melden und durchgeführte Analyse dokumentieren",
+        "en": "Immediately report to CRF and document analysis performed",
+        "es": "Informar inmediatamente a la CRF y documentar análisis realizado"
+      },
+      "severity": "critical",
+      "regulatory_basis": "Loi du 12 novembre 2004, Article 5",
+      "timeline": "Immédiat",
+      "potential_penalty": "€250,000 - €1,250,000"
+    },
+    "inadequate_transaction_monitoring": {
+      "description": {
+        "fr": "Système de surveillance des transactions défaillant ou incomplet",
+        "de": "Mangelhaftes oder unvollständiges Transaktionsüberwachungssystem",
+        "en": "Deficient or incomplete transaction monitoring system",
+        "es": "Sistema de monitoreo de transacciones deficiente o incompleto"
+      },
+      "recommended_action": {
+        "fr": "Réviser et améliorer le système de détection automatisée des transactions",
+        "de": "System zur automatisierten Transaktionserkennung überprüfen und verbessern",
+        "en": "Review and improve automated transaction detection system",
+        "es": "Revisar y mejorar sistema de detección automatizada de transacciones"
+      },
+      "severity": "high",
+      "regulatory_basis": "Circulaire CSSF 15/609, Section 4.3",
+      "timeline": "90 jours",
+      "potential_penalty": "€100,000 - €500,000"
+    },
+    "missing_sanctions_screening": {
+      "description": {
+        "fr": "Défaillance dans le criblage des listes de sanctions internationales",
+        "de": "Mangelhaftes Screening internationaler Sanktionslisten",
+        "en": "Failure in international sanctions lists screening",
+        "es": "Falla en el cribado de listas de sanciones internacionales"
+      },
+      "recommended_action": {
+        "fr": "Implémenter un système de criblage en temps réel contre toutes les listes",
+        "de": "Echtzeit-Screening-System gegen alle Listen implementieren",
+        "en": "Implement real-time screening system against all lists",
+        "es": "Implementar sistema de cribado en tiempo real contra todas las listas"
+      },
+      "severity": "critical",
+      "regulatory_basis": "Règlement UE n° 2580/2001, Loi du 27 octobre 2010",
+      "timeline": "Immédiat",
+      "potential_penalty": "€500,000 - €2,500,000"
+    },
+    "insufficient_record_keeping": {
+      "description": {
+        "fr": "Conservation inadéquate des documents et registres AML",
+        "de": "Unzureichende Aufbewahrung von AML-Dokumenten und -Aufzeichnungen",
+        "en": "Inadequate AML documents and records retention",
+        "es": "Conservación inadecuada de documentos y registros AML"
+      },
+      "recommended_action": {
+        "fr": "Établir un système de gestion documentaire conforme avec archivage 5 ans",
+        "de": "Konformes Dokumentenmanagementsystem mit 5-jähriger Archivierung einrichten",
+        "en": "Establish compliant document management system with 5-year archival",
+        "es": "Establecer sistema de gestión documental conforme con archivo de 5 años"
+      },
+      "severity": "medium",
+      "regulatory_basis": "Loi du 12 novembre 2004, Article 3-1",
+      "timeline": "60 jours",
+      "potential_penalty": "€25,000 - €125,000"
+    }
+  },
+  "mifid_issues": {
+    "inappropriate_investment_advice": {
+      "description": {
+        "fr": "Conseil en investissement inapproprié par rapport au profil client",
+        "de": "Unangemessene Anlageberatung im Verhältnis zum Kundenprofil",
+        "en": "Inappropriate investment advice relative to client profile",
+        "es": "Asesoramiento de inversión inapropiado relativo al perfil del cliente"
+      },
+      "recommended_action": {
+        "fr": "Réviser les procédures d'évaluation de l'adéquation et du caractère approprié",
+        "de": "Verfahren zur Bewertung von Angemessenheit und Geeignetheit überprüfen",
+        "en": "Review suitability and appropriateness assessment procedures",
+        "es": "Revisar procedimientos de evaluación de idoneidad y conveniencia"
+      },
+      "severity": "high",
+      "regulatory_basis": "Directive 2014/65/UE (MiFID II), Articles 25",
+      "timeline": "30 jours",
+      "potential_penalty": "€50,000 - €250,000"
+    },
+    "inadequate_best_execution": {
+      "description": {
+        "fr": "Non-respect des obligations de meilleure exécution",
+        "de": "Nichteinhaltung der Best-Execution-Verpflichtungen",
+        "en": "Failure to meet best execution obligations",
+        "es": "Incumplimiento de obligaciones de mejor ejecución"
+      },
+      "recommended_action": {
+        "fr": "Réviser la politique de meilleure exécution et les arrangements de négociation",
+        "de": "Best-Execution-Politik und Handelsvereinbarungen überprüfen",
+        "en": "Review best execution policy and trading arrangements",
+        "es": "Revisar política de mejor ejecución y arreglos de negociación"
+      },
+      "severity": "medium",
+      "regulatory_basis": "Directive 2014/65/UE (MiFID II), Article 27",
+      "timeline": "45 jours",
+      "potential_penalty": "€25,000 - €125,000"
+    },
+    "conflicts_of_interest_unmanaged": {
+      "description": {
+        "fr": "Conflits d'intérêts non identifiés ou mal gérés",
+        "de": "Nicht identifizierte oder schlecht verwaltete Interessenkonflikte",
+        "en": "Unidentified or poorly managed conflicts of interest",
+        "es": "Conflictos de interés no identificados o mal gestionados"
+      },
+      "recommended_action": {
+        "fr": "Élaborer un registre complet des conflits et des mesures d'atténuation",
+        "de": "Umfassendes Register von Konflikten und Minderungsmaßnahmen erstellen",
+        "en": "Develop comprehensive conflicts register and mitigation measures",
+        "es": "Desarrollar registro integral de conflictos y medidas de mitigación"
+      },
+      "severity": "medium",
+      "regulatory_basis": "Directive 2014/65/UE (MiFID II), Article 23",
+      "timeline": "60 jours",
+      "potential_penalty": "€30,000 - €150,000"
+    }
+  },
+  "gdpr_issues": {
+    "unlawful_data_processing": {
+      "description": {
+        "fr": "Traitement de données personnelles sans base légale appropriée",
+        "de": "Verarbeitung personenbezogener Daten ohne angemessene Rechtsgrundlage",
+        "en": "Processing personal data without appropriate legal basis",
+        "es": "Procesamiento de datos personales sin base legal apropiada"
+      },
+      "recommended_action": {
+        "fr": "Identifier et documenter la base légale pour chaque traitement",
+        "de": "Rechtsgrundlage für jede Verarbeitung identifizieren und dokumentieren",
+        "en": "Identify and document legal basis for each processing activity",
+        "es": "Identificar y documentar base legal para cada actividad de procesamiento"
+      },
+      "severity": "high",
+      "regulatory_basis": "Règlement UE 2016/679 (RGPD), Article 6",
+      "timeline": "30 jours",
+      "potential_penalty": "€20,000,000 ou 4% du CA"
+    },
+    "data_breach_unreported": {
+      "description": {
+        "fr": "Violation de données personnelles non signalée dans les délais",
+        "de": "Datenschutzverletzung nicht fristgerecht gemeldet",
+        "en": "Personal data breach not reported within deadlines",
+        "es": "Violación de datos personales no reportada dentro de plazos"
+      },
+      "recommended_action": {
+        "fr": "Notifier immédiatement la CNPD (72h) et les personnes concernées si requis",
+        "de": "CNPD sofort benachrichtigen (72h) und betroffene Personen falls erforderlich",
+        "en": "Immediately notify CNPD (72h) and data subjects if required",
+        "es": "Notificar inmediatamente a CNPD (72h) y personas afectadas si requerido"
+      },
+      "severity": "high",
+      "regulatory_basis": "Règlement UE 2016/679 (RGPD), Article 33-34",
+      "timeline": "72 heures",
+      "potential_penalty": "€10,000,000 ou 2% du CA"
+    },
+    "inadequate_data_subject_rights": {
+      "description": {
+        "fr": "Mécanismes insuffisants pour exercer les droits des personnes concernées",
+        "de": "Unzureichende Mechanismen zur Ausübung der Rechte betroffener Personen",
+        "en": "Inadequate mechanisms for exercising data subject rights",
+        "es": "Mecanismos inadecuados para ejercer derechos de los interesados"
+      },
+      "recommended_action": {
+        "fr": "Mettre en place des procédures claires pour tous les droits RGPD",
+        "de": "Klare Verfahren für alle DSGVO-Rechte einrichten",
+        "en": "Establish clear procedures for all GDPR rights",
+        "es": "Establecer procedimientos claros para todos los derechos RGPD"
+      },
+      "severity": "medium",
+      "regulatory_basis": "Règlement UE 2016/679 (RGPD), Articles 15-22",
+      "timeline": "30 jours",
+      "potential_penalty": "€20,000,000 ou 4% du CA"
+    }
+  },
+  "governance_issues": {
+    "inadequate_risk_management": {
+      "description": {
+        "fr": "Cadre de gestion des risques insuffisant ou défaillant",
+        "de": "Unzureichender oder mangelhafter Risikomanagement-Rahmen",
+        "en": "Inadequate or deficient risk management framework",
+        "es": "Marco de gestión de riesgos inadecuado o deficiente"
+      },
+      "recommended_action": {
+        "fr": "Réviser et renforcer le cadre de gestion des risques selon les trois lignes de défense",
+        "de": "Risikomanagement-Rahmen nach den drei Verteidigungslinien überprüfen und stärken",
+        "en": "Review and strengthen risk management framework following three lines of defense",
+        "es": "Revisar y fortalecer marco de gestión de riesgos siguiendo tres líneas de defensa"
+      },
+      "severity": "high",
+      "regulatory_basis": "Circulaire CSSF 12/552, Section 4",
+      "timeline": "90 jours",
+      "potential_penalty": "€100,000 - €500,000"
+    },
+    "board_effectiveness_issues": {
+      "description": {
+        "fr": "Conseil d'administration inefficace ou non conforme aux exigences",
+        "de": "Ineffektiver oder nicht konformer Verwaltungsrat",
+        "en": "Ineffective board of directors or non-compliant with requirements",
+        "es": "Consejo de administración ineficaz o no conforme con requisitos"
+      },
+      "recommended_action": {
+        "fr": "Renforcer la composition, les compétences et le fonctionnement du conseil",
+        "de": "Zusammensetzung, Kompetenzen und Funktionsweise des Rates stärken",
+        "en": "Strengthen board composition, competencies and functioning",
+        "es": "Fortalecer composición, competencias y funcionamiento del consejo"
+      },
+      "severity": "medium",
+      "regulatory_basis": "Circulaire CSSF 12/552, Section 2",
+      "timeline": "120 jours",
+      "potential_penalty": "€50,000 - €250,000"
+    },
+    "inadequate_internal_controls": {
+      "description": {
+        "fr": "Système de contrôle interne déficient ou mal organisé",
+        "de": "Mangelhaftes oder schlecht organisiertes internes Kontrollsystem",
+        "en": "Deficient or poorly organized internal control system",
+        "es": "Sistema de control interno deficiente o mal organizado"
+      },
+      "recommended_action": {
+        "fr": "Implémenter un système de contrôle interne robuste avec audit interne indépendant",
+        "de": "Robustes internes Kontrollsystem mit unabhängiger interner Revision implementieren",
+        "en": "Implement robust internal control system with independent internal audit",
+        "es": "Implementar sistema de control interno robusto con auditoría interna independiente"
+      },
+      "severity": "high",
+      "regulatory_basis": "Circulaire CSSF 12/552, Section 5",
+      "timeline": "180 jours",
+      "potential_penalty": "€75,000 - €375,000"
+    }
+  },
+  "operational_issues": {
+    "inadequate_outsourcing_oversight": {
+      "description": {
+        "fr": "Surveillance insuffisante des activités externalisées",
+        "de": "Unzureichende Überwachung ausgelagerter Aktivitäten",
+        "en": "Inadequate oversight of outsourced activities",
+        "es": "Supervisión inadecuada de actividades externalizadas"
+      },
+      "recommended_action": {
+        "fr": "Renforcer les contrats d'externalisation et la surveillance des prestataires",
+        "de": "Outsourcing-Verträge und Überwachung der Dienstleister stärken",
+        "en": "Strengthen outsourcing contracts and service provider oversight",
+        "es": "Fortalecer contratos de externalización y supervisión de proveedores"
+      },
+      "severity": "medium",
+      "regulatory_basis": "Circulaire CSSF 05/178",
+      "timeline": "60 jours",
+      "potential_penalty": "€25,000 - €125,000"
+    },
+    "business_continuity_gaps": {
+      "description": {
+        "fr": "Plan de continuité d'activité insuffisant ou non testé",
+        "de": "Unzureichender oder nicht getesteter Geschäftskontinuitätsplan",
+        "en": "Inadequate or untested business continuity plan",
+        "es": "Plan de continuidad de negocio inadecuado o no probado"
+      },
+      "recommended_action": {
+        "fr": "Élaborer et tester régulièrement un plan de continuité robuste",
+        "de": "Robusten Kontinuitätsplan entwickeln und regelmäßig testen",
+        "en": "Develop and regularly test robust continuity plan",
+        "es": "Desarrollar y probar regularmente plan de continuidad robusto"
+      },
+      "severity": "medium",
+      "regulatory_basis": "Circulaire CSSF 12/552, Section 7",
+      "timeline": "90 jours",
+      "potential_penalty": "€30,000 - €150,000"
+    },
+    "cybersecurity_vulnerabilities": {
+      "description": {
+        "fr": "Vulnérabilités de cybersécurité non corrigées ou protection insuffisante",
+        "de": "Nicht behobene Cybersicherheitslücken oder unzureichender Schutz",
+        "en": "Unaddressed cybersecurity vulnerabilities or insufficient protection",
+        "es": "Vulnerabilidades de ciberseguridad no corregidas o protección insuficiente"
+      },
+      "recommended_action": {
+        "fr": "Effectuer une évaluation de sécurité et implémenter les correctifs nécessaires",
+        "de": "Sicherheitsbewertung durchführen und notwendige Korrekturen implementieren",
+        "en": "Conduct security assessment and implement necessary fixes",
+        "es": "Realizar evaluación de seguridad e implementar correcciones necesarias"
+      },
+      "severity": "high",
+      "regulatory_basis": "Circulaire CSSF 20/750, DORA",
+      "timeline": "30 jours",
+      "potential_penalty": "€100,000 - €500,000"
+    }
+  },
+  "reporting_issues": {
+    "late_regulatory_reporting": {
+      "description": {
+        "fr": "Retard dans la soumission des déclarations réglementaires",
+        "de": "Verspätung bei der Einreichung regulatorischer Meldungen",
+        "en": "Delays in submitting regulatory reports",
+        "es": "Retrasos en envío de reportes regulatorios"
+      },
+      "recommended_action": {
+        "fr": "Mettre en place un calendrier de reporting avec alertes automatiques",
+        "de": "Berichtskalender mit automatischen Warnungen einrichten",
+        "en": "Establish reporting calendar with automatic alerts",
+        "es": "Establecer calendario de reportes con alertas automáticas"
+      },
+      "severity": "medium",
+      "regulatory_basis": "Loi du 5 avril 1993, Diverses circulaires CSSF",
+      "timeline": "15 jours",
+      "potential_penalty": "€10,000 - €50,000"
+    },
+    "inaccurate_financial_statements": {
+      "description": {
+        "fr": "États financiers inexacts ou non conformes aux normes comptables",
+        "de": "Ungenaue oder nicht normenkonforme Finanzausweise",
+        "en": "Inaccurate financial statements or non-compliant with accounting standards",
+        "es": "Estados financieros inexactos o no conformes con normas contables"
+      },
+      "recommended_action": {
+        "fr": "Réviser les états financiers et améliorer les contrôles comptables",
+        "de": "Finanzausweise überprüfen und Buchhaltungskontrollen verbessern",
+        "en": "Review financial statements and improve accounting controls",
+        "es": "Revisar estados financieros y mejorar controles contables"
+      },
+      "severity": "high",
+      "regulatory_basis": "Loi du 19 décembre 2002, Directive 2013/34/UE",
+      "timeline": "45 jours",
+      "potential_penalty": "€50,000 - €250,000"
+    }
+  },
+  "remediation_framework": {
+    "immediate_actions": {
+      "fr": [
+        "Suspendre les activités non conformes",
+        "Notifier les autorités compétentes",
+        "Préserver les preuves et documents",
+        "Évaluer l'impact sur les clients"
+      ],
+      "de": [
+        "Nicht konforme Aktivitäten aussetzen",
+        "Zuständige Behörden benachrichtigen",
+        "Beweise und Dokumente sichern",
+        "Auswirkungen auf Kunden bewerten"
+      ],
+      "en": [
+        "Suspend non-compliant activities",
+        "Notify competent authorities",
+        "Preserve evidence and documents",
+        "Assess impact on clients"
+      ],
+      "es": [
+        "Suspender actividades no conformes",
+        "Notificar autoridades competentes",
+        "Preservar evidencias y documentos",
+        "Evaluar impacto en clientes"
+      ]
+    },
+    "corrective_measures": {
+      "fr": [
+        "Analyser les causes racines",
+        "Développer un plan d'action correctrice",
+        "Implémenter les contrôles renforcés",
+        "Former le personnel concerné",
+        "Tester l'efficacité des mesures"
+      ],
+      "de": [
+        "Grundursachen analysieren",
+        "Korrekturmaßnahmenplan entwickeln",
+        "Verstärkte Kontrollen implementieren",
+        "Betroffenes Personal schulen",
+        "Wirksamkeit der Maßnahmen testen"
+      ],
+      "en": [
+        "Analyze root causes",
+        "Develop corrective action plan",
+        "Implement enhanced controls",
+        "Train affected personnel",
+        "Test effectiveness of measures"
+      ],
+      "es": [
+        "Analizar causas raíz",
+        "Desarrollar plan de acción correctiva",
+        "Implementar controles reforzados",
+        "Capacitar personal afectado",
+        "Probar efectividad de medidas"
+      ]
+    },
+    "monitoring_validation": {
+      "fr": [
+        "Établir des indicateurs de performance",
+        "Surveiller la mise en œuvre continue",
+        "Effectuer des contrôles périodiques",
+        "Rapporter aux autorités de régulation",
+        "Réviser et améliorer en continu"
+      ],
+      "de": [
+        "Leistungsindikatoren festlegen",
+        "Kontinuierliche Umsetzung überwachen",
+        "Regelmäßige Kontrollen durchführen",
+        "An Regulierungsbehörden berichten",
+        "Kontinuierlich überprüfen und verbessern"
+      ],
+      "en": [
+        "Establish performance indicators",
+        "Monitor ongoing implementation",
+        "Conduct periodic reviews",
+        "Report to regulatory authorities",
+        "Continuously review and improve"
+      ],
+      "es": [
+        "Establecer indicadores de rendimiento",
+        "Monitorear implementación continua",
+        "Realizar revisiones periódicas",
+        "Reportar a autoridades regulatorias",
+        "Revisar y mejorar continuamente"
+      ]
+    }
+  },
+  "escalation_matrix": {
+    "severity_levels": {
+      "critical": {
+        "definition": {
+          "fr": "Risque immédiat pour la stabilité financière ou violation grave",
+          "de": "Unmittelbares Risiko für Finanzstabilität oder schwerwiegender Verstoß",
+          "en": "Immediate risk to financial stability or serious violation",
+          "es": "Riesgo inmediato para estabilidad financiera o violación grave"
+        },
+        "escalation_time": "Immédiat",
+        "notification_required": ["CSSF", "Direction générale", "Conseil d'administration"]
+      },
+      "high": {
+        "definition": {
+          "fr": "Impact significatif sur les opérations ou non-conformité majeure",
+          "de": "Erhebliche Auswirkungen auf Operationen oder größere Nichteinhaltung",
+          "en": "Significant impact on operations or major non-compliance",
+          "es": "Impacto significativo en operaciones o incumplimiento mayor"
+        },
+        "escalation_time": "24 heures",
+        "notification_required": ["CSSF", "Direction générale", "Responsable conformité"]
+      },
+      "medium": {
+        "definition": {
+          "fr": "Non-conformité modérée nécessitant une action corrective",
+          "de": "Mäßige Nichteinhaltung erfordert Korrekturmaßnahmen",
+          "en": "Moderate non-compliance requiring corrective action",
+          "es": "Incumplimiento moderado que requiere acción correctiva"
+        },
+        "escalation_time": "72 heures",
+        "notification_required": ["Direction", "Responsable conformité"]
+      }
+    }
+  }
+}

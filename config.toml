@@ -1,0 +1,223 @@
+# config.toml - VERSION CORRIGÉE POUR THÈME SOMBRE
+# Configuration optimisée pour Streamlit avec thème sombre
+
+[global]
+developmentMode = false
+
+[server]
+port = 8501
+address = "0.0.0.0"
+maxUploadSize = 100
+maxMessageSize = 50
+enableCORS = false
+enableXsrfProtection = true
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+[runner]
+magicEnabled = true
+fastReruns = true
+enforceSerializableSessionState = false
+
+[logger]
+level = "info"
+
+# THÈME SOMBRE CONFIGURÉ
+[theme]
+# Couleur principale (bleu accent)
+primaryColor = "#3b82f6"
+
+# Arrière-plan principal - NOIR PUR
+backgroundColor = "#0a0a0a"
+
+# Arrière-plan secondaire - GRIS TRÈS SOMBRE
+secondaryBackgroundColor = "#1a1a1a"
+
+# Couleur du texte - BLANC PUR
+textColor = "#ffffff"
+
+# Police sans-serif pour meilleure lisibilité
+font = "sans serif"
+
+# Custom sections for application
+[compliance]
+engine = "local"
+data_dir = "data"
+max_file_size = 10
+supported_formats = ["pdf", "docx", "txt"]
+
+[analysis]
+timeout = 300
+max_rules_check = 50
+confidence_threshold = 0.5
+language_detection = true
+
+# CONFIGURATION SPÉCIFIQUE AU THÈME SOMBRE
+[dark_theme]
+# Activation du thème sombre
+enabled = true
+
+# Couleurs personnalisées pour le thème sombre
+[dark_theme.colors]
+background_primary = "#0a0a0a"
+background_secondary = "#1a1a1a"
+background_tertiary = "#2a2a2a"
+text_primary = "#ffffff"
+text_secondary = "#e0e0e0"
+text_muted = "#b0b0b0"
+accent_blue = "#3b82f6"
+accent_green = "#10b981"
+accent_red = "#ef4444"
+accent_orange = "#f59e0b"
+border_color = "#404040"
+hover_background = "#333333"
+
+# Paramètres d'optimisation
+[dark_theme.optimization]
+high_contrast = true
+reduce_eye_strain = true
+battery_saving = true
+accessibility_compliant = true
+
+# Configuration des ombres et effets
+[dark_theme.effects]
+shadow_intensity = "high"
+blur_effects = true
+hover_animations = true
+transition_duration = "0.3s"
+
+# Responsive design pour mobile
+[dark_theme.responsive]
+mobile_optimized = true
+tablet_optimized = true
+desktop_optimized = true
+
+# Configuration de l'interface utilisateur
+[ui]
+# Mode sombre par défaut
+default_theme = "dark"
+
+# Taille des polices optimisée pour le contraste
+font_sizes = {
+    small = "0.875rem",
+    normal = "1rem", 
+    large = "1.25rem",
+    xlarge = "1.5rem"
+}
+
+# Espacements optimisés
+spacing = {
+    small = "0.5rem",
+    normal = "1rem",
+    large = "1.5rem",
+    xlarge = "2rem"
+}
+
+# Configuration des composants
+[components]
+# Cartes avec fond sombre
+cards_background = "#2a2a2a"
+cards_border = "#404040"
+cards_text = "#ffffff"
+
+# Boutons avec thème sombre
+buttons_primary = "#3b82f6"
+buttons_secondary = "#6b7280"
+buttons_success = "#10b981"
+buttons_warning = "#f59e0b"
+buttons_danger = "#ef4444"
+
+# Formulaires avec thème sombre
+forms_background = "#2a2a2a"
+forms_border = "#404040"
+forms_text = "#ffffff"
+forms_placeholder = "#9ca3af"
+
+# Configuration de l'accessibilité
+[accessibility]
+# Contraste élevé pour le thème sombre
+high_contrast = true
+
+# Support des lecteurs d'écran
+screen_reader_support = true
+
+# Navigation au clavier
+keyboard_navigation = true
+
+# Taille de police minimum
+min_font_size = "14px"
+
+# Ratio de contraste minimum (WCAG AA)
+min_contrast_ratio = 7.0
+
+# Configuration des performances
+[performance]
+# Optimisations CSS pour le thème sombre
+css_minification = true
+lazy_loading = true
+cache_static_assets = true
+
+# Optimisations spécifiques au thème sombre
+[performance.dark_theme]
+# Réduction de la consommation sur écrans OLED
+oled_optimization = true
+
+# Cache des couleurs calculées
+color_cache = true
+
+# Optimisation des transitions
+smooth_transitions = true
+
+# Configuration de la sécurité
+[security]
+# Protection CSRF activée
+csrf_protection = true
+
+# En-têtes de sécurité
+security_headers = true
+
+# Validation des uploads
+upload_validation = true
+
+# Configuration du développement
+[development]
+# Mode debug pour le thème sombre
+debug_theme = false
+
+# Affichage des métriques de performance
+show_metrics = false
+
+# Rechargement à chaud
+hot_reload = true
+
+# Configuration de la localisation
+[localization]
+# Langues supportées
+supported_languages = ["fr", "en", "de", "es"]
+
+# Langue par défaut
+default_language = "fr"
+
+# Support RTL (future)
+rtl_support = false
+
+# Configuration des logs
+[logging]
+# Niveau de log
+level = "info"
+
+# Format des logs
+format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Rotation des fichiers de log
+rotation = true
+max_size = "10MB"
+backup_count = 5
+
+# Logs spécifiques au thème sombre
+[logging.dark_theme]
+log_theme_changes = true
+log_performance_metrics = false
+log_accessibility_warnings = true

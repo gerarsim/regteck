@@ -1,0 +1,83 @@
+# Docker Compose configuration for LexAI
+# Compatible with Docker Compose v2.x (no version field needed)
+
+services:
+  # ============================================================================
+  # LEXAI APPLICATION - LOCAL COMPLIANCE ENGINE
+  # ============================================================================
+  lexai-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        INSTALL_LLM: "false"  # Disable LLM installation
+        BUILD_ENV: "production"
+
+    container_name: lexai-app
+
+    ports:
+      - "8501:8501"
+
+    environment:
+      # Streamlit configuration
+      STREAMLIT_SERVER_ADDRESS: "0.0.0.0"
+      STREAMLIT_SERVER_PORT: "8501"
+      STREAMLIT_SERVER_HEADLESS: "true"
+      STREAMLIT_BROWSER_GATHER_USAGE_STATS: "false"
+      STREAMLIT_SERVER_MAX_UPLOAD_SIZE: "100"
+
+      # Application settings
+      PYTHONPATH: "/app"
+      APP_NAME: "LexAI"
+      APP_VERSION: "2.0.0"
+      LOG_LEVEL: "INFO"
+      DEBUG_MODE: "false"
+
+      # Local engine configuration
+      COMPLIANCE_ENGINE: "local"
+      LLM_AVAILABLE: "false"
+      USE_LOCAL_ENGINE: "true"
+      DATA_DIR: "/app/data"
+
+      # Performance optimization
+      OMP_NUM_THREADS: "4"
+      PYTHONUNBUFFERED: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+
+      # Security
+      SESSION_SECRET_KEY: "${SESSION_SECRET_KEY:-change-me-in-production}"
+      SECURE_MODE: "true"
+
+    volumes:
+      # Mount your data directory (read-only for compliance data)
+      - ./data:/app/data:ro
+      # Writable logs directory
+      - lexai-logs:/app/logs
+
+    restart: unless-stopped
+
+    networks:
+      - lexai-net
+
+    # Resource limits (Docker Compose v2 format)
+    mem_limit: 2g
+    mem_reservation: 1g
+    cpus: 1.0
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+# ============================================================================
+# NETWORKS AND VOLUMES
+# ============================================================================
+networks:
+  lexai-net:
+    driver: bridge
+
+volumes:
+  lexai-logs:
+    driver: local

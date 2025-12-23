@@ -1,0 +1,139 @@
+[
+  {
+    "analysis_id": "default_001",
+    "document_type": "contract",
+    "base_score": 80.0,
+    "excellence_criteria": [
+      {
+        "criterion": "kyc_compliance",
+        "weight": 0.25,
+        "threshold": 0.8,
+        "description": "Know Your Customer procedures"
+      },
+      {
+        "criterion": "aml_surveillance", 
+        "weight": 0.25,
+        "threshold": 0.85,
+        "description": "Anti-Money Laundering surveillance"
+      },
+      {
+        "criterion": "sanctions_screening",
+        "weight": 0.20,
+        "threshold": 0.9,
+        "description": "Sanctions lists screening"
+      },
+      {
+        "criterion": "gdpr_compliance",
+        "weight": 0.15,
+        "threshold": 0.85,
+        "description": "GDPR data protection compliance"
+      },
+      {
+        "criterion": "crs_fatca",
+        "weight": 0.10,
+        "threshold": 0.8,
+        "description": "CRS and FATCA compliance"
+      },
+      {
+        "criterion": "internal_controls",
+        "weight": 0.05,
+        "threshold": 0.75,
+        "description": "Internal controls and governance"
+      }
+    ],
+    "scoring_matrix": {
+      "perfect_score": 100.0,
+      "excellence_threshold": 95.0,
+      "good_threshold": 85.0,
+      "adequate_threshold": 70.0,
+      "bonus_multiplier": 1.05
+    },
+    "luxembourg_bonus": {
+      "cssf_keywords": 5.0,
+      "local_regulations": 3.0,
+      "banking_sector": 2.0
+    }
+  },
+  {
+    "analysis_id": "banking_002", 
+    "document_type": "policy",
+    "base_score": 85.0,
+    "excellence_criteria": [
+      {
+        "criterion": "regulatory_framework",
+        "weight": 0.30,
+        "threshold": 0.9,
+        "description": "Comprehensive regulatory framework coverage"
+      },
+      {
+        "criterion": "risk_management",
+        "weight": 0.25,
+        "threshold": 0.85,
+        "description": "Risk management procedures"
+      },
+      {
+        "criterion": "compliance_monitoring",
+        "weight": 0.20,
+        "threshold": 0.8,
+        "description": "Continuous compliance monitoring"
+      },
+      {
+        "criterion": "staff_training",
+        "weight": 0.15,
+        "threshold": 0.75,
+        "description": "Staff training and awareness"
+      },
+      {
+        "criterion": "audit_procedures",
+        "weight": 0.10,
+        "threshold": 0.8,
+        "description": "Internal and external audit procedures"
+      }
+    ],
+    "scoring_matrix": {
+      "perfect_score": 100.0,
+      "excellence_threshold": 98.0,
+      "good_threshold": 90.0,
+      "adequate_threshold": 75.0,
+      "bonus_multiplier": 1.03
+    }
+  },
+  {
+    "analysis_id": "financial_003",
+    "document_type": "report", 
+    "base_score": 75.0,
+    "excellence_criteria": [
+      {
+        "criterion": "transparency",
+        "weight": 0.35,
+        "threshold": 0.85,
+        "description": "Financial transparency and disclosure"
+      },
+      {
+        "criterion": "accuracy",
+        "weight": 0.30,
+        "threshold": 0.95,
+        "description": "Data accuracy and validation"
+      },
+      {
+        "criterion": "timeliness",
+        "weight": 0.20,
+        "threshold": 0.8,
+        "description": "Timely reporting requirements"
+      },
+      {
+        "criterion": "completeness",
+        "weight": 0.15,
+        "threshold": 0.9,
+        "description": "Complete regulatory coverage"
+      }
+    ],
+    "scoring_matrix": {
+      "perfect_score": 100.0,
+      "excellence_threshold": 95.0,
+      "good_threshold": 85.0,
+      "adequate_threshold": 70.0,
+      "bonus_multiplier": 1.02
+    }
+  }
+]

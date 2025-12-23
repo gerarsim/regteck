@@ -1,0 +1,626 @@
+{
+  "eu_passport_system": {
+    "financial_services": {
+      "fr": {
+        "description": "Permet aux institutions financières autorisées dans un État membre de l'UE d'opérer dans toute l'Union européenne sans autorisation supplémentaire",
+        "key_principles": [
+          "Passeport européen",
+          "Reconnaissance mutuelle",
+          "Harmonisation réglementaire",
+          "Supervision du pays d'origine",
+          "Notification transfrontalière"
+        ],
+        "benefits": [
+          "Accès au marché unique européen",
+          "Réduction des coûts réglementaires",
+          "Simplification des procédures",
+          "Économies d'échelle",
+          "Compétitivité accrue"
+        ]
+      },
+      "de": {
+        "description": "Ermöglicht in einem EU-Mitgliedstaat zugelassenen Finanzinstituten den Betrieb in der gesamten Europäischen Union ohne zusätzliche Genehmigung",
+        "key_principles": [
+          "Europäischer Pass",
+          "Gegenseitige Anerkennung",
+          "Regulatorische Harmonisierung",
+          "Heimatlandaufsicht",
+          "Grenzüberschreitende Notifikation"
+        ],
+        "benefits": [
+          "Zugang zum europäischen Binnenmarkt",
+          "Reduzierung regulatorischer Kosten",
+          "Vereinfachung der Verfahren",
+          "Skaleneffekte",
+          "Erhöhte Wettbewerbsfähigkeit"
+        ]
+      },
+      "en": {
+        "description": "Allows financial institutions authorized in one EU member state to operate throughout the European Union without additional authorization",
+        "key_principles": [
+          "European passport",
+          "Mutual recognition",
+          "Regulatory harmonization",
+          "Home country supervision",
+          "Cross-border notification"
+        ],
+        "benefits": [
+          "Access to European single market",
+          "Reduction of regulatory costs",
+          "Simplification of procedures",
+          "Economies of scale",
+          "Increased competitiveness"
+        ]
+      },
+      "es": {
+        "description": "Permite a las instituciones financieras autorizadas en un estado miembro de la UE operar en toda la Unión Europea sin autorización adicional",
+        "key_principles": [
+          "Pasaporte europeo",
+          "Reconocimiento mutuo",
+          "Armonización regulatoria",
+          "Supervisión del país de origen",
+          "Notificación transfronteriza"
+        ],
+        "benefits": [
+          "Acceso al mercado único europeo",
+          "Reducción de costos regulatorios",
+          "Simplificación de procedimientos",
+          "Economías de escala",
+          "Mayor competitividad"
+        ]
+      }
+    },
+    "eligible_services": {
+      "banking": {
+        "fr": [
+          "Réception de dépôts et autres fonds remboursables",
+          "Opérations de prêt",
+          "Services de paiement",
+          "Émission et gestion de moyens de paiement",
+          "Garanties et engagements",
+          "Négociation pour compte propre",
+          "Exécution d'ordres pour le compte de clients",
+          "Participation à des émissions de titres",
+          "Conseil en investissement",
+          "Conservation et administration de valeurs mobilières"
+        ],
+        "de": [
+          "Annahme von Einlagen und anderen rückzahlbaren Geldern",
+          "Kreditgeschäfte",
+          "Zahlungsdienstleistungen",
+          "Ausgabe und Verwaltung von Zahlungsmitteln",
+          "Garantien und Bürgschaften",
+          "Handel auf eigene Rechnung",
+          "Ausführung von Aufträgen für Kunden",
+          "Beteiligung an Wertpapieremissionen",
+          "Anlageberatung",
+          "Verwahrung und Verwaltung von Wertpapieren"
+        ],
+        "en": [
+          "Acceptance of deposits and other repayable funds",
+          "Lending operations",
+          "Payment services",
+          "Issuing and managing means of payment",
+          "Guarantees and commitments",
+          "Trading on own account",
+          "Execution of orders on behalf of clients",
+          "Participation in securities issues",
+          "Investment advice",
+          "Safekeeping and administration of securities"
+        ],
+        "es": [
+          "Recepción de depósitos y otros fondos reembolsables",
+          "Operaciones de préstamo",
+          "Servicios de pago",
+          "Emisión y gestión de medios de pago",
+          "Garantías y compromisos",
+          "Negociación por cuenta propia",
+          "Ejecución de órdenes por cuenta de clientes",
+          "Participación en emisiones de valores",
+          "Asesoramiento en inversiones",
+          "Custodia y administración de valores"
+        ]
+      },
+      "investment_services": {
+        "fr": [
+          "Réception et transmission d'ordres",
+          "Exécution d'ordres pour le compte de clients",
+          "Négociation pour compte propre",
+          "Gestion de portefeuille",
+          "Conseil en investissement",
+          "Prise ferme d'instruments financiers",
+          "Placement d'instruments financiers",
+          "Services liés aux opérations sur les structures de marché"
+        ],
+        "de": [
+          "Annahme und Weiterleitung von Aufträgen",
+          "Ausführung von Aufträgen für Kunden",
+          "Handel auf eigene Rechnung",
+          "Portfolioverwaltung",
+          "Anlageberatung",
+          "Übernahme von Finanzinstrumenten",
+          "Platzierung von Finanzinstrumenten",
+          "Dienstleistungen im Zusammenhang mit Marktstrukturen"
+        ],
+        "en": [
+          "Reception and transmission of orders",
+          "Execution of orders on behalf of clients",
+          "Dealing on own account",
+          "Portfolio management",
+          "Investment advice",
+          "Underwriting of financial instruments",
+          "Placement of financial instruments",
+          "Services related to market structure operations"
+        ],
+        "es": [
+          "Recepción y transmisión de órdenes",
+          "Ejecución de órdenes por cuenta de clientes",
+          "Negociación por cuenta propia",
+          "Gestión de carteras",
+          "Asesoramiento en inversiones",
+          "Aseguramiento de instrumentos financieros",
+          "Colocación de instrumentos financieros",
+          "Servicios relacionados con operaciones de estructura de mercado"
+        ]
+      }
+    },
+    "notification_procedure": {
+      "steps": {
+        "fr": [
+          "Demande d'autorisation auprès de l'autorité nationale",
+          "Notification à l'autorité du pays d'accueil",
+          "Délai de réponse de 2 mois",
+          "Communication des détails du programme d'activités",
+          "Début des activités autorisé après notification"
+        ],
+        "de": [
+          "Genehmigungsantrag bei der nationalen Behörde",
+          "Benachrichtigung der Behörde des Aufnahmelandes",
+          "Antwortfrist von 2 Monaten",
+          "Mitteilung der Einzelheiten des Tätigkeitsprogramms",
+          "Beginn der Tätigkeiten nach Benachrichtigung erlaubt"
+        ],
+        "en": [
+          "Authorization request to national authority",
+          "Notification to host country authority",
+          "2-month response period",
+          "Communication of activity program details",
+          "Commencement of activities allowed after notification"
+        ],
+        "es": [
+          "Solicitud de autorización a la autoridad nacional",
+          "Notificación a la autoridad del país de acogida",
+          "Período de respuesta de 2 meses",
+          "Comunicación de detalles del programa de actividades",
+          "Inicio de actividades permitido después de la notificación"
+        ]
+      }
+    }
+  },
+  "psd2": {
+    "description": {
+      "fr": "Directive sur les services de paiement révisée - Cadre réglementaire pour les services de paiement dans l'UE",
+      "de": "Überarbeitete Zahlungsdiensterichtlinie - Regulatorischer Rahmen für Zahlungsdienste in der EU",
+      "en": "Revised Payment Services Directive - Regulatory framework for payment services in the EU",
+      "es": "Directiva de Servicios de Pago revisada - Marco regulatorio para servicios de pago en la UE"
+    },
+    "key_objectives": {
+      "fr": [
+        "Favoriser l'innovation dans les paiements",
+        "Renforcer la sécurité des paiements",
+        "Améliorer la protection des consommateurs",
+        "Promouvoir la concurrence",
+        "Faciliter l'accès au marché des paiements"
+      ],
+      "de": [
+        "Innovation im Zahlungsbereich fördern",
+        "Zahlungssicherheit stärken",
+        "Verbraucherschutz verbessern",
+        "Wettbewerb fördern",
+        "Marktzugang für Zahlungsdienste erleichtern"
+      ],
+      "en": [
+        "Foster innovation in payments",
+        "Strengthen payment security",
+        "Improve consumer protection",
+        "Promote competition",
+        "Facilitate access to payment markets"
+      ],
+      "es": [
+        "Fomentar la innovación en pagos",
+        "Fortalecer la seguridad de pagos",
+        "Mejorar la protección del consumidor",
+        "Promover la competencia",
+        "Facilitar el acceso a mercados de pago"
+      ]
+    },
+    "new_services": {
+      "aisp": {
+        "name": {
+          "fr": "Services d'information sur les comptes (AISP)",
+          "de": "Kontoinformationsdienste (AISP)",
+          "en": "Account Information Services (AISP)",
+          "es": "Servicios de información de cuentas (AISP)"
+        },
+        "description": {
+          "fr": "Services en ligne permettant de consulter des informations consolidées sur différents comptes de paiement",
+          "de": "Online-Dienste zur Einsichtnahme in konsolidierte Informationen verschiedener Zahlungskonten",
+          "en": "Online services providing consolidated information on different payment accounts",
+          "es": "Servicios en línea que proporcionan información consolidada sobre diferentes cuentas de pago"
+        }
+      },
+      "pisp": {
+        "name": {
+          "fr": "Services d'initiation de paiement (PISP)",
+          "de": "Zahlungsauslösedienste (PISP)",
+          "en": "Payment Initiation Services (PISP)",
+          "es": "Servicios de iniciación de pago (PISP)"
+        },
+        "description": {
+          "fr": "Services permettant d'initier un ordre de paiement depuis le compte de paiement du payeur",
+          "de": "Dienste zur Initiierung einer Zahlungsanweisung vom Zahlungskonto des Zahlers",
+          "en": "Services enabling initiation of payment order from the payer's payment account",
+          "es": "Servicios que permiten iniciar una orden de pago desde la cuenta de pago del pagador"
+        }
+      }
+    },
+    "strong_customer_authentication": {
+      "description": {
+        "fr": "Authentification forte du client - Exigence de sécurité renforcée pour les paiements électroniques",
+        "de": "Starke Kundenauthentifizierung - Verstärkte Sicherheitsanforderung für elektronische Zahlungen",
+        "en": "Strong Customer Authentication - Enhanced security requirement for electronic payments",
+        "es": "Autenticación fuerte del cliente - Requisito de seguridad reforzado para pagos electrónicos"
+      },
+      "requirements": {
+        "fr": [
+          "Au moins deux éléments d'authentification",
+          "Éléments de catégories différentes",
+          "Indépendance des éléments",
+          "Protection contre la divulgation"
+        ],
+        "de": [
+          "Mindestens zwei Authentifizierungselemente",
+          "Elemente verschiedener Kategorien",
+          "Unabhängigkeit der Elemente",
+          "Schutz vor Offenlegung"
+        ],
+        "en": [
+          "At least two authentication elements",
+          "Elements from different categories",
+          "Independence of elements",
+          "Protection against disclosure"
+        ],
+        "es": [
+          "Al menos dos elementos de autenticación",
+          "Elementos de diferentes categorías",
+          "Independencia de los elementos",
+          "Protección contra divulgación"
+        ]
+      },
+      "categories": {
+        "knowledge": {
+          "fr": "Connaissance - Quelque chose que seul l'utilisateur connaît",
+          "de": "Wissen - Etwas, das nur der Benutzer kennt",
+          "en": "Knowledge - Something only the user knows",
+          "es": "Conocimiento - Algo que solo el usuario conoce"
+        },
+        "possession": {
+          "fr": "Possession - Quelque chose que seul l'utilisateur possède",
+          "de": "Besitz - Etwas, das nur der Benutzer besitzt",
+          "en": "Possession - Something only the user possesses",
+          "es": "Posesión - Algo que solo el usuario posee"
+        },
+        "inherence": {
+          "fr": "Inhérence - Quelque chose que l'utilisateur est",
+          "de": "Inhärenz - Etwas, was der Benutzer ist",
+          "en": "Inherence - Something the user is",
+          "es": "Inherencia - Algo que el usuario es"
+        }
+      }
+    },
+    "open_banking": {
+      "description": {
+        "fr": "Ouverture des données bancaires aux tiers prestataires de services",
+        "de": "Öffnung von Bankdaten für Drittanbieter von Dienstleistungen",
+        "en": "Opening of banking data to third-party service providers",
+        "es": "Apertura de datos bancarios a proveedores de servicios terceros"
+      },
+      "requirements": {
+        "fr": [
+          "API dédiées pour les TPP",
+          "Accès gratuit aux comptes",
+          "Mêmes conditions que les clients directs",
+          "Interface sécurisée",
+          "Disponibilité garantie"
+        ],
+        "de": [
+          "Dedizierte APIs für TPPs",
+          "Kostenloser Zugang zu Konten",
+          "Gleiche Bedingungen wie Direktkunden",
+          "Sichere Schnittstelle",
+          "Garantierte Verfügbarkeit"
+        ],
+        "en": [
+          "Dedicated APIs for TPPs",
+          "Free access to accounts",
+          "Same conditions as direct clients",
+          "Secure interface",
+          "Guaranteed availability"
+        ],
+        "es": [
+          "APIs dedicadas para TPPs",
+          "Acceso gratuito a cuentas",
+          "Mismas condiciones que clientes directos",
+          "Interfaz segura",
+          "Disponibilidad garantizada"
+        ]
+      }
+    }
+  },
+  "mifid_ii": {
+    "description": {
+      "fr": "Directive concernant les marchés d'instruments financiers - Cadre réglementaire pour les services d'investissement",
+      "de": "Richtlinie über Märkte für Finanzinstrumente - Regulatorischer Rahmen für Wertpapierdienstleistungen",
+      "en": "Markets in Financial Instruments Directive - Regulatory framework for investment services",
+      "es": "Directiva sobre Mercados de Instrumentos Financieros - Marco regulatorio para servicios de inversión"
+    },
+    "key_changes": {
+      "fr": [
+        "Extension du champ d'application",
+        "Renforcement de la protection des investisseurs",
+        "Amélioration de la transparence des marchés",
+        "Nouvelles exigences organisationnelles",
+        "Obligations de reporting étendues"
+      ],
+      "de": [
+        "Ausweitung des Anwendungsbereichs",
+        "Stärkung des Anlegerschutzes",
+        "Verbesserung der Markttransparenz",
+        "Neue organisatorische Anforderungen",
+        "Erweiterte Berichtspflichten"
+      ],
+      "en": [
+        "Extension of scope of application",
+        "Strengthening of investor protection",
+        "Improvement of market transparency",
+        "New organizational requirements",
+        "Extended reporting obligations"
+      ],
+      "es": [
+        "Extensión del ámbito de aplicación",
+        "Fortalecimiento de la protección del inversor",
+        "Mejora de la transparencia del mercado",
+        "Nuevos requisitos organizacionales",
+        "Obligaciones de reporte ampliadas"
+      ]
+    },
+    "product_governance": {
+      "description": {
+        "fr": "Gouvernance des produits - Exigences pour la conception, distribution et révision des produits financiers",
+        "de": "Produktgovernance - Anforderungen für Design, Vertrieb und Überprüfung von Finanzprodukten",
+        "en": "Product governance - Requirements for design, distribution and review of financial products",
+        "es": "Gobernanza de productos - Requisitos para diseño, distribución y revisión de productos financieros"
+      },
+      "target_market": {
+        "fr": "Identification du marché cible pour chaque produit",
+        "de": "Identifikation des Zielmarktes für jedes Produkt",
+        "en": "Identification of target market for each product",
+        "es": "Identificación del mercado objetivo para cada producto"
+      }
+    }
+  },
+  "gdpr_financial_specifics": {
+    "description": {
+      "fr": "Application spécifique du RGPD aux services financiers",
+      "de": "Spezifische Anwendung der DSGVO auf Finanzdienstleistungen",
+      "en": "Specific application of GDPR to financial services",
+      "es": "Aplicación específica del RGPD a servicios financieros"
+    },
+    "legitimate_interests": {
+      "fr": [
+        "Prévention de la fraude",
+        "Gestion des risques",
+        "Conformité réglementaire",
+        "Sécurité des systèmes",
+        "Recouvrement de créances"
+      ],
+      "de": [
+        "Betrugsprävention",
+        "Risikomanagement",
+        "Regulatorische Compliance",
+        "Systemsicherheit",
+        "Forderungsbeitreibung"
+      ],
+      "en": [
+        "Fraud prevention",
+        "Risk management",
+        "Regulatory compliance",
+        "System security",
+        "Debt recovery"
+      ],
+      "es": [
+        "Prevención del fraude",
+        "Gestión de riesgos",
+        "Cumplimiento regulatorio",
+        "Seguridad de sistemas",
+        "Recuperación de deudas"
+      ]
+    },
+    "retention_periods": {
+      "aml_records": {
+        "fr": "5 ans (obligations de lutte contre le blanchiment)",
+        "de": "5 Jahre (Geldwäsche-Bekämpfungspflichten)",
+        "en": "5 years (anti-money laundering obligations)",
+        "es": "5 años (obligaciones de prevención de blanqueo)"
+      },
+      "mifid_records": {
+        "fr": "5 ans (obligations MiFID)",
+        "de": "5 Jahre (MiFID-Verpflichtungen)",
+        "en": "5 years (MiFID obligations)",
+        "es": "5 años (obligaciones MiFID)"
+      },
+      "tax_records": {
+        "fr": "Variable selon les obligations fiscales",
+        "de": "Variabel je nach steuerlichen Verpflichtungen",
+        "en": "Variable according to tax obligations",
+        "es": "Variable según obligaciones fiscales"
+      }
+    }
+  },
+  "brexit_implications": {
+    "description": {
+      "fr": "Impact du Brexit sur les droits d'accès au marché européen",
+      "de": "Auswirkungen des Brexit auf europäische Marktzugangsrechte",
+      "en": "Impact of Brexit on European market access rights",
+      "es": "Impacto del Brexit en los derechos de acceso al mercado europeo"
+    },
+    "uk_institutions": {
+      "loss_of_passporting": {
+        "fr": "Perte des droits de passeport européen pour les institutions britanniques",
+        "de": "Verlust der europäischen Passport-Rechte für britische Institutionen",
+        "en": "Loss of European passporting rights for UK institutions",
+        "es": "Pérdida de derechos de pasaporte europeo para instituciones británicas"
+      },
+      "equivalence_decisions": {
+        "fr": "Décisions d'équivalence limitées et temporaires",
+        "de": "Begrenzte und zeitlich befristete Äquivalenzentscheidungen",
+        "en": "Limited and temporary equivalence decisions",
+        "es": "Decisiones de equivalencia limitadas y temporales"
+      }
+    },
+    "eu27_opportunities": {
+      "fr": [
+        "Opportunités de relocalisation pour Luxembourg",
+        "Attraction de nouvelles licences européennes",
+        "Renforcement du rôle de hub financier"
+      ],
+      "de": [
+        "Verlagerungsmöglichkeiten für Luxemburg",
+        "Anziehung neuer europäischer Lizenzen",
+        "Stärkung der Rolle als Finanzhub"
+      ],
+      "en": [
+        "Relocation opportunities for Luxembourg",
+        "Attraction of new European licenses",
+        "Strengthening of financial hub role"
+      ],
+      "es": [
+        "Oportunidades de reubicación para Luxemburgo",
+        "Atracción de nuevas licencias europeas",
+        "Fortalecimiento del rol de centro financiero"
+      ]
+    }
+  },
+  "digital_finance_strategy": {
+    "description": {
+      "fr": "Stratégie européenne pour la finance numérique",
+      "de": "Europäische Strategie für digitale Finanzdienstleistungen",
+      "en": "European strategy for digital finance",
+      "es": "Estrategia europea para finanzas digitales"
+    },
+    "key_areas": {
+      "crypto_assets": {
+        "fr": "Réglementation des crypto-actifs (MiCA)",
+        "de": "Regulierung von Krypto-Assets (MiCA)",
+        "en": "Crypto-assets regulation (MiCA)",
+        "es": "Regulación de cripto-activos (MiCA)"
+      },
+      "digital_operational_resilience": {
+        "fr": "Résilience opérationnelle numérique (DORA)",
+        "de": "Digitale operative Resilienz (DORA)",
+        "en": "Digital operational resilience (DORA)",
+        "es": "Resistencia operacional digital (DORA)"
+      },
+      "ai_in_finance": {
+        "fr": "Intelligence artificielle dans la finance",
+        "de": "Künstliche Intelligenz im Finanzwesen",
+        "en": "Artificial intelligence in finance",
+        "es": "Inteligencia artificial en finanzas"
+      }
+    }
+  },
+  "passporting_statistics": {
+    "luxembourg_outbound": {
+      "description": {
+        "fr": "Services passeportés depuis le Luxembourg vers d'autres États membres",
+        "de": "Passport-Dienstleistungen von Luxemburg in andere Mitgliedstaaten",
+        "en": "Passported services from Luxembourg to other member states",
+        "es": "Servicios pasaportados desde Luxemburgo a otros estados miembros"
+      },
+      "top_destinations": {
+        "fr": ["Allemagne", "France", "Italie", "Pays-Bas", "Belgique"],
+        "de": ["Deutschland", "Frankreich", "Italien", "Niederlande", "Belgien"],
+        "en": ["Germany", "France", "Italy", "Netherlands", "Belgium"],
+        "es": ["Alemania", "Francia", "Italia", "Países Bajos", "Bélgica"]
+      }
+    },
+    "luxembourg_inbound": {
+      "description": {
+        "fr": "Services passeportés vers le Luxembourg depuis d'autres États membres",
+        "de": "Passport-Dienstleistungen nach Luxemburg aus anderen Mitgliedstaaten",
+        "en": "Passported services to Luxembourg from other member states",
+        "es": "Servicios pasaportados hacia Luxemburgo desde otros estados miembros"
+      },
+      "top_origins": {
+        "fr": ["Allemagne", "France", "Pays-Bas", "Irlande", "Italie"],
+        "de": ["Deutschland", "Frankreich", "Niederlande", "Irland", "Italien"],
+        "en": ["Germany", "France", "Netherlands", "Ireland", "Italy"],
+        "es": ["Alemania", "Francia", "Países Bajos", "Irlanda", "Italia"]
+      }
+    }
+  },
+  "supervisory_convergence": {
+    "esas": {
+      "description": {
+        "fr": "Autorités européennes de surveillance - Harmonisation de la supervision",
+        "de": "Europäische Aufsichtsbehörden - Harmonisierung der Aufsicht",
+        "en": "European Supervisory Authorities - Harmonization of supervision",
+        "es": "Autoridades Europeas de Supervisión - Armonización de la supervisión"
+      },
+      "authorities": {
+        "eba": {
+          "name": {
+            "fr": "Autorité bancaire européenne",
+            "de": "Europäische Bankenaufsichtsbehörde",
+            "en": "European Banking Authority",
+            "es": "Autoridad Bancaria Europea"
+          },
+          "role": {
+            "fr": "Supervision bancaire et réglementation prudentielle",
+            "de": "Bankenaufsicht und Aufsichtsrecht",
+            "en": "Banking supervision and prudential regulation",
+            "es": "Supervisión bancaria y regulación prudencial"
+          }
+        },
+        "esma": {
+          "name": {
+            "fr": "Autorité européenne des marchés financiers",
+            "de": "Europäische Wertpapier- und Marktaufsichtsbehörde",
+            "en": "European Securities and Markets Authority",
+            "es": "Autoridad Europea de Valores y Mercados"
+          },
+          "role": {
+            "fr": "Supervision des marchés financiers et protection des investisseurs",
+            "de": "Aufsicht über Finanzmärkte und Anlegerschutz",
+            "en": "Financial markets supervision and investor protection",
+            "es": "Supervisión de mercados financieros y protección de inversores"
+          }
+        },
+        "eiopa": {
+          "name": {
+            "fr": "Autorité européenne des assurances et des pensions professionnelles",
+            "de": "Europäische Aufsichtsbehörde für das Versicherungswesen und die betriebliche Altersversorgung",
+            "en": "European Insurance and Occupational Pensions Authority",
+            "es": "Autoridad Europea de Seguros y Pensiones de Jubilación"
+          },
+          "role": {
+            "fr": "Supervision des assurances et des pensions",
+            "de": "Aufsicht über Versicherungen und Pensionen",
+            "en": "Insurance and pensions supervision",
+            "es": "Supervisión de seguros y pensiones"
+          }
+        }
+      }
+    }
+  }
+}

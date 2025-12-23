@@ -1,0 +1,1258 @@
+{
+  "kyc": {
+    "full_name": {
+      "fr": "Connaissance du client",
+      "de": "Kundenkenntnis",
+      "en": "Know Your Customer",
+      "es": "Conoce a tu cliente"
+    },
+    "description": {
+      "fr": "Processus réglementaire d'identification et de vérification des clients selon les standards internationaux et luxembourgeois",
+      "de": "Regulatorischer Prozess zur Identifizierung und Überprüfung von Kunden nach internationalen und luxemburgischen Standards",
+      "en": "Regulatory process of identifying and verifying customers according to international and Luxembourg standards",
+      "es": "Proceso regulatorio de identificación y verificación de clientes según estándares internacionales y luxemburgueses"
+    },
+    "legal_basis": {
+      "luxembourg": "Loi du 12 novembre 2004 relative à la lutte contre le blanchiment et contre le financement du terrorisme",
+      "eu": "Directive (UE) 2018/843 (5ème directive anti-blanchiment)",
+      "international": "Recommandations du GAFI"
+    },
+    "scope": {
+      "fr": "Tous les professionnels du secteur financier, établissements de crédit, entreprises d'investissement",
+      "de": "Alle Fachleute des Finanzsektors, Kreditinstitute, Wertpapierfirmen",
+      "en": "All financial sector professionals, credit institutions, investment firms",
+      "es": "Todos los profesionales del sector financiero, instituciones de crédito, empresas de inversión"
+    },
+    "key_requirements": {
+      "fr": [
+        "Identification du client avec documents officiels",
+        "Vérification de l'identité par moyens appropriés",
+        "Identification du bénéficiaire effectif (≥25%)",
+        "Évaluation du profil de risque client",
+        "Surveillance continue de la relation d'affaires",
+        "Conservation des documents pendant 5 ans minimum"
+      ],
+      "de": [
+        "Kundenidentifikation mit offiziellen Dokumenten",
+        "Identitätsüberprüfung mit geeigneten Mitteln",
+        "Identifikation des wirtschaftlichen Eigentümers (≥25%)",
+        "Bewertung des Kundenrisikoprofils",
+        "Kontinuierliche Überwachung der Geschäftsbeziehung",
+        "Dokumentenaufbewahrung für mindestens 5 Jahre"
+      ],
+      "en": [
+        "Customer identification with official documents",
+        "Identity verification by appropriate means",
+        "Beneficial owner identification (≥25%)",
+        "Customer risk profile assessment",
+        "Ongoing monitoring of business relationship",
+        "Document retention for minimum 5 years"
+      ],
+      "es": [
+        "Identificación del cliente con documentos oficiales",
+        "Verificación de identidad por medios apropiados",
+        "Identificación del beneficiario efectivo (≥25%)",
+        "Evaluación del perfil de riesgo del cliente",
+        "Monitoreo continuo de la relación comercial",
+        "Conservación de documentos por mínimo 5 años"
+      ]
+    },
+    "risk_categories": {
+      "low_risk": {
+        "fr": [
+          "Clients résidents UE",
+          "Institutions financières réglementées",
+          "Sociétés cotées"
+        ],
+        "de": [
+          "EU-ansässige Kunden",
+          "Regulierte Finanzinstitute",
+          "Börsennotierte Unternehmen"
+        ],
+        "en": [
+          "EU resident clients",
+          "Regulated financial institutions",
+          "Listed companies"
+        ],
+        "es": [
+          "Clientes residentes UE",
+          "Instituciones financieras reguladas",
+          "Empresas cotizadas"
+        ]
+      },
+      "high_risk": {
+        "fr": [
+          "PEP",
+          "Pays à haut risque",
+          "Structures offshore complexes",
+          "Clients à distance"
+        ],
+        "de": [
+          "PEP",
+          "Hochrisikoländer",
+          "Komplexe Offshore-Strukturen",
+          "Fernkunden"
+        ],
+        "en": [
+          "PEPs",
+          "High-risk countries",
+          "Complex offshore structures",
+          "Remote clients"
+        ],
+        "es": [
+          "PEP",
+          "Países de alto riesgo",
+          "Estructuras offshore complejas",
+          "Clientes remotos"
+        ]
+      }
+    },
+    "penalties": {
+      "administrative": "€10,000 - €5,000,000",
+      "criminal": "€500 - €1,250,000 + imprisonment up to 5 years"
+    },
+    "supervisory_authority": "CSSF",
+    "related_regulations": [
+      "aml",
+      "ctf",
+      "fatca",
+      "crs"
+    ]
+  },
+  "aml": {
+    "full_name": {
+      "fr": "Lutte contre le blanchiment d'argent",
+      "de": "Geldwäschebekämpfung",
+      "en": "Anti-Money Laundering",
+      "es": "Lucha contra el lavado de dinero"
+    },
+    "description": {
+      "fr": "Ensemble de procédures et mesures pour prévenir, détecter et signaler le blanchiment d'argent et infractions sous-jacentes",
+      "de": "Satz von Verfahren und Maßnahmen zur Verhinderung, Erkennung und Meldung von Geldwäsche und Grundstraftaten",
+      "en": "Set of procedures and measures to prevent, detect and report money laundering and predicate offences",
+      "es": "Conjunto de procedimientos y medidas para prevenir, detectar y reportar el lavado de dinero y delitos subyacentes"
+    },
+    "legal_basis": {
+      "luxembourg": "Loi du 12 novembre 2004, Loi du 27 octobre 2010",
+      "eu": "Directive (UE) 2018/843, Règlement (UE) 2018/1672",
+      "international": "Recommandations GAFI, Conventions internationales"
+    },
+    "core_obligations": {
+      "transaction_monitoring": {
+        "fr": "Surveillance continue des transactions avec systèmes automatisés et contrôles manuels",
+        "de": "Kontinuierliche Transaktionsüberwachung mit automatisierten Systemen und manuellen Kontrollen",
+        "en": "Continuous transaction monitoring with automated systems and manual controls",
+        "es": "Monitoreo continuo de transacciones con sistemas automatizados y controles manuales"
+      },
+      "suspicious_reporting": {
+        "fr": "Déclaration obligatoire des transactions suspectes à la CRF sans délai",
+        "de": "Obligatorische Meldung verdächtiger Transaktionen an die CRF ohne Verzögerung",
+        "en": "Mandatory reporting of suspicious transactions to CRF without delay",
+        "es": "Reporte obligatorio de transacciones sospechosas a la CRF sin demora"
+      },
+      "sanctions_screening": {
+        "fr": "Criblage en temps réel contre listes de sanctions (UE, ONU, OFAC)",
+        "de": "Echtzeit-Screening gegen Sanktionslisten (EU, UN, OFAC)",
+        "en": "Real-time screening against sanctions lists (EU, UN, OFAC)",
+        "es": "Cribado en tiempo real contra listas de sanciones (UE, ONU, OFAC)"
+      }
+    },
+    "reporting_thresholds": {
+      "cash_transactions": "€10,000",
+      "suspicious_activity": "No minimum threshold",
+      "cross_border": "€10,000"
+    },
+    "training_requirements": {
+      "fr": "Formation initiale et continue du personnel, mise à jour annuelle minimum",
+      "de": "Anfangs- und fortlaufende Personalschulung, mindestens jährliche Aktualisierung",
+      "en": "Initial and ongoing staff training, minimum annual update",
+      "es": "Capacitación inicial y continua del personal, actualización anual mínima"
+    },
+    "record_keeping": "5 years minimum retention period",
+    "supervisory_authority": "CSSF, CRF",
+    "related_regulations": [
+      "kyc",
+      "ctf",
+      "mar"
+    ]
+  },
+  "ctf": {
+    "full_name": {
+      "fr": "Lutte contre le financement du terrorisme",
+      "de": "Terrorismusfinanzierungsbekämpfung",
+      "en": "Counter-Terrorism Financing",
+      "es": "Lucha contra la financiación del terrorismo"
+    },
+    "description": {
+      "fr": "Mesures spécifiques visant à empêcher le financement d'activités terroristes et organisations terroristes",
+      "de": "Spezifische Maßnahmen zur Verhinderung der Finanzierung terroristischer Aktivitäten und Organisationen",
+      "en": "Specific measures to prevent financing of terrorist activities and organizations",
+      "es": "Medidas específicas para prevenir la financiación de actividades y organizaciones terroristas"
+    },
+    "legal_basis": {
+      "luxembourg": "Loi du 12 novembre 2004, Loi du 27 octobre 2010",
+      "eu": "Directive (UE) 2018/843, Règlements sanctions UE",
+      "international": "Résolutions du Conseil de sécurité ONU, Recommandations GAFI"
+    },
+    "key_measures": {
+      "asset_freezing": {
+        "fr": "Gel immédiat des avoirs des personnes et entités désignées",
+        "de": "Sofortiges Einfrieren von Vermögenswerten bezeichneter Personen und Entitäten",
+        "en": "Immediate freezing of assets of designated persons and entities",
+        "es": "Congelamiento inmediato de activos de personas y entidades designadas"
+      },
+      "prohibition_funds": {
+        "fr": "Interdiction de mise à disposition de fonds ou ressources économiques",
+        "de": "Verbot der Bereitstellung von Geldern oder wirtschaftlichen Ressourcen",
+        "en": "Prohibition of making funds or economic resources available",
+        "es": "Prohibición de poner a disposición fondos o recursos económicos"
+      },
+      "enhanced_screening": {
+        "fr": "Criblage renforcé contre toutes les listes terroristes",
+        "de": "Verstärktes Screening gegen alle Terrorlisten",
+        "en": "Enhanced screening against all terrorist lists",
+        "es": "Cribado reforzado contra todas las listas terroristas"
+      }
+    },
+    "sanctions_lists": {
+      "eu": "Liste consolidée UE des personnes et entités",
+      "un": "Liste du Comité 1267/1989 Al-Qaida",
+      "national": "Listes nationales luxembourgeoises"
+    },
+    "immediate_reporting": {
+      "fr": "Déclaration immédiate à la CRF et gel des avoirs",
+      "de": "Sofortige Meldung an CRF und Einfrieren der Vermögenswerte",
+      "en": "Immediate reporting to CRF and asset freezing",
+      "es": "Reporte inmediato a CRF y congelamiento de activos"
+    },
+    "penalties": {
+      "administrative": "€125,000 - €1,250,000",
+      "criminal": "€1,250 - €3,750 + imprisonment up to 5 years"
+    },
+    "supervisory_authority": "CSSF, CRF, Ministère des Finances",
+    "related_regulations": [
+      "aml",
+      "kyc",
+      "sanctions"
+    ]
+  },
+  "gdpr": {
+    "full_name": {
+      "fr": "Règlement général sur la protection des données",
+      "de": "Datenschutz-Grundverordnung",
+      "en": "General Data Protection Regulation",
+      "es": "Reglamento General de Protección de Datos"
+    },
+    "description": {
+      "fr": "Réglementation européenne uniforme sur la protection des données personnelles et la vie privée",
+      "de": "Einheitliche europäische Verordnung zum Schutz personenbezogener Daten und der Privatsphäre",
+      "en": "Uniform European regulation on personal data protection and privacy",
+      "es": "Regulación europea uniforme sobre protección de datos personales y privacidad"
+    },
+    "legal_basis": {
+      "eu": "Règlement (UE) 2016/679",
+      "luxembourg": "Loi du 1er août 2018 portant organisation de la CNPD"
+    },
+    "scope": {
+      "fr": "Toutes les organisations traitant des données personnelles de résidents UE",
+      "de": "Alle Organisationen, die personenbezogene Daten von EU-Bürgern verarbeiten",
+      "en": "All organizations processing personal data of EU residents",
+      "es": "Todas las organizaciones que procesan datos personales de residentes UE"
+    },
+    "core_principles": {
+      "lawfulness": {
+        "fr": "Licéité - Base légale appropriée pour tout traitement",
+        "de": "Rechtmäßigkeit - Angemessene Rechtsgrundlage für jede Verarbeitung",
+        "en": "Lawfulness - Appropriate legal basis for any processing",
+        "es": "Legalidad - Base legal apropiada para cualquier procesamiento"
+      },
+      "purpose_limitation": {
+        "fr": "Limitation des finalités - Finalités déterminées, explicites et légitimes",
+        "de": "Zweckbindung - Bestimmte, ausdrückliche und rechtmäßige Zwecke",
+        "en": "Purpose limitation - Specific, explicit and legitimate purposes",
+        "es": "Limitación de propósito - Propósitos específicos, explícitos y legítimos"
+      },
+      "data_minimisation": {
+        "fr": "Minimisation - Données adéquates, pertinentes et limitées au nécessaire",
+        "de": "Datenminimierung - Angemessene, relevante und auf das Notwendige beschränkte Daten",
+        "en": "Data minimisation - Adequate, relevant and limited to necessary data",
+        "es": "Minimización - Datos adecuados, relevantes y limitados a lo necesario"
+      }
+    },
+    "individual_rights": {
+      "fr": [
+        "Droit à l'information",
+        "Droit d'accès",
+        "Droit de rectification",
+        "Droit à l'effacement (droit à l'oubli)",
+        "Droit à la limitation du traitement",
+        "Droit à la portabilité des données",
+        "Droit d'opposition",
+        "Droits relatifs à la prise de décision automatisée"
+      ],
+      "de": [
+        "Recht auf Information",
+        "Auskunftsrecht",
+        "Recht auf Berichtigung",
+        "Recht auf Löschung (Recht auf Vergessenwerden)",
+        "Recht auf Einschränkung der Verarbeitung",
+        "Recht auf Datenübertragbarkeit",
+        "Widerspruchsrecht",
+        "Rechte bezüglich automatisierter Entscheidungsfindung"
+      ],
+      "en": [
+        "Right to information",
+        "Right of access",
+        "Right to rectification",
+        "Right to erasure (right to be forgotten)",
+        "Right to restriction of processing",
+        "Right to data portability",
+        "Right to object",
+        "Rights relating to automated decision-making"
+      ],
+      "es": [
+        "Derecho a la información",
+        "Derecho de acceso",
+        "Derecho de rectificación",
+        "Derecho al borrado (derecho al olvido)",
+        "Derecho a la limitación del tratamiento",
+        "Derecho a la portabilidad de datos",
+        "Derecho de oposición",
+        "Derechos relativos a la toma de decisiones automatizada"
+      ]
+    },
+    "breach_notification": {
+      "to_authority": "72 hours to CNPD",
+      "to_data_subjects": "Without undue delay if high risk",
+      "documentation": "Mandatory breach register"
+    },
+    "penalties": {
+      "administrative": "Up to €20,000,000 or 4% of global annual turnover",
+      "categories": {
+        "tier_1": "€10,000,000 or 2% of turnover",
+        "tier_2": "€20,000,000 or 4% of turnover"
+      }
+    },
+    "supervisory_authority": "CNPD",
+    "dpo_requirements": {
+      "mandatory_for": [
+        "Public authorities",
+        "Large scale systematic monitoring",
+        "Large scale special category data processing"
+      ]
+    },
+    "related_regulations": [
+      "e-privacy",
+      "nis_directive",
+      "ai_act"
+    ]
+  },
+  "mifid_ii": {
+    "full_name": {
+      "fr": "Directive concernant les marchés d'instruments financiers II",
+      "de": "Richtlinie über Märkte für Finanzinstrumente II",
+      "en": "Markets in Financial Instruments Directive II",
+      "es": "Directiva de Mercados de Instrumentos Financieros II"
+    },
+    "description": {
+      "fr": "Réglementation renforcée visant à améliorer la protection des investisseurs et la transparence des marchés financiers",
+      "de": "Verstärkte Vorschrift zur Verbesserung des Anlegerschutzes und der Transparenz auf Finanzmärkten",
+      "en": "Enhanced regulation aimed at improving investor protection and financial market transparency",
+      "es": "Regulación reforzada destinada a mejorar la protección de inversores y transparencia de mercados financieros"
+    },
+    "legal_basis": {
+      "eu": "Directive 2014/65/UE, Règlement (UE) No 600/2014 (MiFIR)",
+      "luxembourg": "Loi du 30 mai 2018 relative aux marchés d'instruments financiers"
+    },
+    "scope": {
+      "fr": "Entreprises d'investissement, marchés réglementés, prestataires de services d'investissement",
+      "de": "Wertpapierfirmen, regulierte Märkte, Wertpapierdienstleister",
+      "en": "Investment firms, regulated markets, investment service providers",
+      "es": "Empresas de inversión, mercados regulados, proveedores de servicios de inversión"
+    },
+    "investor_protection": {
+      "client_categorisation": {
+        "retail": {
+          "fr": "Clients de détail - Protection maximale",
+          "de": "Kleinanleger - Maximaler Schutz",
+          "en": "Retail clients - Maximum protection",
+          "es": "Clientes minoristas - Protección máxima"
+        },
+        "professional": {
+          "fr": "Clients professionnels - Protection adaptée",
+          "de": "Professionelle Kunden - Angepasster Schutz",
+          "en": "Professional clients - Adapted protection",
+          "es": "Clientes profesionales - Protección adaptada"
+        },
+        "eligible_counterparties": {
+          "fr": "Contreparties éligibles - Protection minimale",
+          "de": "Geeignete Gegenparteien - Minimaler Schutz",
+          "en": "Eligible counterparties - Minimal protection",
+          "es": "Contrapartes elegibles - Protección mínima"
+        }
+      },
+      "suitability_assessment": {
+        "fr": "Évaluation obligatoire des connaissances, expérience, situation financière et objectifs",
+        "de": "Obligatorische Bewertung von Kenntnissen, Erfahrung, finanzieller Situation und Zielen",
+        "en": "Mandatory assessment of knowledge, experience, financial situation and objectives",
+        "es": "Evaluación obligatoria de conocimientos, experiencia, situación financiera y objetivos"
+      },
+      "appropriateness_test": {
+        "fr": "Test de caractère approprié pour services sans conseil",
+        "de": "Geeignetheitstest für Dienstleistungen ohne Beratung",
+        "en": "Appropriateness test for non-advisory services",
+        "es": "Prueba de conveniencia para servicios sin asesoramiento"
+      }
+    },
+    "conduct_requirements": {
+      "best_execution": {
+        "fr": "Obligation d'obtenir le meilleur résultat possible pour les clients",
+        "de": "Verpflichtung, das bestmögliche Ergebnis für Kunden zu erzielen",
+        "en": "Obligation to obtain the best possible result for clients",
+        "es": "Obligación de obtener el mejor resultado posible para los clientes"
+      },
+      "conflicts_management": {
+        "fr": "Identification, prévention et gestion des conflits d'intérêts",
+        "de": "Identifikation, Prävention und Management von Interessenkonflikten",
+        "en": "Identification, prevention and management of conflicts of interest",
+        "es": "Identificación, prevención y gestión de conflictos de interés"
+      },
+      "product_governance": {
+        "fr": "Processus de conception, distribution et révision des produits financiers",
+        "de": "Prozess für Design, Vertrieb und Überprüfung von Finanzprodukten",
+        "en": "Process for design, distribution and review of financial products",
+        "es": "Proceso de diseño, distribución y revisión de productos financieros"
+      }
+    },
+    "reporting_obligations": {
+      "transaction_reporting": {
+        "fr": "Déclaration de toutes les transactions sur instruments financiers",
+        "de": "Meldung aller Transaktionen mit Finanzinstrumenten",
+        "en": "Reporting of all transactions in financial instruments",
+        "es": "Reporte de todas las transacciones en instrumentos financieros"
+      },
+      "best_execution_reports": {
+        "fr": "Rapports annuels sur la qualité d'exécution",
+        "de": "Jährliche Berichte über Ausführungsqualität",
+        "en": "Annual reports on execution quality",
+        "es": "Informes anuales sobre la calidad de ejecución"
+      }
+    },
+    "penalties": {
+      "administrative": "Up to €5,000,000 or 10% of annual turnover",
+      "publication": "Mandatory publication of penalties"
+    },
+    "supervisory_authority": "CSSF",
+    "related_regulations": [
+      "mar",
+      "emir",
+      "ucits",
+      "aifmd"
+    ]
+  },
+  "fatca": {
+    "full_name": {
+      "fr": "Loi sur la conformité fiscale des comptes étrangers",
+      "de": "Gesetz zur steuerlichen Konformität ausländischer Konten",
+      "en": "Foreign Account Tax Compliance Act",
+      "es": "Ley de Cumplimiento Fiscal de Cuentas Extranjeras"
+    },
+    "description": {
+      "fr": "Loi américaine visant à lutter contre l'évasion fiscale des contribuables américains détenant des comptes à l'étranger",
+      "de": "US-Gesetz zur Bekämpfung der Steuerhinterziehung amerikanischer Steuerzahler mit Auslandskonten",
+      "en": "US law to combat tax evasion by US taxpayers holding foreign accounts",
+      "es": "Ley de EE.UU. para combatir la evasión fiscal de contribuyentes estadounidenses con cuentas extranjeras"
+    },
+    "legal_basis": {
+      "us": "Internal Revenue Code Section 1471-1474",
+      "luxembourg": "Accord intergouvernemental Luxembourg-États-Unis du 28 mars 2014"
+    },
+    "scope": {
+      "fr": "Institutions financières étrangères (FFI) avec clients américains",
+      "de": "Ausländische Finanzinstitute (FFI) mit US-Kunden",
+      "en": "Foreign Financial Institutions (FFI) with US clients",
+      "es": "Instituciones Financieras Extranjeras (FFI) con clientes estadounidenses"
+    },
+    "key_obligations": {
+      "us_person_identification": {
+        "fr": "Identification de toutes les personnes américaines (citoyens, résidents, entités)",
+        "de": "Identifikation aller US-Personen (Bürger, Einwohner, Entitäten)",
+        "en": "Identification of all US persons (citizens, residents, entities)",
+        "es": "Identificación de todas las personas estadounidenses (ciudadanos, residentes, entidades)"
+      },
+      "account_reporting": {
+        "fr": "Déclaration annuelle des comptes détenus par des personnes américaines",
+        "de": "Jährliche Meldung von Konten im Besitz von US-Personen",
+        "en": "Annual reporting of accounts held by US persons",
+        "es": "Reporte anual de cuentas mantenidas por personas estadounidenses"
+      },
+      "withholding": {
+        "fr": "Retenue à la source de 30% sur paiements américains si non-conforme",
+        "de": "30% Quellensteuer auf US-Zahlungen bei Nicht-Compliance",
+        "en": "30% withholding tax on US payments if non-compliant",
+        "es": "Retención del 30% sobre pagos estadounidenses si no cumple"
+      }
+    },
+    "reporting_requirements": {
+      "frequency": "Annual",
+      "deadline": "31 March following the calendar year",
+      "method": "IDES (International Data Exchange Service)",
+      "content": [
+        "Account holder information",
+        "Account numbers",
+        "Account balances",
+        "Income paid or credited"
+      ]
+    },
+    "documentation": {
+      "w8_series": {
+        "fr": "Formulaires W-8 pour les entités étrangères",
+        "de": "W-8-Formulare für ausländische Entitäten",
+        "en": "W-8 forms for foreign entities",
+        "es": "Formularios W-8 para entidades extranjeras"
+      },
+      "w9": {
+        "fr": "Formulaire W-9 pour les personnes américaines",
+        "de": "W-9-Formular für US-Personen",
+        "en": "W-9 form for US persons",
+        "es": "Formulario W-9 para personas estadounidenses"
+      }
+    },
+    "penalties": {
+      "non_compliance": "30% withholding on US source payments",
+      "reporting_failures": "Penalties under US tax law"
+    },
+    "supervisory_authority": "Administration des Contributions Directes (ACD)",
+    "related_regulations": [
+      "crs",
+      "automatic_exchange"
+    ]
+  },
+  "crs": {
+    "full_name": {
+      "fr": "Norme commune de déclaration de l'OCDE",
+      "de": "Gemeinsamer Meldestandard der OECD",
+      "en": "Common Reporting Standard",
+      "es": "Estándar Común de Reporting"
+    },
+    "description": {
+      "fr": "Standard international développé par l'OCDE pour l'échange automatique d'informations de comptes financiers",
+      "de": "Internationaler Standard der OECD für den automatischen Austausch von Finanzkonteninformationen",
+      "en": "International standard developed by OECD for automatic exchange of financial account information",
+      "es": "Estándar internacional desarrollado por la OCDE para intercambio automático de información de cuentas financieras"
+    },
+    "legal_basis": {
+      "oecd": "Common Reporting Standard for Automatic Exchange of Financial Account Information",
+      "eu": "Directive 2014/107/UE (DAC2)",
+      "luxembourg": "Loi du 18 décembre 2015 relative à l'échange automatique de renseignements"
+    },
+    "scope": {
+      "fr": "Institutions financières déclarantes dans juridictions participantes",
+      "de": "Meldende Finanzinstitute in teilnehmenden Rechtsordnungen",
+      "en": "Reporting financial institutions in participating jurisdictions",
+      "es": "Instituciones financieras informantes en jurisdicciones participantes"
+    },
+    "account_types": {
+      "reportable": {
+        "fr": [
+          "Comptes de dépôt",
+          "Comptes de conservation",
+          "Contrats d'assurance avec valeur de rachat",
+          "Rentes"
+        ],
+        "de": [
+          "Einlagenkonten",
+          "Verwahrkonten",
+          "Versicherungsverträge mit Rückkaufswert",
+          "Renten"
+        ],
+        "en": [
+          "Depository accounts",
+          "Custodial accounts",
+          "Insurance contracts with cash value",
+          "Annuities"
+        ],
+        "es": [
+          "Cuentas de depósito",
+          "Cuentas de custodia",
+          "Contratos de seguro con valor de rescate",
+          "Anualidades"
+        ]
+      }
+    },
+    "due_diligence": {
+      "new_accounts": {
+        "fr": "Procédures CRS pour nouveaux comptes basées sur l'auto-certification",
+        "de": "CRS-Verfahren für neue Konten basierend auf Selbstauskunft",
+        "en": "CRS procedures for new accounts based on self-certification",
+        "es": "Procedimientos CRS para nuevas cuentas basados en auto-certificación"
+      },
+      "existing_accounts": {
+        "fr": "Révision des comptes existants selon seuils définis",
+        "de": "Überprüfung bestehender Konten nach definierten Schwellenwerten",
+        "en": "Review of existing accounts according to defined thresholds",
+        "es": "Revisión de cuentas existentes según umbrales definidos"
+      }
+    },
+    "reporting_information": {
+      "fr": [
+        "Nom, adresse, TIN et date/lieu de naissance",
+        "Numéro de compte",
+        "Solde ou valeur du compte au 31 décembre",
+        "Revenus bruts versés ou crédités"
+      ],
+      "de": [
+        "Name, Anschrift, TIN und Geburtsdatum/-ort",
+        "Kontonummer",
+        "Kontosaldo oder -wert zum 31. Dezember",
+        "Gezahlte oder gutgeschriebene Bruttoeinkünfte"
+      ],
+      "en": [
+        "Name, address, TIN and date/place of birth",
+        "Account number",
+        "Account balance or value as of 31 December",
+        "Gross income paid or credited"
+      ],
+      "es": [
+        "Nombre, dirección, TIN y fecha/lugar de nacimiento",
+        "Número de cuenta",
+        "Saldo o valor de cuenta al 31 de diciembre",
+        "Ingresos brutos pagados o acreditados"
+      ]
+    },
+    "exchange_timeline": {
+      "reporting_deadline": "31 May following the calendar year",
+      "exchange_deadline": "30 September following the calendar year",
+      "first_exchange": "2017 (for 2016 data)"
+    },
+    "penalties": {
+      "non_compliance": "Administrative penalties under national law",
+      "false_information": "Criminal penalties possible"
+    },
+    "supervisory_authority": "Administration des Contributions Directes (ACD)",
+    "related_regulations": [
+      "fatca",
+      "dac6",
+      "automatic_exchange"
+    ]
+  },
+  "psd2": {
+    "full_name": {
+      "fr": "Directive sur les services de paiement 2",
+      "de": "Zahlungsdiensterichtlinie 2",
+      "en": "Payment Services Directive 2",
+      "es": "Directiva de Servicios de Pago 2"
+    },
+    "description": {
+      "fr": "Réglementation européenne modernisant les services de paiement et favorisant l'innovation financière",
+      "de": "Europäische Vorschrift zur Modernisierung von Zahlungsdiensten und Förderung von Finanzinnovation",
+      "en": "European regulation modernizing payment services and promoting financial innovation",
+      "es": "Regulación europea modernizando servicios de pago y promoviendo innovación financiera"
+    },
+    "legal_basis": {
+      "eu": "Directive (UE) 2015/2366",
+      "luxembourg": "Loi du 10 novembre 2009 modifiée relative aux services de paiement"
+    },
+    "scope": {
+      "fr": "Prestataires de services de paiement, institutions de paiement, établissements de crédit",
+      "de": "Zahlungsdienstleister, Zahlungsinstitute, Kreditinstitute",
+      "en": "Payment service providers, payment institutions, credit institutions",
+      "es": "Proveedores de servicios de pago, instituciones de pago, instituciones de crédito"
+    },
+    "new_services": {
+      "aisp": {
+        "name": {
+          "fr": "Services d'information sur les comptes (AISP)",
+          "de": "Kontoinformationsdienste (AISP)",
+          "en": "Account Information Services (AISP)",
+          "es": "Servicios de información de cuentas (AISP)"
+        },
+        "description": {
+          "fr": "Agrégation d'informations sur différents comptes de paiement",
+          "de": "Aggregation von Informationen über verschiedene Zahlungskonten",
+          "en": "Aggregation of information on different payment accounts",
+          "es": "Agregación de información sobre diferentes cuentas de pago"
+        }
+      },
+      "pisp": {
+        "name": {
+          "fr": "Services d'initiation de paiement (PISP)",
+          "de": "Zahlungsauslösedienste (PISP)",
+          "en": "Payment Initiation Services (PISP)",
+          "es": "Servicios de iniciación de pago (PISP)"
+        },
+        "description": {
+          "fr": "Initiation de paiements depuis le compte du payeur",
+          "de": "Initiierung von Zahlungen vom Konto des Zahlers",
+          "en": "Initiation of payments from the payer's account",
+          "es": "Iniciación de pagos desde la cuenta del pagador"
+        }
+      }
+    },
+    "strong_customer_authentication": {
+      "definition": {
+        "fr": "Authentification basée sur au moins deux éléments de catégories différentes",
+        "de": "Authentifizierung basierend auf mindestens zwei Elementen verschiedener Kategorien",
+        "en": "Authentication based on at least two elements from different categories",
+        "es": "Autenticación basada en al menos dos elementos de diferentes categorías"
+      },
+      "categories": {
+        "knowledge": {
+          "fr": "Connaissance - Quelque chose que seul l'utilisateur connaît",
+          "de": "Wissen - Etwas, das nur der Benutzer kennt",
+          "en": "Knowledge - Something only the user knows",
+          "es": "Conocimiento - Algo que solo el usuario conoce"
+        },
+        "possession": {
+          "fr": "Possession - Quelque chose que seul l'utilisateur possède",
+          "de": "Besitz - Etwas, das nur der Benutzer besitzt",
+          "en": "Possession - Something only the user possesses",
+          "es": "Posesión - Algo que solo el usuario posee"
+        },
+        "inherence": {
+          "fr": "Inhérence - Quelque chose que l'utilisateur est",
+          "de": "Inhärenz - Etwas, was der Benutzer ist",
+          "en": "Inherence - Something the user is",
+          "es": "Inherencia - Algo que el usuario es"
+        }
+      },
+      "exemptions": {
+        "fr": [
+          "Paiements de faible montant",
+          "Transactions récurrentes",
+          "Bénéficiaires de confiance"
+        ],
+        "de": [
+          "Zahlungen geringen Betrags",
+          "Wiederkehrende Transaktionen",
+          "Vertrauenswürdige Begünstigte"
+        ],
+        "en": [
+          "Low-value payments",
+          "Recurring transactions",
+          "Trusted beneficiaries"
+        ],
+        "es": [
+          "Pagos de bajo valor",
+          "Transacciones recurrentes",
+          "Beneficiarios de confianza"
+        ]
+      }
+    },
+    "open_banking": {
+      "api_requirements": {
+        "fr": "APIs dédiées pour l'accès aux comptes par les tiers prestataires",
+        "de": "Dedizierte APIs für Kontozugang durch Drittanbieter",
+        "en": "Dedicated APIs for account access by third-party providers",
+        "es": "APIs dedicadas para acceso a cuentas por proveedores terceros"
+      },
+      "access_conditions": {
+        "fr": [
+          "Accès gratuit",
+          "Mêmes conditions que les clients directs",
+          "Interface sécurisée"
+        ],
+        "de": [
+          "Kostenloser Zugang",
+          "Gleiche Bedingungen wie Direktkunden",
+          "Sichere Schnittstelle"
+        ],
+        "en": [
+          "Free access",
+          "Same conditions as direct customers",
+          "Secure interface"
+        ],
+        "es": [
+          "Acceso gratuito",
+          "Mismas condiciones que clientes directos",
+          "Interfaz segura"
+        ]
+      }
+    },
+    "consumer_protection": {
+      "liability_rules": {
+        "fr": "Règles de responsabilité renforcées pour les paiements non autorisés",
+        "de": "Verstärkte Haftungsregeln für nicht autorisierte Zahlungen",
+        "en": "Enhanced liability rules for unauthorized payments",
+        "es": "Reglas de responsabilidad reforzadas para pagos no autorizados"
+      },
+      "refund_rights": {
+        "fr": "Droit de remboursement pour les paiements autorisés dans certaines conditions",
+        "de": "Erstattungsrecht für autorisierte Zahlungen unter bestimmten Bedingungen",
+        "en": "Refund rights for authorized payments under certain conditions",
+        "es": "Derechos de reembolso para pagos autorizados bajo ciertas condiciones"
+      }
+    },
+    "penalties": {
+      "administrative": "Up to €5,000,000 or 10% of annual turnover",
+      "operational": "Suspension or withdrawal of authorization"
+    },
+    "supervisory_authority": "CSSF",
+    "related_regulations": [
+      "e_money",
+      "payment_accounts",
+      "gdpr"
+    ]
+  },
+  "mar": {
+    "full_name": {
+      "fr": "Règlement sur les abus de marché",
+      "de": "Marktmissbrauchsverordnung",
+      "en": "Market Abuse Regulation",
+      "es": "Reglamento sobre Abuso de Mercado"
+    },
+    "description": {
+      "fr": "Réglementation européenne uniforme visant à prévenir et sanctionner les abus de marché",
+      "de": "Einheitliche europäische Vorschrift zur Verhinderung und Sanktionierung von Marktmissbrauch",
+      "en": "Uniform European regulation to prevent and sanction market abuse",
+      "es": "Regulación europea uniforme para prevenir y sancionar el abuso de mercado"
+    },
+    "legal_basis": {
+      "eu": "Règlement (UE) No 596/2014, Directive 2014/57/UE (MAD II)",
+      "luxembourg": "Loi du 23 décembre 2016 relative aux abus de marché"
+    },
+    "scope": {
+      "fr": "Instruments financiers admis sur marchés réglementés, MTF et OTF dans l'UE",
+      "de": "Finanzinstrumente zugelassen auf regulierten Märkten, MTF und OTF in der EU",
+      "en": "Financial instruments admitted on regulated markets, MTF and OTF in the EU",
+      "es": "Instrumentos financieros admitidos en mercados regulados, MTF y OTF en la UE"
+    },
+    "prohibited_practices": {
+      "insider_dealing": {
+        "definition": {
+          "fr": "Utilisation d'informations privilégiées pour négocier ou recommander",
+          "de": "Nutzung von Insiderinformationen zum Handel oder für Empfehlungen",
+          "en": "Use of inside information for trading or recommending",
+          "es": "Uso de información privilegiada para negociar o recomendar"
+        },
+        "elements": {
+          "fr": [
+            "Information privilégiée",
+            "Négociation",
+            "Recommandation ou incitation"
+          ],
+          "de": [
+            "Insiderinformation",
+            "Handel",
+            "Empfehlung oder Anstiftung"
+          ],
+          "en": [
+            "Inside information",
+            "Trading",
+            "Recommendation or inducement"
+          ],
+          "es": [
+            "Información privilegiada",
+            "Negociación",
+            "Recomendación o inducción"
+          ]
+        }
+      },
+      "market_manipulation": {
+        "definition": {
+          "fr": "Manipulation des cours ou diffusion d'informations fausses ou trompeuses",
+          "de": "Manipulation von Kursen oder Verbreitung falscher oder irreführender Informationen",
+          "en": "Price manipulation or dissemination of false or misleading information",
+          "es": "Manipulación de precios o difusión de información falsa o engañosa"
+        },
+        "types": {
+          "fr": [
+            "Manipulation de transactions",
+            "Manipulation d'informations",
+            "Manipulation de références"
+          ],
+          "de": [
+            "Transaktionsmanipulation",
+            "Informationsmanipulation",
+            "Referenzmanipulation"
+          ],
+          "en": [
+            "Transaction-based manipulation",
+            "Information-based manipulation",
+            "Benchmark manipulation"
+          ],
+          "es": [
+            "Manipulación basada en transacciones",
+            "Manipulación basada en información",
+            "Manipulación de referencias"
+          ]
+        }
+      },
+      "unlawful_disclosure": {
+        "definition": {
+          "fr": "Communication illicite d'informations privilégiées",
+          "de": "Unrechtmäßige Weitergabe von Insiderinformationen",
+          "en": "Unlawful disclosure of inside information",
+          "es": "Divulgación ilícita de información privilegiada"
+        }
+      }
+    },
+    "prevention_measures": {
+      "insider_lists": {
+        "fr": "Tenue obligatoire de listes des personnes ayant accès aux informations privilégiées",
+        "de": "Obligatorische Führung von Listen von Personen mit Zugang zu Insiderinformationen",
+        "en": "Mandatory maintenance of lists of persons with access to inside information",
+        "es": "Mantenimiento obligatorio de listas de personas con acceso a información privilegiada"
+      },
+      "managers_transactions": {
+        "fr": "Déclaration des transactions des dirigeants",
+        "de": "Meldung von Führungskräftetransaktionen",
+        "en": "Notification of managers' transactions",
+        "es": "Notificación de transacciones de directivos"
+      },
+      "suspicious_orders": {
+        "fr": "Signalement d'ordres et transactions suspects",
+        "de": "Meldung verdächtiger Aufträge und Transaktionen",
+        "en": "Reporting of suspicious orders and transactions",
+        "es": "Reporte de órdenes y transacciones sospechosas"
+      }
+    },
+    "public_disclosure": {
+      "inside_information": {
+        "fr": "Publication immédiate d'informations privilégiées concernant l'émetteur",
+        "de": "Sofortige Veröffentlichung von Insiderinformationen über den Emittenten",
+        "en": "Immediate publication of inside information concerning the issuer",
+        "es": "Publicación inmediata de información privilegiada concerniente al emisor"
+      },
+      "delay_conditions": {
+        "fr": [
+          "Intérêts légitimes de l'émetteur",
+          "Pas de tromperie du public",
+          "Confidentialité assurée"
+        ],
+        "de": [
+          "Berechtigte Interessen des Emittenten",
+          "Keine Irreführung der Öffentlichkeit",
+          "Vertraulichkeit gewährleistet"
+        ],
+        "en": [
+          "Legitimate interests of issuer",
+          "No misleading of public",
+          "Confidentiality ensured"
+        ],
+        "es": [
+          "Intereses legítimos del emisor",
+          "No engaño del público",
+          "Confidencialidad asegurada"
+        ]
+      }
+    },
+    "penalties": {
+      "administrative": {
+        "individuals": "Up to €5,000,000",
+        "legal_persons": "Up to €15,000,000 or 15% of annual turnover"
+      },
+      "criminal": {
+        "imprisonment": "Up to 4 years",
+        "fines": "Up to €5,000,000"
+      }
+    },
+    "supervisory_authority": "CSSF",
+    "related_regulations": [
+      "mifid_ii",
+      "transparency_directive",
+      "prospectus_regulation"
+    ]
+  },
+  "solvency_ii": {
+    "full_name": {
+      "fr": "Solvabilité II",
+      "de": "Solvabilität II",
+      "en": "Solvency II",
+      "es": "Solvencia II"
+    },
+    "description": {
+      "fr": "Directive européenne établissant un régime harmonisé de surveillance prudentielle des entreprises d'assurance et de réassurance",
+      "de": "Europäische Richtlinie zur Einführung eines harmonisierten Aufsichtsregimes für Versicherungs- und Rückversicherungsunternehmen",
+      "en": "European directive establishing harmonized prudential supervision regime for insurance and reinsurance undertakings",
+      "es": "Directiva europea estableciendo régimen armonizado de supervisión prudencial para empresas de seguros y reaseguros"
+    },
+    "legal_basis": {
+      "eu": "Directive 2009/138/CE modifiée",
+      "luxembourg": "Loi modifiée du 7 décembre 2015 sur le secteur des assurances"
+    },
+    "scope": {
+      "fr": "Entreprises d'assurance directe vie et non-vie, entreprises de réassurance",
+      "de": "Direkte Lebens- und Nichtlebensversicherungsunternehmen, Rückversicherungsunternehmen",
+      "en": "Direct life and non-life insurance undertakings, reinsurance undertakings",
+      "es": "Empresas de seguros directos de vida y no vida, empresas de reaseguros"
+    },
+    "three_pillar_structure": {
+      "pillar_i": {
+        "name": {
+          "fr": "Pilier I - Exigences quantitatives",
+          "de": "Säule I - Quantitative Anforderungen",
+          "en": "Pillar I - Quantitative requirements",
+          "es": "Pilar I - Requisitos cuantitativos"
+        },
+        "components": {
+          "technical_provisions": {
+            "fr": "Provisions techniques - Meilleure estimation + marge de risque",
+            "de": "Versicherungstechnische Rückstellungen - Beste Schätzung + Risikomarge",
+            "en": "Technical provisions - Best estimate + risk margin",
+            "es": "Provisiones técnicas - Mejor estimación + margen de riesgo"
+          },
+          "own_funds": {
+            "fr": "Fonds propres - Classification en tiers selon qualité",
+            "de": "Eigenmittel - Klassifizierung in Stufen nach Qualität",
+            "en": "Own funds - Classification in tiers by quality",
+            "es": "Fondos propios - Clasificación en niveles por calidad"
+          },
+          "solvency_capital_requirement": {
+            "fr": "Exigence de capital de solvabilité (SCR) - Capital pour survie à 1 an avec 99,5% de confiance",
+            "de": "Solvenzkapitalanforderung (SCR) - Kapital für 1-Jahres-Überleben mit 99,5% Vertrauen",
+            "en": "Solvency Capital Requirement (SCR) - Capital for 1-year survival with 99.5% confidence",
+            "es": "Requerimiento de Capital de Solvencia (SCR) - Capital para supervivencia de 1 año con 99,5% de confianza"
+          },
+          "minimum_capital_requirement": {
+            "fr": "Exigence de capital minimum (MCR) - Seuil déclenchant intervention réglementaire",
+            "de": "Mindestkapitalanforderung (MCR) - Schwelle für regulatorische Intervention",
+            "en": "Minimum Capital Requirement (MCR) - Threshold triggering regulatory intervention",
+            "es": "Requerimiento Mínimo de Capital (MCR) - Umbral desencadenante de intervención regulatoria"
+          }
+        }
+      },
+      "pillar_ii": {
+        "name": {
+          "fr": "Pilier II - Exigences qualitatives",
+          "de": "Säule II - Qualitative Anforderungen",
+          "en": "Pillar II - Qualitative requirements",
+          "es": "Pilar II - Requisitos cualitativos"
+        },
+        "components": {
+          "governance": {
+            "fr": "Système de gouvernance approprié",
+            "de": "Angemessenes Governance-System",
+            "en": "Appropriate governance system",
+            "es": "Sistema de gobierno apropiado"
+          },
+          "key_functions": {
+            "fr": [
+              "Fonction actuarielle",
+              "Fonction de gestion des risques",
+              "Fonction conformité",
+              "Fonction d'audit interne"
+            ],
+            "de": [
+              "Versicherungsmathematische Funktion",
+              "Risikomanagementfunktion",
+              "Compliance-Funktion",
+              "Interne Auditfunktion"
+            ],
+            "en": [
+              "Actuarial function",
+              "Risk management function",
+              "Compliance function",
+              "Internal audit function"
+            ],
+            "es": [
+              "Función actuarial",
+              "Función de gestión de riesgos",
+              "Función de cumplimiento",
+              "Función de auditoría interna"
+            ]
+          },
+          "orsa": {
+            "fr": "Évaluation interne des risques et de la solvabilité (ORSA)",
+            "de": "Eigene Risiko- und Solvabilitätsbeurteilung (ORSA)",
+            "en": "Own Risk and Solvency Assessment (ORSA)",
+            "es": "Evaluación Interna de Riesgos y Solvencia (ORSA)"
+          },
+          "supervisory_review": {
+            "fr": "Processus de contrôle prudentiel",
+            "de": "Aufsichtsrechtliches Überprüfungsverfahren",
+            "en": "Supervisory review process",
+            "es": "Proceso de revisión supervisora"
+          }
+        }
+      },
+      "pillar_iii": {
+        "name": {
+          "fr": "Pilier III - Transparence et discipline de marché",
+          "de": "Säule III - Transparenz und Marktdisziplin",
+          "en": "Pillar III - Transparency and market discipline",
+          "es": "Pilar III - Transparencia y disciplina de mercado"
+        },
+        "reporting": {
+          "public_disclosure": {
+            "fr": "Rapport sur la solvabilité et la situation financière (SFCR) - Publication annuelle",
+            "de": "Bericht über Solvabilität und Finanzlage (SFCR) - Jährliche Veröffentlichung",
+            "en": "Solvency and Financial Condition Report (SFCR) - Annual publication",
+            "es": "Informe sobre Solvencia y Situación Financiera (SFCR) - Publicación anual"
+          },
+          "supervisory_reporting": {
+            "fr": "Déclarations réglementaires quantitatives et narratives aux autorités",
+            "de": "Quantitative und narrative regulatorische Berichte an Behörden",
+            "en": "Quantitative and narrative regulatory reports to authorities",
+            "es": "Reportes regulatorios cuantitativos y narrativos a autoridades"
+          }
+        }
+      }
+    },
+    "proportionality": {
+      "fr": "Application proportionnelle selon nature, envergure et complexité des risques",
+      "de": "Verhältnismäßige Anwendung nach Art, Umfang und Komplexität der Risiken",
+      "en": "Proportionate application according to nature, scale and complexity of risks",
+      "es": "Aplicación proporcional según naturaleza, escala y complejidad de riesgos"
+    },
+    "group_supervision": {
+      "fr": "Surveillance des groupes avec collège de superviseurs",
+      "de": "Gruppenaufsicht mit Aufsichtskollegium",
+      "en": "Group supervision with supervisory college",
+      "es": "Supervisión de grupos con colegio supervisor"
+    },
+    "penalties": {
+      "administrative": "Administrative measures and penalties",
+      "operational": "Restrictions on business activities"
+    },
+    "supervisory_authority": "Commissariat aux Assurances (CAA)",
+    "related_regulations": [
+      "insurance_mediation",
+      "motor_insurance",
+      "idd"
+    ]
+  },
+  "emir": {
+    "full_name": {
+      "fr": "Règlement sur l'infrastructure du marché européen",
+      "de": "Europäische Marktinfrastruktur-Verordnung",
+      "en": "European Market Infrastructure Regulation",
+      "es": "Reglamento de Infraestructura de Mercado Europeo"
+    },
+    "description": {
+      "fr": "Règlement européen sur les produits dérivés de gré à gré, les contreparties centrales et les référentiels centraux",
+      "de": "Europäische Verordnung über OTC-Derivate, zentrale Gegenparteien und Transaktionsregister",
+      "en": "European regulation on OTC derivatives, central counterparties and trade repositories",
+      "es": "Regulación europea sobre derivados OTC, contrapartes centrales y repositorios de transacciones"
+    },
+    "legal_basis": {
+      "eu": "Règlement (UE) No 648/2012 modifié",
+      "luxembourg": "Application directe du règlement européen"
+    },
+    "scope": {
+      "fr": "Contreparties financières et non financières négociant des dérivés OTC",
+      "de": "Finanzielle und nicht-finanzielle Gegenparteien, die OTC-Derivate handeln",
+      "en": "Financial and non-financial counterparties trading OTC derivatives",
+      "es": "Contrapartes financieras y no financieras que negocian derivados OTC"
+    },
+    "key_obligations": {
+      "clearing_obligation": {
+        "definition": {
+          "fr": "Obligation de compensation centralisée pour certaines classes de dérivés OTC",
+          "de": "Verpflichtung zum zentralen Clearing für bestimmte OTC-Derivatklassen",
+          "en": "Central clearing obligation for certain classes of OTC derivatives",
+          "es": "Obligación de compensación central para ciertas clases de derivados OTC"
+        },
+        "scope": {
+          "fr": "Dérivés de taux d'intérêt, dérivés sur actions, dérivés de change, dérivés de crédit, dérivés sur matières premières",
+          "de": "Zinsderivate, Aktienderivate, Devisenderivate, Kreditderivate, Rohstoffderivate",
+          "en": "Interest rate derivatives, equity derivatives, foreign exchange derivatives, credit derivatives, commodity derivatives",
+          "es": "Derivados de tipos de interés, derivados de acciones, derivados de divisas, derivados de crédito, derivados de materias primas"
+        }
+      },
+      "risk_mitigation": {
+        "definition": {
+          "fr": "Techniques d'atténuation des risques pour dérivés non compensés centralement",
+          "de": "Risikominderungstechniken für nicht zentral geclearte Derivate",
+          "en": "Risk mitigation techniques for non-centrally cleared derivatives",
+          "es": "Técnicas de mitigación de riesgos para derivados no compensados centralmente"
+        },
+        "requirements": {
+          "fr": [
+            "Confirmation en temps opportun",
+            "Rapprochement de portefeuille",
+            "Compression de portefeuille",
+            "Résolution des litiges",
+            "Valorisation au prix du marché",
+            "Échange de garanties"
+          ],
+          "de": [
+            "Rechtzeitige Bestätigung",
+            "Portfolio-Abgleich",
+            "Portfolio-Kompression",
+            "Streitbeilegung",
+            "Marktbewertung",
+            "Sicherheitenaustausch"
+          ],
+          "en": [
+            "Timely confirmation",
+            "Portfolio reconciliation",
+            "Portfolio compression",
+            "Dispute resolution",
+            "Mark-to-market valuation",
+            "Collateral exchange"
+          ],
+          "es": [
+            "Confirmación oportuna",
+            "Reconciliación de cartera",
+            "Compresión de cartera",
+            "Resolución de disputas",
+            "Valoración a precios de mercado",
+            "Intercambio de garantías"
+          ]
+        }
+      },
+      "reporting_obligation": {
+        "definition": {
+          "fr": "Obligation de déclaration de tous les contrats dérivés aux référentiels centraux",
+          "de": "Meldepflicht für alle Derivatkontrakte an Transaktionsregister",
+          "en": "Reporting obligation for all derivative contracts to trade repositories",
+          "es": "Obligación de reporte de todos los contratos de derivados a repositorios de transacciones"
+        },
+        "timeline": {
+          "fr": "Au plus tard le jour ouvrable suivant la conclusion du contrat",
+          "de": "Spätestens am Geschäftstag nach Vertragsabschluss",
+          "en": "No later than the business day following contract conclusion",
+          "es": "A más tardar el día hábil siguiente a la conclusión del contrato"
+        }
+      }
+    },
+    "counterparty_categories": {
+      "financial_counterparty": {
+        "fr": "Contrepartie financière (FC) - Établissements de crédit, entreprises d'investissement, etc.",
+        "de": "Finanzielle Gegenpartei (FC) - Kreditinstitute, Wertpapierfirmen, etc.",
+        "en": "Financial Counterparty (FC) - Credit institutions, investment firms, etc.",
+        "es": "Contraparte Financiera (FC) - Instituciones de crédito, empresas de inversión, etc."
+      },
+      "non_financial_counterparty": {
+        "fr": "Contrepartie non financière (NFC) - Entreprises non financières",
+        "de": "Nicht-finanzielle Gegenpartei (NFC) - Nicht-finanzielle Unternehmen",
+        "en": "Non-Financial Counterparty (NFC) - Non-financial undertakings",
+        "es": "Contraparte No Financiera (NFC) - Empresas no financieras"
+      }
+    },
+    "thresholds": {
+      "clearing_threshold": {
+        "fr": "Seuils de compensation pour contreparties non financières",
+        "de": "Clearing-Schwellenwerte für nicht-finanzielle Gegenparteien",
+        "en": "Clearing thresholds for non-financial counterparties",
+        "es": "Umbrales de compensación para contrapartes no financieras"
+      },
+      "amounts": {
+        "credit_derivatives": "€1 billion",
+        "equity_derivatives": "€1 billion",
+        "interest_rate_derivatives": "€3 billion",
+        "fx_derivatives": "€3 billion",
+        "commodity_derivatives": "€3 billion"
+      }
+    },
+    "margin_requirements": {
+      "initial_margin": {
+        "fr": "Marge initiale pour couvrir les mouvements adverses potentiels",
+        "de": "Initial-Margin zur Abdeckung potenzieller negativer Bewegungen",
+        "en": "Initial margin to cover potential adverse movements",
+        "es": "Margen inicial para cubrir movimientos adversos potenciales"
+      },
+      "variation_margin": {
+        "fr": "Marge de variation pour couvrir l'exposition courante",
+        "de": "Variation-Margin zur Abdeckung der aktuellen Exposition",
+        "en": "Variation margin to cover current exposure",
+        "es": "Margen de variación para cubrir la exposición actual"
+      }
+    },
+    "penalties": {
+      "administrative": "Administrative measures and penalties",
+      "financial": "Periodic penalty payments"
+    }
+  }
+}

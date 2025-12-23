@@ -1,0 +1,106 @@
+# requirements-llm.txt - Dépendances IA pour l'analyseur de conformité
+# Version corrigée et optimisée pour Docker avec Ollama
+
+# ============================================================================
+# CORE LLM DEPENDENCIES - ESSENTIELLES
+# ============================================================================
+
+# Ollama - Client Python officiel
+ollama>=0.3.1
+
+# ============================================================================
+# MINIMAL TRANSFORMERS SUPPORT
+# ============================================================================
+
+# Transformers léger (sans PyTorch complet)
+transformers>=4.36.0
+
+# Tokenisation
+tiktoken>=0.5.2
+
+# ============================================================================
+# TRAITEMENT DE TEXTE ESSENTIEL
+# ============================================================================
+
+# Détection de langue
+langdetect>=1.0.9
+
+# Similarité de texte (packages existants)
+fuzzywuzzy>=0.18.0
+python-Levenshtein>=0.23.0
+
+# ============================================================================
+# UTILITAIRES CORE
+# ============================================================================
+
+# API OpenAI (compatible Ollama)
+openai>=1.6.0
+
+# JSON parsing robuste
+jsonschema>=4.20.0
+
+# Async support
+aiohttp>=3.9.0
+
+# ============================================================================
+# PERFORMANCE ET MONITORING
+# ============================================================================
+
+# Progress bars
+tqdm>=4.66.0
+
+# Configuration
+pydantic>=2.5.0
+python-dotenv>=1.0.0
+
+# ============================================================================
+# FORMATS DE DONNÉES
+# ============================================================================
+
+# YAML pour configuration
+PyYAML>=6.0.1
+
+# ============================================================================
+# SÉCURITÉ ET VALIDATION
+# ============================================================================
+
+# Validation de données
+validators>=0.22.0
+
+# ============================================================================
+# COMPATIBILITÉ ET FALLBACKS
+# ============================================================================
+
+# HTTP robuste
+requests>=2.31.0
+
+# Retry logic
+tenacity>=8.2.3
+
+# ============================================================================
+# CACHE ET OPTIMISATIONS
+# ============================================================================
+
+# Cache intelligent
+cachetools>=5.3.2
+
+# ============================================================================
+# OPTIONNEL - Décommentez si besoin avancé
+# ============================================================================
+
+# LangChain pour orchestration LLM (lourd)
+# langchain>=0.1.0
+# langchain-community>=0.0.20
+
+# Embeddings et vectorisation (lourd)
+# sentence-transformers>=2.2.2
+# chromadb>=0.4.22
+# faiss-cpu>=1.7.4
+
+# PyTorch complet (très lourd - 2GB+)
+# torch>=2.1.0
+# torchvision>=0.16.0
+# torchaudio>=2.1.0
+
+# Multi-provider LLM (dépendances complexes)
+# litellm>=1.17.0

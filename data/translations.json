@@ -1,0 +1,734 @@
+{
+  "welcome": {
+    "fr": "Bienvenue sur LexAI - Votre assistant de conformité réglementaire",
+    "en": "Welcome to LexAI - Your Regulatory Compliance Assistant",
+    "de": "Willkommen bei LexAI - Ihr Assistent für regulatorische Compliance",
+    "es": "Bienvenido a LexAI - Su asistente de cumplimiento normativo"
+  },
+  "app_title": {
+    "fr": "Assistant de conformité réglementaire",
+    "en": "Regulatory Compliance Assistant",
+    "de": "Regulatorischer Compliance-Assistent",
+    "es": "Asistente de Cumplimiento Normativo"
+  },
+  "complete_interface_local_data": {
+    "fr": "Interface Complète avec Données Locales",
+    "en": "Complete Interface with Local Data",
+    "de": "Vollständige Schnittstelle mit lokalen Daten",
+    "es": "Interfaz Completa con Datos Locales"
+  },
+  "profile": {
+    "fr": "Profil",
+    "en": "Profile",
+    "de": "Profil",
+    "es": "Perfil"
+  },
+  "logout": {
+    "fr": "Déconnexion",
+    "en": "Logout",
+    "de": "Abmelden",
+    "es": "Cerrar Sesión"
+  },
+  "home": {
+    "fr": "Accueil",
+    "en": "Home",
+    "de": "Startseite",
+    "es": "Inicio"
+  },
+  "dashboard": {
+    "fr": "Tableau de bord",
+    "en": "Dashboard",
+    "de": "Dashboard",
+    "es": "Panel de Control"
+  },
+  "history": {
+    "fr": "Historique",
+    "en": "History",
+    "de": "Verlauf",
+    "es": "Historial"
+  },
+  "administration": {
+    "fr": "Administration",
+    "en": "Administration",
+    "de": "Verwaltung",
+    "es": "Administración"
+  },
+  "authentication": {
+    "fr": "Authentification",
+    "en": "Authentication",
+    "de": "Authentifizierung",
+    "es": "Autenticación"
+  },
+  "login": {
+    "fr": "Connexion",
+    "en": "Login",
+    "de": "Anmelden",
+    "es": "Iniciar Sesión"
+  },
+  "register": {
+    "fr": "Inscription",
+    "en": "Register",
+    "de": "Registrieren",
+    "es": "Registrarse"
+  },
+  "email": {
+    "fr": "Email",
+    "en": "Email",
+    "de": "E-Mail",
+    "es": "Correo electrónico"
+  },
+  "password": {
+    "fr": "Mot de passe",
+    "en": "Password",
+    "de": "Passwort",
+    "es": "Contraseña"
+  },
+  "company": {
+    "fr": "Entreprise",
+    "en": "Company",
+    "de": "Unternehmen",
+    "es": "Empresa"
+  },
+  "navigation": {
+    "fr": "Navigation",
+    "en": "Navigation",
+    "de": "Navigation",
+    "es": "Navegación"
+  },
+  "manage_rules": {
+    "fr": "Gestion des règles",
+    "en": "Manage Rules",
+    "de": "Regelverwaltung",
+    "es": "Gestión de Reglas"
+  },
+  "language": {
+    "fr": "Langue",
+    "en": "Language",
+    "de": "Sprache",
+    "es": "Idioma"
+  },
+  "select_language": {
+    "fr": "Sélectionner la langue",
+    "en": "Select Language",
+    "de": "Sprache auswählen",
+    "es": "Seleccionar Idioma"
+  },
+  "language_changed": {
+    "fr": "Langue modifiée",
+    "en": "Language changed",
+    "de": "Sprache geändert",
+    "es": "Idioma cambiado"
+  },
+  "language_help": {
+    "fr": "Sélectionnez votre langue préférée pour l'interface",
+    "en": "Select your preferred language for the interface",
+    "de": "Wählen Sie Ihre bevorzugte Sprache für die Benutzeroberfläche",
+    "es": "Seleccione su idioma preferido para la interfaz"
+  },
+  "current_language": {
+    "fr": "Langue actuelle",
+    "en": "Current language",
+    "de": "Aktuelle Sprache",
+    "es": "Idioma actual"
+  },
+  "language_name": {
+    "fr": "Français",
+    "en": "English",
+    "de": "Deutsch",
+    "es": "Español"
+  },
+  "system_configuration": {
+    "fr": "Configuration du Système",
+    "en": "System Configuration",
+    "de": "Systemkonfiguration",
+    "es": "Configuración del Sistema"
+  },
+  "global_settings": {
+    "fr": "Paramètres Globaux",
+    "en": "Global Settings",
+    "de": "Globale Einstellungen",
+    "es": "Configuración Global"
+  },
+  "module_status": {
+    "fr": "État des Modules",
+    "en": "Module Status",
+    "de": "Modulstatus",
+    "es": "Estado de Módulos"
+  },
+  "operational": {
+    "fr": "Opérationnel",
+    "en": "Operational",
+    "de": "Betriebsbereit",
+    "es": "Operacional"
+  },
+  "not_available": {
+    "fr": "Non disponible",
+    "en": "Not available",
+    "de": "Nicht verfügbar",
+    "es": "No disponible"
+  },
+  "ollama_configuration": {
+    "fr": "Configuration Ollama",
+    "en": "Ollama Configuration",
+    "de": "Ollama-Konfiguration",
+    "es": "Configuración Ollama"
+  },
+  "ollama_operational": {
+    "fr": "Ollama opérationnel",
+    "en": "Ollama operational",
+    "de": "Ollama betriebsbereit",
+    "es": "Ollama operacional"
+  },
+  "ollama_not_operational": {
+    "fr": "Ollama non opérationnel",
+    "en": "Ollama not operational",
+    "de": "Ollama nicht betriebsbereit",
+    "es": "Ollama no operacional"
+  },
+  "available_models": {
+    "fr": "Modèles disponibles",
+    "en": "Available models",
+    "de": "Verfügbare Modelle",
+    "es": "Modelos disponibles"
+  },
+  "setup_instructions": {
+    "fr": "Instructions d'installation",
+    "en": "Setup instructions",
+    "de": "Setup-Anweisungen",
+    "es": "Instrucciones de configuración"
+  },
+  "ollama_error": {
+    "fr": "Erreur Ollama",
+    "en": "Ollama error",
+    "de": "Ollama-Fehler",
+    "es": "Error de Ollama"
+  },
+  "analyzer": {
+    "fr": "Analyseur",
+    "en": "Analyzer",
+    "de": "Analysator",
+    "es": "Analizador"
+  },
+  "data": {
+    "fr": "Données",
+    "en": "Data",
+    "de": "Daten",
+    "es": "Datos"
+  },
+  "files": {
+    "fr": "fichiers",
+    "en": "files",
+    "de": "Dateien",
+    "es": "archivos"
+  },
+  "analyses": {
+    "fr": "Analyses",
+    "en": "Analyses",
+    "de": "Analysen",
+    "es": "Análisis"
+  },
+  "sessions": {
+    "fr": "sessions",
+    "en": "sessions",
+    "de": "Sitzungen",
+    "es": "sesiones"
+  },
+  "utils": {
+    "fr": "Utils",
+    "en": "Utils",
+    "de": "Utils",
+    "es": "Utils"
+  },
+  "available": {
+    "fr": "Disponible",
+    "en": "Available",
+    "de": "Verfügbar",
+    "es": "Disponible"
+  },
+  "basic": {
+    "fr": "Basique",
+    "en": "Basic",
+    "de": "Grundlegend",
+    "es": "Básico"
+  },
+  "complete": {
+    "fr": "Complets",
+    "en": "Complete",
+    "de": "Vollständig",
+    "es": "Completos"
+  },
+  "partial": {
+    "fr": "Partiels",
+    "en": "Partial",
+    "de": "Teilweise",
+    "es": "Parciales"
+  },
+  "document_analysis": {
+    "fr": "Analyse Document",
+    "en": "Document Analysis",
+    "de": "Dokumentanalyse",
+    "es": "Análisis de Documento"
+  },
+  "configuration": {
+    "fr": "Configuration",
+    "en": "Configuration",
+    "de": "Konfiguration",
+    "es": "Configuración"
+  },
+  "data_management": {
+    "fr": "Gestion des Données",
+    "en": "Data Management",
+    "de": "Datenverwaltung",
+    "es": "Gestión de Datos"
+  },
+  "document_analysis_with_local_data": {
+    "fr": "Analyse de Documents avec Données Locales",
+    "en": "Document Analysis with Local Data",
+    "de": "Dokumentanalyse mit lokalen Daten",
+    "es": "Análisis de Documentos con Datos Locales"
+  },
+  "analysis_language": {
+    "fr": "Langue d'analyse",
+    "en": "Analysis language",
+    "de": "Analysesprache",
+    "es": "Idioma de análisis"
+  },
+  "compliance_analysis_language": {
+    "fr": "Langue pour l'analyse de conformité",
+    "en": "Language for compliance analysis",
+    "de": "Sprache für Compliance-Analyse",
+    "es": "Idioma para análisis de cumplimiento"
+  },
+  "document_type": {
+    "fr": "Type de document",
+    "en": "Document type",
+    "de": "Dokumenttyp",
+    "es": "Tipo de documento"
+  },
+  "auto_detect": {
+    "fr": "Détection automatique",
+    "en": "Auto-detect",
+    "de": "Automatische Erkennung",
+    "es": "Detección automática"
+  },
+  "contract": {
+    "fr": "Contrat",
+    "en": "Contract",
+    "de": "Vertrag",
+    "es": "Contrato"
+  },
+  "policy": {
+    "fr": "Politique",
+    "en": "Policy",
+    "de": "Richtlinie",
+    "es": "Política"
+  },
+  "report": {
+    "fr": "Rapport",
+    "en": "Report",
+    "de": "Bericht",
+    "es": "Informe"
+  },
+  "optimize_analysis_document_type": {
+    "fr": "Type de document pour optimiser l'analyse",
+    "en": "Document type to optimize analysis",
+    "de": "Dokumenttyp zur Optimierung der Analyse",
+    "es": "Tipo de documento para optimizar el análisis"
+  },
+  "upload_document": {
+    "fr": "Déposez votre document",
+    "en": "Upload your document",
+    "de": "Laden Sie Ihr Dokument hoch",
+    "es": "Suba su documento"
+  },
+  "supported_formats": {
+    "fr": "Formats supportés: PDF, DOCX, TXT (max 10MB)",
+    "en": "Supported formats: PDF, DOCX, TXT (max 10MB)",
+    "de": "Unterstützte Formate: PDF, DOCX, TXT (max. 10 MB)",
+    "es": "Formatos soportados: PDF, DOCX, TXT (máx. 10MB)"
+  },
+  "file_uploaded": {
+    "fr": "Fichier téléchargé",
+    "en": "File uploaded",
+    "de": "Datei hochgeladen",
+    "es": "Archivo subido"
+  },
+  "file": {
+    "fr": "Fichier",
+    "en": "File",
+    "de": "Datei",
+    "es": "Archivo"
+  },
+  "size": {
+    "fr": "Taille",
+    "en": "Size",
+    "de": "Größe",
+    "es": "Tamaño"
+  },
+  "engine": {
+    "fr": "Moteur",
+    "en": "Engine",
+    "de": "Engine",
+    "es": "Motor"
+  },
+  "advanced_llm": {
+    "fr": "LLM Avancé",
+    "en": "Advanced LLM",
+    "de": "Erweiterte LLM",
+    "es": "LLM Avanzado"
+  },
+  "enhanced_analyzer": {
+    "fr": "Analyseur Amélioré",
+    "en": "Enhanced Analyzer",
+    "de": "Erweiterter Analysator",
+    "es": "Analizador Mejorado"
+  },
+  "analyze_document": {
+    "fr": "ANALYSER LE DOCUMENT",
+    "en": "ANALYZE DOCUMENT",
+    "de": "DOKUMENT ANALYSIEREN",
+    "es": "ANALIZAR DOCUMENTO"
+  },
+  "analysis_in_progress_local_data": {
+    "fr": "Analyse en cours avec données locales...",
+    "en": "Analysis in progress with local data...",
+    "de": "Analyse läuft mit lokalen Daten...",
+    "es": "Análisis en progreso con datos locales..."
+  },
+  "cannot_extract_text": {
+    "fr": "Impossible d'extraire le texte du fichier",
+    "en": "Cannot extract text from file",
+    "de": "Text kann nicht aus der Datei extrahiert werden",
+    "es": "No se puede extraer texto del archivo"
+  },
+  "text_extracted": {
+    "fr": "Texte extrait",
+    "en": "Text extracted",
+    "de": "Text extrahiert",
+    "es": "Texto extraído"
+  },
+  "words": {
+    "fr": "mots",
+    "en": "words",
+    "de": "Wörter",
+    "es": "palabras"
+  },
+  "language_detected": {
+    "fr": "langue",
+    "en": "language",
+    "de": "Sprache",
+    "es": "idioma"
+  },
+  "analysis_completed": {
+    "fr": "Analyse terminée en",
+    "en": "Analysis completed in",
+    "de": "Analyse abgeschlossen in",
+    "es": "Análisis completado en"
+  },
+  "analysis_error": {
+    "fr": "Erreur lors de l'analyse",
+    "en": "Error during analysis",
+    "de": "Fehler bei der Analyse",
+    "es": "Error durante el análisis"
+  },
+  "show_error_details": {
+    "fr": "Afficher détails erreur",
+    "en": "Show error details",
+    "de": "Fehlerdetails anzeigen",
+    "es": "Mostrar detalles del error"
+  },
+  "error": {
+    "fr": "Erreur",
+    "en": "Error",
+    "de": "Fehler",
+    "es": "Error"
+  },
+  "analysis_history": {
+    "fr": "Historique des Analyses",
+    "en": "Analysis History",
+    "de": "Analyse-Verlauf",
+    "es": "Historial de Análisis"
+  },
+  "analyses_in_history": {
+    "fr": "analyses dans l'historique",
+    "en": "analyses in history",
+    "de": "Analysen in der Historie",
+    "es": "análisis en el historial"
+  },
+  "total": {
+    "fr": "Total",
+    "en": "Total",
+    "de": "Gesamt",
+    "es": "Total"
+  },
+  "average_score": {
+    "fr": "Score Moyen",
+    "en": "Average Score",
+    "de": "Durchschnittlicher Score",
+    "es": "Puntuación Promedio"
+  },
+  "total_issues": {
+    "fr": "Total Problèmes",
+    "en": "Total Issues",
+    "de": "Gesamte Probleme",
+    "es": "Problemas Totales"
+  },
+  "score": {
+    "fr": "Score",
+    "en": "Score",
+    "de": "Bewertung",
+    "es": "Puntuación"
+  },
+  "date": {
+    "fr": "Date",
+    "en": "Date",
+    "de": "Datum",
+    "es": "Fecha"
+  },
+  "issues": {
+    "fr": "Problèmes",
+    "en": "Issues",
+    "de": "Probleme",
+    "es": "Problemas"
+  },
+  "processing_time": {
+    "fr": "Temps",
+    "en": "Time",
+    "de": "Zeit",
+    "es": "Tiempo"
+  },
+  "clear_history": {
+    "fr": "Effacer l'historique",
+    "en": "Clear history",
+    "de": "Verlauf löschen",
+    "es": "Borrar historial"
+  },
+  "confirm_deletion": {
+    "fr": "Confirmer la suppression",
+    "en": "Confirm deletion",
+    "de": "Löschung bestätigen",
+    "es": "Confirmar eliminación"
+  },
+  "success": {
+    "fr": "Historique effacé",
+    "en": "History cleared",
+    "de": "Verlauf gelöscht",
+    "es": "Historial borrado"
+  },
+  "no_analyses_found": {
+    "fr": "Aucune analyse dans l'historique",
+    "en": "No analyses in history",
+    "de": "Keine Analysen in der Historie",
+    "es": "No hay análisis en el historial"
+  },
+  "financial_statement": {
+    "fr": "État financier",
+    "en": "Financial statement",
+    "de": "Finanzbericht",
+    "es": "Estado financiero"
+  },
+  "compliance_document": {
+    "fr": "Document de conformité",
+    "en": "Compliance document",
+    "de": "Compliance-Dokument",
+    "es": "Documento de cumplimiento"
+  },
+  "analysis_engine": {
+    "fr": "Moteur d'analyse",
+    "en": "Analysis engine",
+    "de": "Analyse-Engine",
+    "es": "Motor de análisis"
+  },
+  "local_engine": {
+    "fr": "Moteur local",
+    "en": "Local engine",
+    "de": "Lokale Engine",
+    "es": "Motor local"
+  },
+  "cloud_engine": {
+    "fr": "Moteur cloud",
+    "en": "Cloud engine",
+    "de": "Cloud-Engine",
+    "es": "Motor en la nube"
+  },
+  "fallback_engine": {
+    "fr": "Moteur de secours",
+    "en": "Fallback engine",
+    "de": "Ersatz-Engine",
+    "es": "Motor de respaldo"
+  },
+  "user_management": {
+    "fr": "Gestion des utilisateurs",
+    "en": "User management",
+    "de": "Benutzerverwaltung",
+    "es": "Gestión de usuarios"
+  },
+  "rule_management": {
+    "fr": "Gestion des règles",
+    "en": "Rule management",
+    "de": "Regelverwaltung",
+    "es": "Gestión de reglas"
+  },
+  "export_results": {
+    "fr": "Exporter les résultats",
+    "en": "Export results",
+    "de": "Ergebnisse exportieren",
+    "es": "Exportar resultados"
+  },
+  "warning": {
+    "fr": "Avertissement",
+    "en": "Warning",
+    "de": "Warnung",
+    "es": "Advertencia"
+  },
+  "info": {
+    "fr": "Information",
+    "en": "Information",
+    "de": "Information",
+    "es": "Información"
+  },
+  "loading": {
+    "fr": "Chargement...",
+    "en": "Loading...",
+    "de": "Laden...",
+    "es": "Cargando..."
+  },
+  "please_wait": {
+    "fr": "Veuillez patienter",
+    "en": "Please wait",
+    "de": "Bitte warten",
+    "es": "Por favor espere"
+  },
+  "retry": {
+    "fr": "Réessayer",
+    "en": "Retry",
+    "de": "Wiederholen",
+    "es": "Reintentar"
+  },
+  "cancel": {
+    "fr": "Annuler",
+    "en": "Cancel",
+    "de": "Abbrechen",
+    "es": "Cancelar"
+  },
+  "save": {
+    "fr": "Enregistrer",
+    "en": "Save",
+    "de": "Speichern",
+    "es": "Guardar"
+  },
+  "delete": {
+    "fr": "Supprimer",
+    "en": "Delete",
+    "de": "Löschen",
+    "es": "Eliminar"
+  },
+  "edit": {
+    "fr": "Modifier",
+    "en": "Edit",
+    "de": "Bearbeiten",
+    "es": "Editar"
+  },
+  "view": {
+    "fr": "Voir",
+    "en": "View",
+    "de": "Anzeigen",
+    "es": "Ver"
+  },
+  "close": {
+    "fr": "Fermer",
+    "en": "Close",
+    "de": "Schließen",
+    "es": "Cerrar"
+  },
+  "open": {
+    "fr": "Ouvrir",
+    "en": "Open",
+    "de": "Öffnen",
+    "es": "Abrir"
+  },
+  "search": {
+    "fr": "Rechercher",
+    "en": "Search",
+    "de": "Suchen",
+    "es": "Buscar"
+  },
+  "filter": {
+    "fr": "Filtrer",
+    "en": "Filter",
+    "de": "Filtern",
+    "es": "Filtrar"
+  },
+  "sort": {
+    "fr": "Trier",
+    "en": "Sort",
+    "de": "Sortieren",
+    "es": "Ordenar"
+  },
+  "refresh": {
+    "fr": "Actualiser",
+    "en": "Refresh",
+    "de": "Aktualisieren",
+    "es": "Actualizar"
+  },
+  "back": {
+    "fr": "Retour",
+    "en": "Back",
+    "de": "Zurück",
+    "es": "Volver"
+  },
+  "next": {
+    "fr": "Suivant",
+    "en": "Next",
+    "de": "Weiter",
+    "es": "Siguiente"
+  },
+  "previous": {
+    "fr": "Précédent",
+    "en": "Previous",
+    "de": "Vorherige",
+    "es": "Anterior"
+  },
+  "finish": {
+    "fr": "Terminer",
+    "en": "Finish",
+    "de": "Beenden",
+    "es": "Finalizar"
+  },
+  "help": {
+    "fr": "Aide",
+    "en": "Help",
+    "de": "Hilfe",
+    "es": "Ayuda"
+  },
+  "about": {
+    "fr": "À propos",
+    "en": "About",
+    "de": "Über",
+    "es": "Acerca de"
+  },
+  "version": {
+    "fr": "Version",
+    "en": "Version",
+    "de": "Version",
+    "es": "Versión"
+  },
+  "status": {
+    "fr": "Statut",
+    "en": "Status",
+    "de": "Status",
+    "es": "Estado"
+  },
+  "connected": {
+    "fr": "Connecté",
+    "en": "Connected",
+    "de": "Verbunden",
+    "es": "Conectado"
+  },
+  "disconnected": {
+    "fr": "Déconnecté",
+    "en": "Disconnected",
+    "de": "Getrennt",
+    "es": "Desconectado"
+  }
+}

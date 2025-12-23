@@ -1,0 +1,712 @@
+{
+  "contrat": {
+    "confidentialite_clause": {
+      "description": {
+        "fr": "Le contrat doit contenir une clause de confidentialité explicite.",
+        "de": "Der Vertrag muss eine explizite Vertraulichkeitsklausel enthalten.",
+        "en": "The contract must contain an explicit confidentiality clause.",
+        "es": "El contrato debe contener una cláusula de confidencialidad explícita."
+      },
+      "keywords": [
+        "confidentialité",
+        "non-divulgation",
+        "secret professionnel",
+        "information confidentielle",
+        "devoir de réserve",
+        "vertraulichkeit",
+        "geheimhaltung",
+        "confidentiality",
+        "non-disclosure",
+        "confidencialidad"
+      ],
+      "severity": "high",
+      "penalty": 0.2,
+      "regulatory_basis": "Article 458 du Code civil luxembourgeois",
+      "required_elements": [
+        "Définition des informations confidentielles",
+        "Durée de l'obligation de confidentialité",
+        "Exceptions à la confidentialité",
+        "Sanctions en cas de violation"
+      ]
+    },
+    "resiliation_clause": {
+      "description": {
+        "fr": "Une clause de résiliation claire est requise.",
+        "de": "Eine klare Kündigungsklausel ist erforderlich.",
+        "en": "A clear termination clause is required.",
+        "es": "Se requiere una cláusula de terminación clara."
+      },
+      "keywords": [
+        "résiliation",
+        "durée",
+        "préavis",
+        "terme",
+        "expiration",
+        "kündigung",
+        "laufzeit",
+        "termination",
+        "duration",
+        "notice",
+        "terminación",
+        "duración"
+      ],
+      "severity": "medium",
+      "penalty": 0.1,
+      "regulatory_basis": "Articles 1184-1230 du Code civil luxembourgeois",
+      "required_elements": [
+        "Conditions de résiliation",
+        "Délai de préavis",
+        "Modalités de résiliation",
+        "Conséquences de la résiliation"
+      ]
+    },
+    "loi_applicable": {
+      "description": {
+        "fr": "Le contrat doit mentionner la juridiction ou la loi applicable.",
+        "de": "Der Vertrag muss die zuständige Gerichtsbarkeit oder das anwendbare Recht angeben.",
+        "en": "The contract must specify the governing law or jurisdiction.",
+        "es": "El contrato debe especificar la ley aplicable o jurisdicción."
+      },
+      "keywords": [
+        "loi applicable",
+        "juridiction",
+        "tribunal compétent",
+        "droit luxembourgeois",
+        "anwendbares recht",
+        "zuständigkeit",
+        "governing law",
+        "jurisdiction",
+        "competent court",
+        "ley aplicable",
+        "jurisdicción"
+      ],
+      "severity": "medium",
+      "penalty": 0.1,
+      "regulatory_basis": "Règlement Rome I (CE) n° 593/2008",
+      "required_elements": [
+        "Loi applicable au contrat",
+        "Juridiction compétente",
+        "Mode de résolution des litiges"
+      ]
+    },
+    "protection_donnees": {
+      "description": {
+        "fr": "Le contrat doit inclure des clauses de protection des données personnelles.",
+        "de": "Der Vertrag muss Klauseln zum Schutz personenbezogener Daten enthalten.",
+        "en": "The contract must include personal data protection clauses.",
+        "es": "El contrato debe incluir cláusulas de protección de datos personales."
+      },
+      "keywords": [
+        "protection des données",
+        "données personnelles",
+        "RGPD",
+        "GDPR",
+        "consentement",
+        "datenschutz",
+        "personenbezogene daten",
+        "data protection",
+        "personal data",
+        "protección de datos",
+        "datos personales"
+      ],
+      "severity": "high",
+      "penalty": 0.25,
+      "regulatory_basis": "Règlement UE 2016/679 (RGPD)",
+      "required_elements": [
+        "Finalité du traitement",
+        "Base légale du traitement",
+        "Droits des personnes concernées",
+        "Mesures de sécurité"
+      ]
+    },
+    "lutte_anti_blanchiment": {
+      "description": {
+        "fr": "Le contrat doit contenir des clauses relatives à la lutte contre le blanchiment.",
+        "de": "Der Vertrag muss Klauseln zur Geldwäschebekämpfung enthalten.",
+        "en": "The contract must contain anti-money laundering clauses.",
+        "es": "El contrato debe contener cláusulas de prevención de blanqueo de capitales."
+      },
+      "keywords": [
+        "lutte contre le blanchiment",
+        "LCB-FT",
+        "AML",
+        "due diligence",
+        "vérification identité",
+        "geldwäschebekämpfung",
+        "anti-money laundering",
+        "prevención blanqueo"
+      ],
+      "severity": "high",
+      "penalty": 0.3,
+      "regulatory_basis": "Loi du 12 novembre 2004 relative à la lutte contre le blanchiment",
+      "required_elements": [
+        "Obligations d'identification",
+        "Déclaration de soupçon",
+        "Conservation des documents",
+        "Formation du personnel"
+      ]
+    }
+  },
+  "rapport_annuel": {
+    "informations_financieres": {
+      "description": {
+        "fr": "Le rapport annuel doit inclure les résultats financiers détaillés.",
+        "de": "Der Jahresbericht muss detaillierte Finanzergebnisse enthalten.",
+        "en": "The annual report must include detailed financial results.",
+        "es": "El informe anual debe incluir resultados financieros detallados."
+      },
+      "keywords": [
+        "résultat net",
+        "revenus",
+        "perte",
+        "profit",
+        "chiffre d'affaires",
+        "bénéfice",
+        "nettoergebnis",
+        "einnahmen",
+        "verlust",
+        "gewinn",
+        "net result",
+        "revenues",
+        "loss",
+        "profit",
+        "resultado neto",
+        "ingresos",
+        "pérdida"
+      ],
+      "severity": "high",
+      "penalty": 0.2,
+      "regulatory_basis": "Loi du 19 décembre 2002 concernant le registre de commerce et des sociétés",
+      "required_elements": [
+        "Compte de résultat",
+        "Bilan",
+        "Annexe",
+        "Rapport de gestion"
+      ]
+    },
+    "activites_principales": {
+      "description": {
+        "fr": "Le rapport doit décrire les activités principales de l'entreprise.",
+        "de": "Der Bericht muss die Hauptaktivitäten des Unternehmens beschreiben.",
+        "en": "The report must describe the company's main activities.",
+        "es": "El informe debe describir las actividades principales de la empresa."
+      },
+      "keywords": [
+        "activité",
+        "opérations",
+        "segments",
+        "division",
+        "métier",
+        "secteur",
+        "aktivität",
+        "operationen",
+        "segmente",
+        "activity",
+        "operations",
+        "segments",
+        "business",
+        "actividad",
+        "operaciones",
+        "segmentos"
+      ],
+      "severity": "medium",
+      "penalty": 0.1,
+      "regulatory_basis": "Directive 2013/34/UE relative aux états financiers annuels",
+      "required_elements": [
+        "Description des activités",
+        "Évolution des affaires",
+        "Perspectives d'avenir",
+        "Facteurs de risque"
+      ]
+    },
+    "gouvernance_entreprise": {
+      "description": {
+        "fr": "Le rapport doit inclure des informations sur la gouvernance d'entreprise.",
+        "de": "Der Bericht muss Informationen zur Unternehmensführung enthalten.",
+        "en": "The report must include corporate governance information.",
+        "es": "El informe debe incluir información sobre gobierno corporativo."
+      },
+      "keywords": [
+        "gouvernance",
+        "conseil d'administration",
+        "comité d'audit",
+        "rémunération",
+        "unternehmensführung",
+        "verwaltungsrat",
+        "governance",
+        "board of directors",
+        "audit committee",
+        "gobierno corporativo",
+        "consejo de administración"
+      ],
+      "severity": "medium",
+      "penalty": 0.15,
+      "regulatory_basis": "Loi du 10 août 1915 concernant les sociétés commerciales",
+      "required_elements": [
+        "Composition du conseil",
+        "Comités spécialisés",
+        "Politique de rémunération",
+        "Contrôle interne"
+      ]
+    },
+    "developpement_durable": {
+      "description": {
+        "fr": "Le rapport doit inclure des informations sur le développement durable.",
+        "de": "Der Bericht muss Informationen zur nachhaltigen Entwicklung enthalten.",
+        "en": "The report must include sustainable development information.",
+        "es": "El informe debe incluir información sobre desarrollo sostenible."
+      },
+      "keywords": [
+        "développement durable",
+        "RSE",
+        "environnement",
+        "social",
+        "nachhaltige entwicklung",
+        "umwelt",
+        "sozial",
+        "sustainable development",
+        "ESG",
+        "environment",
+        "social",
+        "desarrollo sostenible",
+        "medio ambiente"
+      ],
+      "severity": "medium",
+      "penalty": 0.1,
+      "regulatory_basis": "Directive 2014/95/UE sur la déclaration d'informations non financières",
+      "required_elements": [
+        "Politique environnementale",
+        "Questions sociales",
+        "Droits de l'homme",
+        "Lutte contre la corruption"
+      ]
+    }
+  },
+  "bilan_financier": {
+    "actif_passif": {
+      "description": {
+        "fr": "Le bilan doit contenir les sections Actif et Passif équilibrées.",
+        "de": "Die Bilanz muss ausgeglichene Aktiva- und Passiva-Abschnitte enthalten.",
+        "en": "The balance sheet must include balanced Assets and Liabilities sections.",
+        "es": "El balance debe incluir secciones equilibradas de Activo y Pasivo."
+      },
+      "keywords": [
+        "actif",
+        "passif",
+        "total bilan",
+        "équilibre",
+        "immobilisations",
+        "capitaux propres",
+        "aktiva",
+        "passiva",
+        "bilanzsumme",
+        "assets",
+        "liabilities",
+        "balance",
+        "equity",
+        "activo",
+        "pasivo",
+        "balance total"
+      ],
+      "severity": "high",
+      "penalty": 0.2,
+      "regulatory_basis": "Loi du 19 décembre 2002 concernant le registre de commerce et des sociétés",
+      "required_elements": [
+        "Actif immobilisé",
+        "Actif circulant",
+        "Capitaux propres",
+        "Dettes"
+      ]
+    },
+    "annexe": {
+      "description": {
+        "fr": "Le bilan doit inclure une annexe explicative détaillée.",
+        "de": "Die Bilanz muss detaillierte erläuternde Anmerkungen enthalten.",
+        "en": "The financial statement must include detailed explanatory notes.",
+        "es": "El estado financiero debe incluir notas explicativas detalladas."
+      },
+      "keywords": [
+        "annexe",
+        "notes",
+        "explication",
+        "commentaire",
+        "méthodes comptables",
+        "anmerkungen",
+        "erläuterungen",
+        "rechnungslegungsmethoden",
+        "notes",
+        "explanations",
+        "accounting methods",
+        "notas",
+        "explicaciones",
+        "métodos contables"
+      ],
+      "severity": "medium",
+      "penalty": 0.1,
+      "regulatory_basis": "Directive 2013/34/UE relative aux états financiers annuels",
+      "required_elements": [
+        "Méthodes comptables",
+        "Informations complémentaires",
+        "Événements postérieurs",
+        "Engagements hors bilan"
+      ]
+    },
+    "audit_externe": {
+      "description": {
+        "fr": "Le bilan doit être accompagné d'un rapport d'audit externe si requis.",
+        "de": "Die Bilanz muss bei Bedarf von einem externen Prüfbericht begleitet werden.",
+        "en": "The balance sheet must be accompanied by an external audit report if required.",
+        "es": "El balance debe estar acompañado de un informe de auditoría externa si es requerido."
+      },
+      "keywords": [
+        "audit externe",
+        "commissaire aux comptes",
+        "réviseur d'entreprise",
+        "certification",
+        "externe prüfung",
+        "wirtschaftsprüfer",
+        "external audit",
+        "auditor",
+        "certification",
+        "auditoría externa",
+        "auditor externo"
+      ],
+      "severity": "high",
+      "penalty": 0.25,
+      "regulatory_basis": "Loi du 23 juillet 2016 relative à la profession de l'audit",
+      "required_elements": [
+        "Opinion d'audit",
+        "Rapport sur les comptes",
+        "Rapport de gestion",
+        "Déclaration d'indépendance"
+      ]
+    }
+  },
+  "politique": {
+    "responsable_conformite": {
+      "description": {
+        "fr": "La politique doit nommer un responsable de la conformité identifié.",
+        "de": "Die Richtlinie muss einen identifizierten Compliance-Beauftragten benennen.",
+        "en": "The policy must name an identified compliance officer.",
+        "es": "La política debe nombrar un oficial de cumplimiento identificado."
+      },
+      "keywords": [
+        "responsable conformité",
+        "compliance officer",
+        "directeur conformité",
+        "fonction conformité",
+        "compliance-beauftragter",
+        "compliance-direktor",
+        "oficial de cumplimiento",
+        "director de cumplimiento"
+      ],
+      "severity": "high",
+      "penalty": 0.2,
+      "regulatory_basis": "Loi du 5 avril 1993 sur le secteur financier",
+      "required_elements": [
+        "Nom et fonction",
+        "Responsabilités",
+        "Reporting hiérarchique",
+        "Ressources allouées"
+      ]
+    },
+    "objectif_conformite": {
+      "description": {
+        "fr": "La politique doit préciser ses objectifs en matière de conformité.",
+        "de": "Die Richtlinie muss ihre Compliance-Ziele spezifizieren.",
+        "en": "The policy must state its compliance objectives.",
+        "es": "La política debe establecer sus objetivos de cumplimiento."
+      },
+      "keywords": [
+        "objectif",
+        "conformité",
+        "engagement",
+        "mission",
+        "stratégie",
+        "ziel",
+        "compliance",
+        "verpflichtung",
+        "objective",
+        "compliance",
+        "commitment",
+        "objetivo",
+        "cumplimiento",
+        "compromiso"
+      ],
+      "severity": "medium",
+      "penalty": 0.1,
+      "regulatory_basis": "Circulaire CSSF 12/552 relative à la gouvernance d'entreprise",
+      "required_elements": [
+        "Objectifs clairs",
+        "Méthodes de mesure",
+        "Révision périodique",
+        "Communication interne"
+      ]
+    },
+    "gestion_risques": {
+      "description": {
+        "fr": "La politique doit définir le cadre de gestion des risques.",
+        "de": "Die Richtlinie muss den Risikomanagement-Rahmen definieren.",
+        "en": "The policy must define the risk management framework.",
+        "es": "La política debe definir el marco de gestión de riesgos."
+      },
+      "keywords": [
+        "gestion des risques",
+        "risque opérationnel",
+        "risque de crédit",
+        "risque de marché",
+        "risikomanagement",
+        "operationelles risiko",
+        "risk management",
+        "operational risk",
+        "credit risk",
+        "gestión de riesgos",
+        "riesgo operacional"
+      ],
+      "severity": "high",
+      "penalty": 0.25,
+      "regulatory_basis": "Règlement CRR (UE) n° 575/2013",
+      "required_elements": [
+        "Identification des risques",
+        "Évaluation des risques",
+        "Stratégies d'atténuation",
+        "Surveillance continue"
+      ]
+    },
+    "formation_personnel": {
+      "description": {
+        "fr": "La politique doit prévoir un programme de formation du personnel.",
+        "de": "Die Richtlinie muss ein Personalschulungsprogramm vorsehen.",
+        "en": "The policy must provide for a staff training program.",
+        "es": "La política debe proporcionar un programa de capacitación del personal."
+      },
+      "keywords": [
+        "formation",
+        "personnel",
+        "sensibilisation",
+        "compétence",
+        "schulung",
+        "personal",
+        "bewusstsein",
+        "training",
+        "staff",
+        "awareness",
+        "formación",
+        "personal",
+        "concienciación"
+      ],
+      "severity": "medium",
+      "penalty": 0.15,
+      "regulatory_basis": "Loi du 12 novembre 2004 relative à la lutte contre le blanchiment",
+      "required_elements": [
+        "Programme de formation",
+        "Fréquence des formations",
+        "Évaluation des connaissances",
+        "Mise à jour régulière"
+      ]
+    }
+  },
+  "procedure_interne": {
+    "escalade_incidents": {
+      "description": {
+        "fr": "La procédure doit définir un processus d'escalade des incidents.",
+        "de": "Das Verfahren muss einen Eskalationsprozess für Vorfälle definieren.",
+        "en": "The procedure must define an incident escalation process.",
+        "es": "El procedimiento debe definir un proceso de escalada de incidentes."
+      },
+      "keywords": [
+        "escalade",
+        "incident",
+        "alerte",
+        "notification",
+        "eskalation",
+        "vorfall",
+        "warnung",
+        "escalation",
+        "incident",
+        "alert",
+        "escalada",
+        "incidente",
+        "alerta"
+      ],
+      "severity": "high",
+      "penalty": 0.2,
+      "regulatory_basis": "Circulaire CSSF 12/552 relative à la gouvernance d'entreprise",
+      "required_elements": [
+        "Critères d'escalade",
+        "Niveaux hiérarchiques",
+        "Délais de traitement",
+        "Documentation requise"
+      ]
+    },
+    "controle_interne": {
+      "description": {
+        "fr": "La procédure doit établir un système de contrôle interne.",
+        "de": "Das Verfahren muss ein internes Kontrollsystem etablieren.",
+        "en": "The procedure must establish an internal control system.",
+        "es": "El procedimiento debe establecer un sistema de control interno."
+      },
+      "keywords": [
+        "contrôle interne",
+        "audit interne",
+        "vérification",
+        "surveillance",
+        "interne kontrolle",
+        "interne revision",
+        "internal control",
+        "internal audit",
+        "control interno",
+        "auditoría interna"
+      ],
+      "severity": "high",
+      "penalty": 0.25,
+      "regulatory_basis": "Circulaire CSSF 12/552 relative à la gouvernance d'entreprise",
+      "required_elements": [
+        "Trois lignes de défense",
+        "Séparation des fonctions",
+        "Contrôles périodiques",
+        "Rapports de contrôle"
+      ]
+    }
+  },
+  "document_kyc": {
+    "identification_client": {
+      "description": {
+        "fr": "Le document KYC doit contenir l'identification complète du client.",
+        "de": "Das KYC-Dokument muss die vollständige Kundenidentifikation enthalten.",
+        "en": "The KYC document must contain complete client identification.",
+        "es": "El documento KYC debe contener la identificación completa del cliente."
+      },
+      "keywords": [
+        "identification",
+        "pièce d'identité",
+        "passeport",
+        "carte d'identité",
+        "identifikation",
+        "ausweis",
+        "reisepass",
+        "identification",
+        "identity document",
+        "passport",
+        "identificación",
+        "documento de identidad"
+      ],
+      "severity": "high",
+      "penalty": 0.3,
+      "regulatory_basis": "Loi du 12 novembre 2004 relative à la lutte contre le blanchiment",
+      "required_elements": [
+        "Document d'identité valide",
+        "Preuve d'adresse",
+        "Vérification des données",
+        "Copie certifiée conforme"
+      ]
+    },
+    "profil_risque": {
+      "description": {
+        "fr": "Le document KYC doit évaluer le profil de risque du client.",
+        "de": "Das KYC-Dokument muss das Risikoprofil des Kunden bewerten.",
+        "en": "The KYC document must assess the client's risk profile.",
+        "es": "El documento KYC debe evaluar el perfil de riesgo del cliente."
+      },
+      "keywords": [
+        "profil de risque",
+        "évaluation risque",
+        "classification",
+        "risikoprofil",
+        "risikobewertung",
+        "klassifizierung",
+        "risk profile",
+        "risk assessment",
+        "classification",
+        "perfil de riesgo",
+        "evaluación de riesgo"
+      ],
+      "severity": "high",
+      "penalty": 0.25,
+      "regulatory_basis": "Circulaire CSSF 15/609 relative à la lutte contre le blanchiment",
+      "required_elements": [
+        "Questionnaire de risque",
+        "Analyse de la situation",
+        "Classification du risque",
+        "Justification de l'évaluation"
+      ]
+    },
+    "source_fonds": {
+      "description": {
+        "fr": "Le document KYC doit documenter la source des fonds.",
+        "de": "Das KYC-Dokument muss die Herkunft der Mittel dokumentieren.",
+        "en": "The KYC document must document the source of funds.",
+        "es": "El documento KYC debe documentar el origen de los fondos."
+      },
+      "keywords": [
+        "source des fonds",
+        "origine des fonds",
+        "provenance",
+        "justificatif",
+        "herkunft der mittel",
+        "nachweis",
+        "source of funds",
+        "origin",
+        "evidence",
+        "origen de fondos",
+        "procedencia"
+      ],
+      "severity": "high",
+      "penalty": 0.3,
+      "regulatory_basis": "Loi du 12 novembre 2004 relative à la lutte contre le blanchiment",
+      "required_elements": [
+        "Déclaration de source",
+        "Justificatifs financiers",
+        "Vérification de cohérence",
+        "Documentation probante"
+      ]
+    }
+  },
+  "scoring_weights": {
+    "severity_multipliers": {
+      "high": 1.0,
+      "medium": 0.6,
+      "low": 0.3
+    },
+    "document_type_weights": {
+      "contrat": 1.0,
+      "rapport_annuel": 0.8,
+      "bilan_financier": 0.9,
+      "politique": 0.7,
+      "procedure_interne": 0.6,
+      "document_kyc": 1.0
+    },
+    "penalty_calculation": {
+      "formula": "base_penalty * severity_multiplier * document_weight",
+      "max_penalty": 1.0,
+      "min_penalty": 0.0
+    }
+  },
+  "validation_rules": {
+    "minimum_score": 0.7,
+    "critical_elements": [
+      "confidentialite_clause",
+      "loi_applicable",
+      "protection_donnees",
+      "lutte_anti_blanchiment",
+      "responsable_conformite",
+      "identification_client",
+      "source_fonds"
+    ],
+    "optional_elements": [
+      "developpement_durable",
+      "formation_personnel"
+    ]
+  },
+  "regulatory_updates": {
+    "last_updated": "2025-01-01",
+    "next_review": "2025-06-01",
+    "changelog": [
+      {
+        "date": "2025-01-01",
+        "changes": "Ajout des exigences DORA et MiCA",
+        "affected_rules": ["politique", "procedure_interne"]
+      }
+    ]
+  }
+}

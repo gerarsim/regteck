@@ -1,0 +1,697 @@
+/* ==============================================
+   LEXAI APP - THÈME SOMBRE CORRIGÉ
+   ============================================== */
+
+/* Variables CSS pour le thème sombre */
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-muted: #b0b0b0;
+  --accent-blue: #3b82f6;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+  --accent-orange: #f59e0b;
+  --border-color: #404040;
+  --hover-bg: #333333;
+  --shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-light: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* ==============================================
+   FORCER LE THÈME SOMBRE GLOBAL
+   ============================================== */
+
+/* Suppression complète de l'image de fond */
+.stApp {
+  background-color: var(--bg-primary) !important;
+  background-image: none !important;
+  color: var(--text-primary) !important;
+}
+
+/* Container principal avec fond noir opaque */
+.main .block-container {
+  background-color: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  margin-top: 1rem !important;
+  box-shadow: var(--shadow-dark) !important;
+}
+
+/* Forcer TOUT le texte en blanc */
+.main, .main *, .stMarkdown, .stText, p, span, div, li, ul, ol {
+  color: var(--text-primary) !important;
+}
+
+/* ==============================================
+   TYPOGRAPHIE SOMBRE
+   ============================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-primary) !important;
+  font-weight: 600;
+  text-shadow: none !important;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-primary) !important;
+}
+
+h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid var(--accent-blue);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary) !important;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--accent-blue) !important;
+  margin-bottom: 1rem;
+}
+
+/* ==============================================
+   COMPOSANTS CARDS SOMBRES
+   ============================================== */
+
+.info-card, .success-card, .warning-card, .error-card, .enhanced-card, .status-card {
+  background-color: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-dark);
+  transition: all 0.3s ease;
+  backdrop-filter: none;
+}
+
+.info-card:hover, .success-card:hover, .warning-card:hover, .error-card:hover,
+.enhanced-card:hover, .status-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.7);
+  border-color: var(--accent-blue);
+}
+
+/* Bordures colorées pour différents types de cards */
+.info-card {
+  border-left: 5px solid var(--accent-blue) !important;
+}
+
+.success-card {
+  border-left: 5px solid var(--accent-green) !important;
+}
+
+.warning-card {
+  border-left: 5px solid var(--accent-orange) !important;
+}
+
+.error-card {
+  border-left: 5px solid var(--accent-red) !important;
+}
+
+/* Texte dans les cards */
+.info-card *, .success-card *, .warning-card *, .error-card *,
+.enhanced-card *, .status-card * {
+  color: var(--text-primary) !important;
+}
+
+.info-card h3, .success-card h3, .warning-card h3, .error-card h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary) !important;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-block {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.card-block:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-dark);
+  border-color: var(--accent-blue);
+}
+
+.card-block p, .card-block li {
+  color: var(--text-primary) !important;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ==============================================
+   BOUTONS SOMBRES
+   ============================================== */
+
+button, .stButton > button {
+  background-color: var(--accent-blue) !important;
+  color: var(--text-primary) !important;
+  border: none !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  font-size: 1rem;
+}
+
+button:hover, .stButton > button:hover {
+  background-color: #2563eb !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+button:focus, .stButton > button:focus {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+button:active, .stButton > button:active {
+  transform: translateY(0);
+}
+
+/* Variantes de boutons */
+.btn-success {
+  background-color: var(--accent-green) !important;
+}
+
+.btn-warning {
+  background-color: var(--accent-orange) !important;
+}
+
+.btn-error {
+  background-color: var(--accent-red) !important;
+}
+
+/* ==============================================
+   BARRE UTILISATEUR SOMBRE
+   ============================================== */
+
+.user-bar, .user-info-bar {
+  background-color: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  font-weight: 500;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-light);
+}
+
+.user-bar .user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+/* ==============================================
+   DATAFRAMES SOMBRES
+   ============================================== */
+
+.stDataFrame {
+  background-color: var(--bg-tertiary) !important;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--border-color);
+}
+
+.stDataFrame [data-testid="stTable"] {
+  background-color: var(--bg-tertiary) !important;
+}
+
+.stDataFrame tbody td {
+  color: var(--text-primary) !important;
+  padding: 0.75rem !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  background-color: var(--bg-secondary) !important;
+}
+
+.stDataFrame thead th {
+  background-color: var(--accent-blue) !important;
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
+  padding: 1rem 0.75rem !important;
+  text-align: left !important;
+}
+
+/* ==============================================
+   FILE UPLOADER SOMBRE
+   ============================================== */
+
+.stFileUploader > label div {
+  display: none !important;
+}
+
+[data-testid="stFileUploader"] > div:first-child {
+  background-color: var(--bg-tertiary) !important;
+  border: 2px dashed var(--accent-blue) !important;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  font-weight: bold;
+  color: var(--text-primary) !important;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+[data-testid="stFileUploader"] > div:first-child:hover {
+  background-color: var(--hover-bg) !important;
+  border-color: var(--accent-green) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
+}
+
+/* ==============================================
+   INPUTS ET SELECTS SOMBRES
+   ============================================== */
+
+.stTextInput > div > div > input,
+.stTextArea > div > div > textarea,
+.stSelectbox > div > div > div,
+.stSelectbox select,
+.stNumberInput > div > div > input {
+  background-color: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+  padding: 0.75rem !important;
+}
+
+.stTextInput > div > div > input:focus,
+.stTextArea > div > div > textarea:focus,
+.stNumberInput > div > div > input:focus {
+  border-color: var(--accent-blue) !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3) !important;
+  background-color: var(--bg-tertiary) !important;
+}
+
+/* ==============================================
+   ONGLETS SOMBRES
+   ============================================== */
+
+.stTabs [data-baseweb="tab-list"] {
+  background-color: var(--bg-tertiary) !important;
+  border-radius: 8px;
+  padding: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.stTabs [data-baseweb="tab"] {
+  background-color: transparent !important;
+  color: var(--text-muted) !important;
+  border-radius: 6px;
+  padding: 12px 20px;
+  transition: all 0.3s ease;
+}
+
+.stTabs [aria-selected="true"] {
+  background-color: var(--accent-blue) !important;
+  color: var(--text-primary) !important;
+}
+
+.stTabs [data-baseweb="tab"]:hover:not([aria-selected="true"]) {
+  background-color: var(--hover-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+/* ==============================================
+   SIDEBAR SOMBRE
+   ============================================== */
+
+.css-1d391kg, .css-1l02zno {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-right: 1px solid var(--border-color);
+}
+
+.css-1d391kg *, .css-1l02zno * {
+  color: var(--text-primary) !important;
+}
+
+/* ==============================================
+   MÉTRIQUES ET SCORES SOMBRES
+   ============================================== */
+
+.metric-box, .score-container {
+  background-color: var(--bg-tertiary) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.metric-box:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-dark);
+  border-color: var(--accent-blue);
+}
+
+.score-circle {
+  background-color: var(--bg-tertiary);
+  border: 2px solid var(--border-color);
+  color: var(--text-primary) !important;
+  box-shadow: var(--shadow-dark);
+}
+
+.score-value {
+  color: var(--text-primary) !important;
+  text-shadow: none !important;
+}
+
+.score-label {
+  color: var(--text-secondary) !important;
+}
+
+/* ==============================================
+   PROGRESS BARS SOMBRES
+   ============================================== */
+
+.stProgress > div > div {
+  background-color: var(--accent-blue) !important;
+}
+
+.stProgress > div {
+  background-color: var(--bg-tertiary) !important;
+}
+
+/* ==============================================
+   ALERTS ET NOTIFICATIONS SOMBRES
+   ============================================== */
+
+.stAlert {
+  background-color: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px;
+}
+
+.stSuccess {
+  background-color: rgba(16, 185, 129, 0.2) !important;
+  border-left: 4px solid var(--accent-green) !important;
+  color: var(--text-primary) !important;
+}
+
+.stError {
+  background-color: rgba(239, 68, 68, 0.2) !important;
+  border-left: 4px solid var(--accent-red) !important;
+  color: var(--text-primary) !important;
+}
+
+.stWarning {
+  background-color: rgba(245, 158, 11, 0.2) !important;
+  border-left: 4px solid var(--accent-orange) !important;
+  color: var(--text-primary) !important;
+}
+
+.stInfo {
+  background-color: rgba(59, 130, 246, 0.2) !important;
+  border-left: 4px solid var(--accent-blue) !important;
+  color: var(--text-primary) !important;
+}
+
+/* ==============================================
+   EXPANDER SOMBRE
+   ============================================== */
+
+.streamlit-expanderHeader {
+  background-color: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px 8px 0 0;
+}
+
+.streamlit-expanderContent {
+  background-color: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  color: var(--text-primary) !important;
+}
+
+/* ==============================================
+   ANIMATIONS DE CHARGEMENT SOMBRES
+   ============================================== */
+
+.processing-animation {
+  background-color: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-dark);
+  margin: 2rem 0;
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  margin: 0 6px;
+  background: var(--accent-blue);
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 1.5s infinite ease-in-out;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.8); opacity: 0.5; }
+}
+
+/* ==============================================
+   SCROLLBARS SOMBRES
+   ============================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ==============================================
+   CLASSES SPÉCIFIQUES POUR SCORES
+   ============================================== */
+
+.score-correction-applied {
+  background-color: rgba(16, 185, 129, 0.2) !important;
+  border-left: 4px solid var(--accent-green) !important;
+  color: var(--text-primary) !important;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+}
+
+.score-debug {
+  background-color: rgba(245, 158, 11, 0.2) !important;
+  color: var(--text-primary) !important;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--accent-orange);
+}
+
+.corrected-score {
+  background-color: rgba(59, 130, 246, 0.2) !important;
+  border: 1px solid var(--accent-blue) !important;
+  color: var(--text-primary) !important;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem 0;
+}
+
+/* ==============================================
+   THÈME LUXEMBOURG SOMBRE
+   ============================================== */
+
+.lux-flag-bg, .lux-flag-accent {
+  background: linear-gradient(90deg, var(--accent-red) 33.33%, #ffffff 33.33%, #ffffff 66.66%, var(--accent-blue) 66.66%);
+  height: 4px;
+  border-radius: 2px;
+  margin: 1rem 0;
+}
+
+.lux-red {
+  color: var(--accent-red);
+}
+
+.lux-blue {
+  color: var(--accent-blue);
+}
+
+.lux-accent-border {
+  border: 2px solid;
+  border-image: linear-gradient(90deg, var(--accent-red), #ffffff, var(--accent-blue)) 1;
+}
+
+/* ==============================================
+   ANIMATIONS D'ENTRÉE
+   ============================================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+/* ==============================================
+   RESPONSIVE MOBILE SOMBRE
+   ============================================== */
+
+@media (max-width: 768px) {
+  .main .block-container {
+    padding: 1rem !important;
+    margin-top: 0.5rem !important;
+  }
+  
+  .card-block, .info-card, .success-card, .warning-card, .error-card, .enhanced-card {
+    padding: 1rem !important;
+  }
+  
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  h3 {
+    font-size: 1.25rem !important;
+  }
+  
+  .user-bar, .user-info-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  button, .stButton > button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  [data-testid="stFileUploader"] > div:first-child {
+    padding: 1.5rem 1rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .main .block-container {
+    padding: 0.75rem !important;
+  }
+  
+  h1 {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* ==============================================
+   ACCESSIBILITÉ SOMBRE
+   ============================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Indicateurs de focus pour l'accessibilité */
+*:focus {
+  outline: 2px solid var(--accent-blue) !important;
+  outline-offset: 2px;
+}
+
+/* Support pour mode contraste élevé */
+@media (prefers-contrast: high) {
+  .card-block, .info-card, .success-card, .warning-card, .error-card, .enhanced-card {
+    border: 2px solid var(--text-primary) !important;
+  }
+  
+  button, .stButton > button {
+    border: 2px solid var(--text-primary) !important;
+  }
+  
+  :root {
+    --border-color: #808080;
+    --text-muted: #cccccc;
+  }
+}
