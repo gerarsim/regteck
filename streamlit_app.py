@@ -42,7 +42,7 @@ logging.basicConfig(level=logging.INFO)
 
 # Check environment variables for Ollama
 USE_LLM = os.getenv('USE_LLM_ANALYZER', 'false').lower() == 'true'
-OLLAMA_HOST = os.getenv('OLLAMA_HOST', 'http://localhost:11434')
+OLLAMA_HOST = os.getenv('OLLAMA_HOST', 'http://192.168.1.24:11434')
 OLLAMA_MODEL = os.getenv('OLLAMA_MODEL', 'llama3.2:3b')
 LLM_MODE = os.getenv('LLM_ANALYSIS_MODE', 'hybrid')
 

@@ -42,7 +42,7 @@ services:
       # Ollama connection - Uses host.docker.internal for cross-platform support
       # For Linux: Uses extra_hosts mapping below (host.docker.internal -> host-gateway)
       # For Mac/Windows Docker Desktop: host.docker.internal works natively
-      OLLAMA_HOST: "http://127.0.0.1:11434"
+      OLLAMA_HOST: "http://192.168.1.24:11434"
       OLLAMA_MODEL: "llama3.2:3b"
       LLM_ANALYSIS_MODE: "hybrid"
       LLM_TEMPERATURE: "0.1"
@@ -78,7 +78,7 @@ services:
     cpus: 1.0
 
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      test: ["CMD", "curl", "-f", "http://192.168.124:8501/_stcore/health"]
       interval: 30s
       timeout: 10s
       retries: 3
