@@ -55,7 +55,6 @@ ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONPATH=/app \
     USE_LOCAL_ENGINE=true \
     COMPLIANCE_ENGINE=local \
-    # Security
     PYTHONHASHSEED=random
 
 WORKDIR /app
@@ -94,16 +93,26 @@ RUN pip install --no-cache-dir /wheels/* \
 # Create non-root user and group
 RUN groupadd -r lexai --gid=1000 \
     && useradd -r -g lexai --uid=1000 --home-dir=/app --shell=/sbin/nologin lexai \
-    && mkdir -p /app/data /app/logs /app/assets /app/utils \
+    && mkdir -p /app/logs \
     && chown -R lexai:lexai /app
 
 # Copy application files with correct ownership
+# Following the actual project structure:
+# ├── assets/
+# ├── data/
+# ├── docs/
+# ├── utils/
+# └── root files (*.py, *.toml, *.sh, *.md, *.txt)
+
+COPY --chown=lexai:lexai assets/ ./assets/
 COPY --chown=lexai:lexai data/ ./data/
-COPY --chown=lexai:lexai assets/ ./assets/ 2>/dev/null || true
-COPY --chown=lexai:lexai utils/ ./utils/ 2>/dev/null || true
+COPY --chown=lexai:lexai utils/ ./utils/
+COPY --chown=lexai:lexai docs/ ./docs/
 COPY --chown=lexai:lexai *.py ./
-COPY --chown=lexai:lexai config.toml ./
-COPY --chown=lexai:lexai entrypoint.sh ./
+COPY --chown=lexai:lexai *.txt ./
+COPY --chown=lexai:lexai *.toml ./
+COPY --chown=lexai:lexai *.sh ./
+COPY --chown=lexai:lexai *.md ./
 
 # Make entrypoint executable
 RUN chmod +x /app/entrypoint.sh
