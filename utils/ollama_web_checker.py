@@ -1,451 +1,417 @@
-# utils/ollama_web_checker.py
+#!/usr/bin/env python3
+"""
+Fixed Ollama/Compliance Engine Online Checker
+Works with data/ subdirectory structure
+"""
 
-import requests
+import os
+import sys
 import json
-from typing import Dict, List, Any
-from bs4 import BeautifulSoup
-import re
+import logging
+from typing import Dict, Any, List, Tuple
+from datetime import datetime
+from pathlib import Path
 
-class OllamaWebChecker:
-    """
-    Enables Ollama to check official compliance websites
-    Implements function calling for real-time verification
-    """
+logger = logging.getLogger(__name__)
 
-    def __init__(self, ollama_host: str = "http://localhost:11434"):
-        self.ollama_host = ollama_host
 
-        # Official sources to check
-        self.official_sources = {
-            'gdpr': {
-                'url': 'https://gdpr.eu/',
-                'api': 'https://gdpr.eu/search/',
-                'name': 'GDPR Official'
-            },
-            'cssf': {
-                'url': 'https://www.cssf.lu/en/',
-                'api': 'https://www.cssf.lu/en/search/',
-                'name': 'CSSF Luxembourg'
-            },
-            'eu_sanctions': {
-                'url': 'https://www.sanctionsmap.eu/',
-                'api': 'https://webgate.ec.europa.eu/fsd/fsf/public/files/xmlFullSanctionsList/',
-                'name': 'EU Sanctions Map'
-            },
-            'ofac': {
-                'url': 'https://sanctionssearch.ofac.treas.gov/',
-                'api': 'https://www.treasury.gov/ofac/downloads/sdnlist.txt',
-                'name': 'US OFAC'
-            },
-            'eba': {
-                'url': 'https://www.eba.europa.eu/',
-                'name': 'European Banking Authority'
-            }
-        }
+class EngineHealthChecker:
+    """Fixed health checker for compliance engine with correct paths"""
 
-        # Tools available to Ollama
-        self.tools = [
-            {
-                "type": "function",
-                "function": {
-                    "name": "check_gdpr_compliance",
-                    "description": "Check GDPR official website for compliance requirements",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {
-                            "topic": {
-                                "type": "string",
-                                "description": "GDPR topic to check (e.g., 'consent', 'data processing', 'right to erasure')"
-                            }
-                        },
-                        "required": ["topic"]
-                    }
-                }
-            },
-            {
-                "type": "function",
-                "function": {
-                    "name": "check_cssf_regulations",
-                    "description": "Check CSSF Luxembourg regulations and circulars",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {
-                            "regulation_type": {
-                                "type": "string",
-                                "description": "Type of regulation (e.g., 'AML', 'banking', 'investment funds')"
-                            }
-                        },
-                        "required": ["regulation_type"]
-                    }
-                }
-            },
-            {
-                "type": "function",
-                "function": {
-                    "name": "check_sanctions_list",
-                    "description": "Check EU/OFAC sanctions lists for entities or individuals",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {
-                            "entity_name": {
-                                "type": "string",
-                                "description": "Name of person or organization to check"
-                            },
-                            "list_type": {
-                                "type": "string",
-                                "enum": ["EU", "OFAC", "both"],
-                                "description": "Which sanctions list to check"
-                            }
-                        },
-                        "required": ["entity_name"]
-                    }
-                }
-            },
-            {
-                "type": "function",
-                "function": {
-                    "name": "get_latest_regulatory_update",
-                    "description": "Get latest regulatory updates from official sources",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {
-                            "source": {
-                                "type": "string",
-                                "enum": ["CSSF", "EBA", "ECB", "GDPR"],
-                                "description": "Regulatory source"
-                            },
-                            "topic": {
-                                "type": "string",
-                                "description": "Topic of interest"
-                            }
-                        },
-                        "required": ["source"]
-                    }
-                }
-            }
+    def __init__(self, base_dir: str = None):
+        """
+        Initialize with base directory
+        If None, uses parent directory (project root)
+        """
+        if base_dir is None:
+            # Get parent directory of utils/ (which is project root)
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            base_dir = os.path.dirname(current_dir)
+
+        self.base_dir = base_dir
+        self.data_dir = os.path.join(base_dir, 'data')
+
+        self.required_files = [
+            'analyses.json',
+            'compliance_rules.json',
+            'compliance_penalties.json',
+            'cross_border_regulations.json',
+            'dynamic_rules.json',
+            'financial_institutions.json',
+            'issue_descriptions.json',
+            'lux_keywords.json',
+            'regulations.json',
+            'reporting_requirements.json',
+            'sanctions_lists.json'
         ]
 
-    def check_gdpr_compliance(self, topic: str) -> Dict[str, Any]:
-        """Check GDPR official website"""
-        try:
-            # Search GDPR.eu
-            search_url = f"https://gdpr.eu/?s={topic.replace(' ', '+')}"
-            response = requests.get(search_url, timeout=10)
-
-            if response.status_code == 200:
-                soup = BeautifulSoup(response.content, 'html.parser')
-
-                # Extract relevant articles
-                articles = []
-                for result in soup.find_all('article', limit=3):
-                    title = result.find('h2')
-                    content = result.find('p')
-                    link = result.find('a', href=True)
-
-                    if title and content:
-                        articles.append({
-                            'title': title.text.strip(),
-                            'summary': content.text.strip()[:200],
-                            'url': link['href'] if link else search_url
-                        })
-
-                return {
-                    'source': 'GDPR Official',
-                    'topic': topic,
-                    'found': len(articles) > 0,
-                    'articles': articles,
-                    'last_checked': 'real-time',
-                    'url': search_url
-                }
-
-        except Exception as e:
-            return {
-                'source': 'GDPR Official',
-                'topic': topic,
-                'error': str(e),
-                'found': False
-            }
-
-    def check_cssf_regulations(self, regulation_type: str) -> Dict[str, Any]:
-        """Check CSSF Luxembourg website"""
-        try:
-            # CSSF circulars and regulations
-            base_url = "https://www.cssf.lu/en/"
-
-            # Map regulation types to CSSF sections
-            section_map = {
-                'aml': 'supervision/aml-cft/',
-                'banking': 'supervision/banking-supervision/',
-                'investment': 'supervision/ucis-supervision/',
-                'funds': 'supervision/ucis-supervision/'
-            }
-
-            section = section_map.get(regulation_type.lower(), 'supervision/')
-            url = base_url + section
-
-            response = requests.get(url, timeout=10)
-
-            if response.status_code == 200:
-                soup = BeautifulSoup(response.content, 'html.parser')
-
-                # Extract recent circulars
-                circulars = []
-                for item in soup.find_all('div', class_='circular', limit=5):
-                    title = item.find('h3') or item.find('h2')
-                    date = item.find('time') or item.find('span', class_='date')
-
-                    if title:
-                        circulars.append({
-                            'title': title.text.strip(),
-                            'date': date.text.strip() if date else 'N/A',
-                            'type': regulation_type
-                        })
-
-                return {
-                    'source': 'CSSF Luxembourg',
-                    'regulation_type': regulation_type,
-                    'found': len(circulars) > 0,
-                    'circulars': circulars,
-                    'last_checked': 'real-time',
-                    'url': url
-                }
-
-        except Exception as e:
-            return {
-                'source': 'CSSF Luxembourg',
-                'regulation_type': regulation_type,
-                'error': str(e),
-                'found': False
-            }
-
-    def check_sanctions_list(self, entity_name: str, list_type: str = "both") -> Dict[str, Any]:
-        """Check sanctions lists"""
-        results = {
-            'entity_name': entity_name,
-            'found_on_sanctions_list': False,
-            'lists_checked': [],
-            'matches': []
+    def check_engine_installation(self) -> Dict[str, Any]:
+        """
+        Check if compliance engine is properly installed and operational
+        This is the fixed version of check_ollama_installation
+        """
+        result = {
+            "timestamp": datetime.now().isoformat(),
+            "installed": False,
+            "running": False,
+            "status": "unknown",
+            "engine_type": "unknown",
+            "models": [],
+            "features": [],
+            "data_files": {},
+            "errors": [],
+            "warnings": [],
+            "recommendations": []
         }
 
-        # Check EU sanctions
-        if list_type in ["EU", "both"]:
-            try:
-                # EU consolidated list
-                eu_url = "https://webgate.ec.europa.eu/fsd/fsf/public/files/xmlFullSanctionsList/content?token=dG9rZW4tMjAxNw"
-                response = requests.get(eu_url, timeout=15)
+        # Check engine module
+        engine_check = self._check_engine_module()
+        result.update(engine_check)
 
-                if response.status_code == 200:
-                    # Parse XML response
-                    content = response.text.lower()
-                    if entity_name.lower() in content:
-                        results['found_on_sanctions_list'] = True
-                        results['matches'].append({
-                            'list': 'EU Consolidated',
-                            'confidence': 'High',
-                            'action': 'IMMEDIATE REJECTION REQUIRED'
-                        })
+        # Check data files
+        data_check = self._check_data_files()
+        result["data_files"] = data_check
 
-                results['lists_checked'].append('EU')
+        # Determine final status
+        result = self._determine_status(result)
 
-            except Exception as e:
-                results['lists_checked'].append(f'EU (error: {str(e)})')
+        return result
 
-        # Check OFAC
-        if list_type in ["OFAC", "both"]:
-            try:
-                # OFAC SDN list
-                ofac_url = "https://www.treasury.gov/ofac/downloads/sdnlist.txt"
-                response = requests.get(ofac_url, timeout=15)
-
-                if response.status_code == 200:
-                    content = response.text.lower()
-                    if entity_name.lower() in content:
-                        results['found_on_sanctions_list'] = True
-                        results['matches'].append({
-                            'list': 'US OFAC SDN',
-                            'confidence': 'High',
-                            'action': 'IMMEDIATE REJECTION REQUIRED'
-                        })
-
-                results['lists_checked'].append('OFAC')
-
-            except Exception as e:
-                results['lists_checked'].append(f'OFAC (error: {str(e)})')
-
-        results['last_checked'] = 'real-time'
-        results['risk_level'] = 'EXTREME' if results['found_on_sanctions_list'] else 'NONE'
-
-        return results
-
-    def get_latest_regulatory_update(self, source: str, topic: str = None) -> Dict[str, Any]:
-        """Get latest regulatory updates"""
-
-        source_urls = {
-            'CSSF': 'https://www.cssf.lu/en/news-publications/',
-            'EBA': 'https://www.eba.europa.eu/news-press',
-            'ECB': 'https://www.ecb.europa.eu/press/html/index.en.html',
-            'GDPR': 'https://gdpr.eu/news/'
+    def _check_engine_module(self) -> Dict[str, Any]:
+        """Check if engine.py module is available and functional"""
+        result = {
+            "installed": False,
+            "running": False,
+            "engine_type": "none",
+            "models": [],
+            "features": []
         }
 
         try:
-            url = source_urls.get(source)
-            if not url:
-                return {'error': f'Unknown source: {source}'}
+            # Add project root to path if needed
+            if self.base_dir not in sys.path:
+                sys.path.insert(0, self.base_dir)
 
-            response = requests.get(url, timeout=10)
+            from engine import LocalComplianceEngine, analyze_document_compliance
 
-            if response.status_code == 200:
-                soup = BeautifulSoup(response.content, 'html.parser')
+            result["installed"] = True
+            result["engine_type"] = "local_json_based_decimal_corrected"
 
-                # Extract recent news/updates
-                updates = []
-                for item in soup.find_all(['article', 'div'], class_=re.compile('news|article|update'), limit=5):
-                    title = item.find(['h2', 'h3', 'h4'])
-                    date = item.find('time') or item.find('span', class_=re.compile('date'))
+            # Try to instantiate and test
+            try:
+                engine = LocalComplianceEngine(self.data_dir)
+                stats = engine.get_analysis_statistics()
 
-                    if title:
-                        text = title.text.strip()
-                        if not topic or topic.lower() in text.lower():
-                            updates.append({
-                                'title': text,
-                                'date': date.text.strip() if date else 'Recent',
-                                'source': source
-                            })
+                result["running"] = True
+                result["models"] = ["local_engine_v4.0_decimal_corrected"]
+                result["features"] = [
+                    "Excellence metrics",
+                    "100.00% scoring capability",
+                    "Advanced weighting",
+                    "Banking sector optimization",
+                    "Decimal precision (XX.XX%)",
+                    "Luxembourg-specific analysis"
+                ]
+                result["statistics"] = stats
 
-                return {
-                    'source': source,
-                    'topic': topic,
-                    'updates': updates,
-                    'count': len(updates),
-                    'last_checked': 'real-time',
-                    'url': url
+            except Exception as e:
+                result["running"] = False
+                result["errors"] = [f"Engine initialization failed: {str(e)}"]
+                logger.warning(f"Engine init error: {e}")
+
+        except ImportError as e:
+            result["installed"] = False
+            result["errors"] = [f"Engine module not found: {str(e)}"]
+            result["recommendations"] = [
+                "Ensure engine.py is present in project root",
+                "Check Python import paths",
+                "Verify engine.py is not corrupted"
+            ]
+
+        return result
+
+    def _check_data_files(self) -> Dict[str, Any]:
+        """Check data files in data/ subdirectory"""
+        data_info = {
+            "total_required": len(self.required_files),
+            "found": 0,
+            "missing": [],
+            "valid": [],
+            "invalid": [],
+            "corrupted": [],
+            "total_size_mb": 0.0,
+            "details": {}
+        }
+
+        # Check if data directory exists
+        if not os.path.exists(self.data_dir):
+            data_info["errors"] = [f"Data directory not found: {self.data_dir}"]
+            for filename in self.required_files:
+                data_info["missing"].append(filename)
+            return data_info
+
+        for filename in self.required_files:
+            # Look in data/ subdirectory
+            filepath = os.path.join(self.data_dir, filename)
+
+            if os.path.exists(filepath):
+                data_info["found"] += 1
+
+                # Validate JSON
+                is_valid, error, size_mb, records = self._validate_json(filepath)
+
+                data_info["details"][filename] = {
+                    "path": filepath,
+                    "valid": is_valid,
+                    "size_mb": round(size_mb, 2),
+                    "records": records,
+                    "error": error
                 }
 
+                if is_valid:
+                    data_info["valid"].append(filename)
+                    data_info["total_size_mb"] += size_mb
+                elif error:
+                    data_info["invalid"].append(filename)
+                    data_info["corrupted"].append(filename)
+            else:
+                data_info["missing"].append(filename)
+                data_info["details"][filename] = {
+                    "path": filepath,
+                    "valid": False,
+                    "error": "File not found"
+                }
+
+        return data_info
+
+    def _validate_json(self, filepath: str) -> Tuple[bool, str, float, int]:
+        """
+        Validate JSON file
+        Returns: (is_valid, error_message, size_mb, record_count)
+        """
+        try:
+            size_mb = os.path.getsize(filepath) / (1024 * 1024)
+
+            with open(filepath, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+
+            # Count records
+            if isinstance(data, dict):
+                record_count = len(data)
+            elif isinstance(data, list):
+                record_count = len(data)
+            else:
+                record_count = 1
+
+            return True, None, size_mb, record_count
+
+        except json.JSONDecodeError as e:
+            return False, f"Invalid JSON: {str(e)}", 0.0, 0
         except Exception as e:
-            return {
-                'source': source,
-                'topic': topic,
-                'error': str(e),
-                'updates': []
-            }
+            return False, f"Read error: {str(e)}", 0.0, 0
 
-    def analyze_with_web_checking(self, text: str, model: str = "llama3.2:3b") -> Dict[str, Any]:
-        """
-        Analyze document with Ollama + real-time web checking
-        """
+    def _determine_status(self, result: Dict[str, Any]) -> Dict[str, Any]:
+        """Determine overall system status"""
 
-        # Step 1: Initial analysis with function calling enabled
-        prompt = f"""You are a Luxembourg compliance expert. Analyze this document for regulatory compliance.
+        data_files = result["data_files"]
+        found_ratio = data_files["found"] / data_files["total_required"]
+        valid_ratio = len(data_files["valid"]) / data_files["total_required"]
 
-For any compliance question where you need current information, use the available functions to check official sources:
-- check_gdpr_compliance() for GDPR questions
-- check_cssf_regulations() for Luxembourg banking regulations  
-- check_sanctions_list() for sanctions screening
-- get_latest_regulatory_update() for recent changes
+        # Determine status
+        if not result["installed"]:
+            result["status"] = "critical"
+            result["warnings"].append("Engine module not installed")
+        elif not result["running"]:
+            result["status"] = "error"
+            result["warnings"].append("Engine installed but not running")
+        elif found_ratio < 0.5:
+            result["status"] = "critical"
+            result["warnings"].append("Less than 50% of required data files found")
+        elif found_ratio < 1.0:
+            result["status"] = "degraded"
+            result["warnings"].append(f"{data_files['total_required'] - data_files['found']} data files missing")
+        elif valid_ratio < 1.0:
+            result["status"] = "warning"
+            result["warnings"].append(f"{len(data_files['invalid'])} invalid data files")
+        else:
+            result["status"] = "operational"
 
-Document to analyze:
-{text}
-
-Provide a comprehensive compliance analysis."""
-
-        # Call Ollama with tools
-        response = requests.post(
-            f"{self.ollama_host}/api/chat",
-            json={
-                "model": model,
-                "messages": [{"role": "user", "content": prompt}],
-                "tools": self.tools,
-                "stream": False
-            }
-        )
-
-        if response.status_code != 200:
-            return {"error": f"Ollama request failed: {response.status_code}"}
-
-        result = response.json()
-
-        # Step 2: Process tool calls
-        message = result.get('message', {})
-        tool_calls = message.get('tool_calls', [])
-
-        web_checks_performed = []
-
-        for tool_call in tool_calls:
-            function_name = tool_call['function']['name']
-            arguments = tool_call['function']['arguments']
-
-            # Execute the function
-            if function_name == 'check_gdpr_compliance':
-                check_result = self.check_gdpr_compliance(**arguments)
-                web_checks_performed.append(check_result)
-
-            elif function_name == 'check_cssf_regulations':
-                check_result = self.check_cssf_regulations(**arguments)
-                web_checks_performed.append(check_result)
-
-            elif function_name == 'check_sanctions_list':
-                check_result = self.check_sanctions_list(**arguments)
-                web_checks_performed.append(check_result)
-
-            elif function_name == 'get_latest_regulatory_update':
-                check_result = self.get_latest_regulatory_update(**arguments)
-                web_checks_performed.append(check_result)
-
-        # Step 3: Re-analyze with web results
-        if web_checks_performed:
-            followup_prompt = f"""Based on the official sources checked:
-
-{json.dumps(web_checks_performed, indent=2)}
-
-Update your compliance analysis with this real-time verified information."""
-
-            followup_response = requests.post(
-                f"{self.ollama_host}/api/chat",
-                json={
-                    "model": model,
-                    "messages": [
-                        {"role": "user", "content": prompt},
-                        {"role": "assistant", "content": message.get('content', '')},
-                        {"role": "user", "content": followup_prompt}
-                    ],
-                    "stream": False
-                }
+        # Add recommendations
+        if data_files["missing"]:
+            result["recommendations"].append(
+                f"Add missing files to data/: {', '.join(data_files['missing'][:3])}{'...' if len(data_files['missing']) > 3 else ''}"
             )
 
-            if followup_response.status_code == 200:
-                final_result = followup_response.json()
-                return {
-                    'analysis': final_result.get('message', {}).get('content', ''),
-                    'web_checks': web_checks_performed,
-                    'sources_verified': len(web_checks_performed),
-                    'real_time_verification': True
-                }
+        if data_files["corrupted"]:
+            result["recommendations"].append(
+                f"Fix corrupted files: {', '.join(data_files['corrupted'])}"
+            )
+
+        if not result["running"] and result["installed"]:
+            result["recommendations"].append(
+                "Check engine.py initialization - review error logs"
+            )
+
+        return result
+
+    def get_compact_status(self) -> Dict[str, Any]:
+        """Get compact status for UI display"""
+        full_status = self.check_engine_installation()
 
         return {
-            'analysis': message.get('content', ''),
-            'web_checks': web_checks_performed,
-            'sources_verified': len(web_checks_performed),
-            'real_time_verification': bool(web_checks_performed)
+            "installed": full_status["installed"],
+            "running": full_status["running"],
+            "status": full_status["status"],
+            "engine_type": full_status["engine_type"],
+            "models": full_status["models"],
+            "features": full_status["features"],
+            "data_files_ok": len(full_status["data_files"]["valid"]) == full_status["data_files"]["total_required"],
+            "data_summary": f"{len(full_status['data_files']['valid'])}/{full_status['data_files']['total_required']} files valid",
+            "decimal_precision": True,
+            "scoring_format": "XX.XX%",
+            "score_correction_enabled": True
         }
 
 
-# Example usage
-if __name__ == "__main__":
-    checker = OllamaWebChecker()
-
-    # Test GDPR check
-    result = checker.check_gdpr_compliance("right to be forgotten")
-    print("GDPR Check:", json.dumps(result, indent=2))
-
-    # Test sanctions check
-    sanctions = checker.check_sanctions_list("Vladimir Putin", "both")
-    print("\nSanctions Check:", json.dumps(sanctions, indent=2))
-
-    # Test full analysis
-    test_doc = """
-    We process personal data of EU citizens without explicit consent.
-    Our banking services are available to clients in Iran and North Korea.
+# Main functions for compatibility
+def check_ollama_installation(base_dir: str = None) -> Dict[str, Any]:
     """
+    Fixed check_ollama_installation function
+    Actually checks local compliance engine, not Ollama
+    """
+    checker = EngineHealthChecker(base_dir)
+    return checker.get_compact_status()
 
-    analysis = checker.analyze_with_web_checking(test_doc)
-    print("\nFull Analysis:", json.dumps(analysis, indent=2))🎉
+
+def check_compliance_engine_online(base_dir: str = None) -> Dict[str, Any]:
+    """Full health check with detailed information"""
+    checker = EngineHealthChecker(base_dir)
+    return checker.check_engine_installation()
+
+
+def get_engine_status_summary(base_dir: str = None) -> str:
+    """Get human-readable status summary"""
+    checker = EngineHealthChecker(base_dir)
+    status = checker.check_engine_installation()
+
+    status_emoji = {
+        "operational": "✅",
+        "warning": "⚠️",
+        "degraded": "⚠️",
+        "error": "❌",
+        "critical": "🚫",
+        "unknown": "❓"
+    }
+
+    emoji = status_emoji.get(status["status"], "❓")
+
+    summary = f"{emoji} Status: {status['status'].upper()}\n"
+    summary += f"Engine: {'Running' if status['running'] else 'Not Running'}\n"
+    summary += f"Data Files: {len(status['data_files']['valid'])}/{status['data_files']['total_required']} valid\n"
+
+    if status["warnings"]:
+        summary += "\nWarnings:\n"
+        for warning in status["warnings"]:
+            summary += f"  • {warning}\n"
+
+    if status["recommendations"]:
+        summary += "\nRecommendations:\n"
+        for rec in status["recommendations"]:
+            summary += f"  • {rec}\n"
+
+    return summary
+
+
+# Backward compatibility - export what was in old version
+__all__ = [
+    'check_ollama_installation',
+    'check_compliance_engine_online',
+    'get_engine_status_summary',
+    'EngineHealthChecker'
+]
+
+
+if __name__ == "__main__":
+    """Run diagnostics when executed directly"""
+    print("=" * 80)
+    print("LexAI Compliance Engine - Online Check & Diagnostics")
+    print("=" * 80)
+
+    # Determine base directory (parent of utils/)
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.dirname(current_dir)
+    print(f"\n📁 Project directory: {base_dir}")
+    print(f"📁 Data directory: {os.path.join(base_dir, 'data')}")
+
+    # Run checks
+    checker = EngineHealthChecker(base_dir)
+
+    print("\n" + "=" * 80)
+    print("COMPACT STATUS (for UI)")
+    print("=" * 80)
+    compact = checker.get_compact_status()
+    print(json.dumps(compact, indent=2))
+
+    print("\n" + "=" * 80)
+    print("DETAILED STATUS")
+    print("=" * 80)
+    detailed = checker.check_engine_installation()
+
+    print(f"\n📊 Overall Status: {detailed['status'].upper()}")
+    print(f"🕐 Timestamp: {detailed['timestamp']}")
+
+    print(f"\n🔧 Engine:")
+    print(f"  Installed: {detailed['installed']}")
+    print(f"  Running: {detailed['running']}")
+    print(f"  Type: {detailed['engine_type']}")
+
+    if detailed['models']:
+        print(f"  Models: {', '.join(detailed['models'])}")
+
+    if detailed['features']:
+        print(f"\n  Features:")
+        for feature in detailed['features']:
+            print(f"    • {feature}")
+
+    print(f"\n📁 Data Files:")
+    df = detailed['data_files']
+    print(f"  Required: {df['total_required']}")
+    print(f"  Found: {df['found']}")
+    print(f"  Valid: {len(df['valid'])}")
+    print(f"  Total Size: {df['total_size_mb']:.2f} MB")
+
+    if df['missing']:
+        print(f"\n  ❌ Missing ({len(df['missing'])}):")
+        for file in df['missing']:
+            print(f"    • {file}")
+
+    if df['invalid']:
+        print(f"\n  ⚠️  Invalid ({len(df['invalid'])}):")
+        for file in df['invalid']:
+            error = df['details'][file].get('error', 'Unknown error')
+            print(f"    • {file}: {error}")
+
+    if df['valid']:
+        print(f"\n  ✅ Valid ({len(df['valid'])}):")
+        for file in df['valid'][:5]:  # Show first 5
+            details = df['details'][file]
+            print(f"    • {file}: {details['size_mb']:.2f} MB, {details['records']} records")
+        if len(df['valid']) > 5:
+            print(f"    ... and {len(df['valid']) - 5} more")
+
+    if detailed['warnings']:
+        print(f"\n⚠️  Warnings:")
+        for warning in detailed['warnings']:
+            print(f"  • {warning}")
+
+    if detailed['recommendations']:
+        print(f"\n💡 Recommendations:")
+        for rec in detailed['recommendations']:
+            print(f"  • {rec}")
+
+    print("\n" + "=" * 80)
+    print("SUMMARY")
+    print("=" * 80)
+    print(get_engine_status_summary(base_dir))
+
+    print("=" * 80)
