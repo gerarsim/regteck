@@ -29,7 +29,7 @@ class OllamaConfig:
     max_tokens: int = None
 
     def __post_init__(self):
-        self.host = self.host or os.getenv("OLLAMA_HOST", "http://localhost:11434")
+        self.host = self.host or os.getenv("OLLAMA_HOST") or "http://host.docker.internal:11434"
         self.model = self.model or os.getenv("OLLAMA_MODEL", "llama3.2:3b")
         self.timeout = self.timeout or int(os.getenv("OLLAMA_TIMEOUT", "120"))
         self.temperature = self.temperature or float(os.getenv("LLM_TEMPERATURE", "0.1"))
